@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent, type ChangeEvent } from "react";
+import { useRouter } from "next/navigation";
 
 interface FormData {
   fname: string;
@@ -44,6 +45,7 @@ const inputClasses =
 type Tab = "roofing" | "remodeling";
 
 export default function HeroQuoteForm() {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState<Tab>("roofing");
   const [roofingForm, setRoofingForm] = useState<FormData>(initialFormData);
   const [remodelingForm, setRemodelingForm] = useState<FormData>(initialFormData);
@@ -65,7 +67,7 @@ export default function HeroQuoteForm() {
       return;
     }
     setStatus("submitting");
-    setTimeout(() => setStatus("success"), 1500);
+    setTimeout(() => router.push("/confirmation"), 1500);
   };
 
   const switchTab = (tab: Tab) => {

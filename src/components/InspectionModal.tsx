@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, type FormEvent, type ChangeEvent } from "react";
+import { useRouter } from "next/navigation";
 import { useModal } from "@/components/ModalProvider";
 
 interface FormData {
@@ -39,6 +40,7 @@ const inputClasses =
   "w-full bg-brand-softGray border border-brand-border rounded-[10px] px-4 py-3 text-brand-charcoal placeholder-brand-muted focus:outline-none focus:border-brand-aqua transition-colors font-sans text-sm";
 
 export default function InspectionModal() {
+  const router = useRouter();
   const { isOpen, close } = useModal();
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -74,7 +76,10 @@ export default function InspectionModal() {
       return;
     }
     setStatus("submitting");
-    setTimeout(() => setStatus("success"), 1500);
+    setTimeout(() => {
+      close();
+      router.push("/confirmation");
+    }, 1500);
   };
 
   const handleClose = () => {

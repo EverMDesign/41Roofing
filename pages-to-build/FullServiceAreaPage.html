@@ -1,0 +1,300 @@
+<html vid="0"><head vid="1">
+    <meta charset="UTF-8" vid="2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
+    <title vid="4">Service Areas | 41 Roofing &amp; Restoration</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17" vid="5"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" vid="6">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" vid="7">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@700;800;900&amp;display=swap" rel="stylesheet" vid="8">
+    <script vid="9">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#050505',
+                        charcoal: '#171A1B',
+                        'aqua-light': '#E9FBFD',
+                        'aqua-brand': '#BFEFF3',
+                        'gray-soft': '#F4F6F6',
+                        border: '#DCE5E6',
+                        muted: '#606568',
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style vid="10">
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .hover-card:hover .card-bg { transform: scale(1.05); }
+        .hover-card:hover .city-arrow { transform: translateX(8px); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; }
+        ::-webkit-scrollbar-thumb:hover { background: #BFEFF3; }
+    </style>
+</head>
+<body class="font-body text-primary bg-white antialiased" vid="11">
+
+    
+    <header class="fixed top-0 w-full bg-primary text-white z-50 border-b border-white/10" id="main-header" vid="12">
+        <div class="max-w-[1440px] mx-auto px-6 h-24 flex items-center justify-between" vid="13">
+            <a href="/" class="flex items-center gap-3 group" vid="14">
+                <div class="w-10 h-10 bg-white text-primary flex items-center justify-center font-heading font-black text-xl group-hover:bg-aqua-brand transition-colors" vid="15">41</div>
+                <div class="flex flex-col" vid="16">
+                    <span class="font-heading font-black text-lg leading-none tracking-widest uppercase" vid="17">Roofing</span>
+                    <span class="text-[10px] font-body tracking-[0.2em] text-white/50 uppercase mt-1" vid="18">&amp; Restoration</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex items-center gap-8" vid="19">
+                <a href="#" class="text-sm font-semibold tracking-wide uppercase hover:text-aqua-brand transition-colors" vid="20">Roofing</a>
+                <a href="#" class="text-sm font-semibold tracking-wide uppercase hover:text-aqua-brand transition-colors" vid="21">Commercial</a>
+                <a href="#" class="text-sm font-semibold tracking-wide uppercase hover:text-aqua-brand transition-colors" vid="22">Storm Damage</a>
+                <a href="#" class="text-sm font-semibold tracking-wide uppercase hover:text-aqua-brand transition-colors" vid="23">Restoration</a>
+                <a href="#" class="text-sm font-semibold tracking-wide uppercase hover:text-aqua-brand transition-colors text-aqua-brand" vid="24">Service Areas</a>
+                <a href="#" class="text-sm font-semibold tracking-wide uppercase hover:text-aqua-brand transition-colors" vid="25">About</a>
+            </nav>
+            <div class="hidden lg:flex items-center gap-6" vid="26">
+                <a href="tel:817-266-9433" class="text-sm font-bold tracking-widest hover:text-aqua-brand transition-colors" vid="27">817-266-9433</a>
+                <a href="#lead-form" class="bg-aqua-brand text-primary px-6 py-3 font-bold text-sm tracking-widest uppercase hover:bg-white transition-colors" vid="28">Free Inspection</a>
+            </div>
+        </div>
+    </header>
+
+    
+    <section class="pt-48 pb-24 bg-primary text-white" vid="29">
+        <div class="max-w-[1440px] mx-auto px-6" vid="30">
+            <div class="max-w-4xl reveal active" vid="31">
+                <p class="text-aqua-brand font-bold tracking-[0.2em] text-sm uppercase mb-6 flex items-center gap-4" vid="32">
+                    <span class="w-12 h-px bg-aqua-brand" vid="33"></span>
+                    Coverage Map
+                </p>
+                <h1 class="font-heading font-black text-6xl lg:text-8xl leading-[0.9] uppercase mb-8" vid="34">
+                    Serving<br vid="35">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40" vid="36">North Texas</span>
+                </h1>
+                <p class="text-white/70 text-xl max-w-2xl font-light leading-relaxed" vid="37">
+                    Based in Crowley, we provide honest inspections and dependable roofing results for residential and commercial properties across Johnson and Tarrant Counties.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="bg-gray-soft border-y border-border sticky top-24 z-40" vid="38">
+        <div class="max-w-[1440px] mx-auto px-6 py-6 flex flex-wrap items-center gap-8" vid="39">
+            <span class="text-[10px] font-black uppercase tracking-[0.2em] text-muted" vid="40">Filter by County:</span>
+            <button class="text-xs font-bold uppercase tracking-widest px-4 py-2 bg-primary text-white" vid="41">All Locations</button>
+            <button class="text-xs font-bold uppercase tracking-widest px-4 py-2 hover:bg-aqua-brand transition-colors" vid="42">Tarrant County</button>
+            <button class="text-xs font-bold uppercase tracking-widest px-4 py-2 hover:bg-aqua-brand transition-colors" vid="43">Johnson County</button>
+            <button class="text-xs font-bold uppercase tracking-widest px-4 py-2 hover:bg-aqua-brand transition-colors" vid="44">Ellis County</button>
+            <button class="text-xs font-bold uppercase tracking-widest px-4 py-2 hover:bg-aqua-brand transition-colors" vid="45">Parker County</button>
+        </div>
+    </section>
+
+    
+    <section class="py-24 bg-white" vid="46">
+        <div class="max-w-[1440px] mx-auto px-6" vid="47">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 reveal active" vid="48">
+                
+                
+                <a href="#" class="hover-card relative group aspect-[4/3] bg-primary overflow-hidden flex flex-col justify-end p-10 border border-white/5" vid="49">
+                    <img src="https://images.unsplash.com/photo-1594819047050-99defca82545?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Crowley TX" class="card-bg absolute inset-0 w-full h-full object-cover opacity-40 transition-transform duration-700" vid="50">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" vid="51"></div>
+                    <div class="relative z-10" vid="52">
+                        <div class="flex items-center gap-2 mb-3" vid="53">
+                            <span class="bg-aqua-brand text-primary text-[10px] font-black uppercase px-2 py-1" vid="54">Headquarters</span>
+                        </div>
+                        <h2 class="font-heading font-black text-4xl text-white uppercase mb-4" vid="55">Crowley</h2>
+                        <div class="flex items-center text-aqua-brand font-bold text-xs tracking-widest uppercase transition-all" vid="56">
+                            View Local Services <span class="city-arrow ml-2 transition-transform" vid="57">→</span>
+                        </div>
+                    </div>
+                </a>
+
+                
+                <a href="#" class="hover-card relative group aspect-[4/3] bg-primary overflow-hidden flex flex-col justify-end p-10 border border-white/5" vid="58">
+                    <img src="https://images.unsplash.com/photo-1518557343213-94c34a81ba31?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Burleson TX" class="card-bg absolute inset-0 w-full h-full object-cover opacity-40 transition-transform duration-700" vid="59">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" vid="60"></div>
+                    <div class="relative z-10" vid="61">
+                        <h2 class="font-heading font-black text-4xl text-white uppercase mb-4" vid="62">Burleson</h2>
+                        <div class="flex items-center text-aqua-brand font-bold text-xs tracking-widest uppercase transition-all" vid="63">
+                            View Local Services <span class="city-arrow ml-2 transition-transform" vid="64">→</span>
+                        </div>
+                    </div>
+                </a>
+
+                
+                <a href="#" class="hover-card relative group aspect-[4/3] bg-primary overflow-hidden flex flex-col justify-end p-10 border border-white/5" vid="65">
+                    <img src="https://images.unsplash.com/photo-1620286820556-9b578c772be4?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Joshua TX" class="card-bg absolute inset-0 w-full h-full object-cover opacity-40 transition-transform duration-700" vid="66">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" vid="67"></div>
+                    <div class="relative z-10" vid="68">
+                        <h2 class="font-heading font-black text-4xl text-white uppercase mb-4" vid="69">Joshua</h2>
+                        <div class="flex items-center text-aqua-brand font-bold text-xs tracking-widest uppercase transition-all" vid="70">
+                            View Local Services <span class="city-arrow ml-2 transition-transform" vid="71">→</span>
+                        </div>
+                    </div>
+                </a>
+
+                
+                <a href="#" class="hover-card relative group aspect-[4/3] bg-primary overflow-hidden flex flex-col justify-end p-10 border border-white/5" vid="72">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Cleburne TX" class="card-bg absolute inset-0 w-full h-full object-cover opacity-40 transition-transform duration-700" vid="73">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" vid="74"></div>
+                    <div class="relative z-10" vid="75">
+                        <h2 class="font-heading font-black text-4xl text-white uppercase mb-4" vid="76">Cleburne</h2>
+                        <div class="flex items-center text-aqua-brand font-bold text-xs tracking-widest uppercase transition-all" vid="77">
+                            View Local Services <span class="city-arrow ml-2 transition-transform" vid="78">→</span>
+                        </div>
+                    </div>
+                </a>
+
+                
+                <a href="#" class="hover-card relative group aspect-[4/3] bg-primary overflow-hidden flex flex-col justify-end p-10 border border-white/5" vid="79">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Arlington TX" class="card-bg absolute inset-0 w-full h-full object-cover opacity-40 transition-transform duration-700" vid="80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" vid="81"></div>
+                    <div class="relative z-10" vid="82">
+                        <h2 class="font-heading font-black text-4xl text-white uppercase mb-4" vid="83">Arlington</h2>
+                        <div class="flex items-center text-aqua-brand font-bold text-xs tracking-widest uppercase transition-all" vid="84">
+                            View Local Services <span class="city-arrow ml-2 transition-transform" vid="85">→</span>
+                        </div>
+                    </div>
+                </a>
+
+                
+                <a href="#" class="hover-card relative group aspect-[4/3] bg-primary overflow-hidden flex flex-col justify-end p-10 border border-white/5" vid="86">
+                    <img src="https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Fort Worth TX" class="card-bg absolute inset-0 w-full h-full object-cover opacity-40 transition-transform duration-700" vid="87">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" vid="88"></div>
+                    <div class="relative z-10" vid="89">
+                        <h2 class="font-heading font-black text-4xl text-white uppercase mb-4" vid="90">Fort Worth</h2>
+                        <div class="flex items-center text-aqua-brand font-bold text-xs tracking-widest uppercase transition-all" vid="91">
+                            View Local Services <span class="city-arrow ml-2 transition-transform" vid="92">→</span>
+                        </div>
+                    </div>
+                </a>
+
+                
+                <a href="#" class="hover-card relative group aspect-[4/3] bg-primary overflow-hidden flex flex-col justify-end p-10 border border-white/5" vid="93">
+                    <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Mansfield TX" class="card-bg absolute inset-0 w-full h-full object-cover opacity-40 transition-transform duration-700" vid="94">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" vid="95"></div>
+                    <div class="relative z-10" vid="96">
+                        <h2 class="font-heading font-black text-4xl text-white uppercase mb-4" vid="97">Mansfield</h2>
+                        <div class="flex items-center text-aqua-brand font-bold text-xs tracking-widest uppercase transition-all" vid="98">
+                            View Local Services <span class="city-arrow ml-2 transition-transform" vid="99">→</span>
+                        </div>
+                    </div>
+                </a>
+
+                
+                <a href="#" class="hover-card relative group aspect-[4/3] bg-primary overflow-hidden flex flex-col justify-end p-10 border border-white/5" vid="100">
+                    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Alvarado TX" class="card-bg absolute inset-0 w-full h-full object-cover opacity-40 transition-transform duration-700" vid="101">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" vid="102"></div>
+                    <div class="relative z-10" vid="103">
+                        <h2 class="font-heading font-black text-4xl text-white uppercase mb-4" vid="104">Alvarado</h2>
+                        <div class="flex items-center text-aqua-brand font-bold text-xs tracking-widest uppercase transition-all" vid="105">
+                            View Local Services <span class="city-arrow ml-2 transition-transform" vid="106">→</span>
+                        </div>
+                    </div>
+                </a>
+
+                
+                <a href="#" class="hover-card relative group aspect-[4/3] bg-primary overflow-hidden flex flex-col justify-end p-10 border border-white/5" vid="107">
+                    <img src="https://images.unsplash.com/photo-1621841328461-2679541dd44b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Kennedale TX" class="card-bg absolute inset-0 w-full h-full object-cover opacity-40 transition-transform duration-700" vid="108">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" vid="109"></div>
+                    <div class="relative z-10" vid="110">
+                        <h2 class="font-heading font-black text-4xl text-white uppercase mb-4" vid="111">Kennedale</h2>
+                        <div class="flex items-center text-aqua-brand font-bold text-xs tracking-widest uppercase transition-all" vid="112">
+                            View Local Services <span class="city-arrow ml-2 transition-transform" vid="113">→</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="py-24 bg-gray-soft" vid="114">
+        <div class="max-w-[1440px] mx-auto px-6" vid="115">
+            <div class="flex flex-col md:flex-row gap-16 reveal" vid="116">
+                <div class="md:w-1/3" vid="117">
+                    <h3 class="font-heading font-black text-3xl uppercase mb-6" vid="118">Additional Areas We Cover</h3>
+                    <p class="text-muted leading-relaxed" vid="119">Don't see your city listed in the grid? We cover most of the South DFW metroplex and surrounding rural areas. Call for specific project inquiries.</p>
+                </div>
+                <div class="md:w-2/3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-6 gap-x-8" vid="120">
+                    <a href="#" class="font-bold text-sm uppercase tracking-widest hover:text-aqua-brand transition-colors" vid="121">• Grand Prairie</a>
+                    <a href="#" class="font-bold text-sm uppercase tracking-widest hover:text-aqua-brand transition-colors" vid="122">• Cedar Hill</a>
+                    <a href="#" class="font-bold text-sm uppercase tracking-widest hover:text-aqua-brand transition-colors" vid="123">• Midlothian</a>
+                    <a href="#" class="font-bold text-sm uppercase tracking-widest hover:text-aqua-brand transition-colors" vid="124">• Waxahachie</a>
+                    <a href="#" class="font-bold text-sm uppercase tracking-widest hover:text-aqua-brand transition-colors" vid="125">• Benbrook</a>
+                    <a href="#" class="font-bold text-sm uppercase tracking-widest hover:text-aqua-brand transition-colors" vid="126">• Weatherford</a>
+                    <a href="#" class="font-bold text-sm uppercase tracking-widest hover:text-aqua-brand transition-colors" vid="127">• Granbury</a>
+                    <a href="#" class="font-bold text-sm uppercase tracking-widest hover:text-aqua-brand transition-colors" vid="128">• Aledo</a>
+                    <a href="#" class="font-bold text-sm uppercase tracking-widest hover:text-aqua-brand transition-colors" vid="129">• Everman</a>
+                    <a href="#" class="font-bold text-sm uppercase tracking-widest hover:text-aqua-brand transition-colors" vid="130">• Forest Hill</a>
+                    <a href="#" class="font-bold text-sm uppercase tracking-widest hover:text-aqua-brand transition-colors" vid="131">• Venus</a>
+                    <a href="#" class="font-bold text-sm uppercase tracking-widest hover:text-aqua-brand transition-colors" vid="132">• Godley</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="bg-primary text-white py-32 border-t border-white/10" id="lead-form" vid="133">
+        <div class="max-w-[1440px] mx-auto px-6 reveal" vid="134">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20" vid="135">
+                <div vid="136">
+                    <p class="text-aqua-brand font-bold tracking-[0.2em] text-sm uppercase mb-4" vid="137">Get Started</p>
+                    <h2 class="font-heading font-black text-5xl lg:text-7xl leading-[1] uppercase mb-12" vid="138">Is your property in our zone?</h2>
+                    <p class="text-white/70 text-lg mb-8 leading-relaxed" vid="139">Schedule a free, honest inspection. We provide on-site assessments across North Texas to give you clear answers about your roof's condition.</p>
+                    <a href="tel:817-266-9433" class="text-2xl font-bold tracking-widest hover:text-aqua-brand transition-colors uppercase border-b border-white/20 pb-4 inline-block" vid="140">817-266-9433</a>
+                </div>
+                <div class="bg-charcoal p-10 lg:p-16 border border-white/10" vid="141">
+                    <h3 class="font-heading font-black text-2xl uppercase mb-8" vid="142">Request My Inspection</h3>
+                    <form class="space-y-6" vid="143">
+                        <input type="text" placeholder="Full Name" class="w-full bg-transparent border-b border-white/20 py-4 text-white focus:outline-none focus:border-aqua-brand rounded-none placeholder-white/30 uppercase text-xs tracking-wider" vid="144">
+                        <input type="text" placeholder="Service City" class="w-full bg-transparent border-b border-white/20 py-4 text-white focus:outline-none focus:border-aqua-brand rounded-none placeholder-white/30 uppercase text-xs tracking-wider" vid="145">
+                        <div class="grid grid-cols-2 gap-6" vid="146">
+                            <input type="tel" placeholder="Phone" class="w-full bg-transparent border-b border-white/20 py-4 text-white focus:outline-none focus:border-aqua-brand rounded-none placeholder-white/30 uppercase text-xs tracking-wider" vid="147">
+                            <input type="email" placeholder="Email" class="w-full bg-transparent border-b border-white/20 py-4 text-white focus:outline-none focus:border-aqua-brand rounded-none placeholder-white/30 uppercase text-xs tracking-wider" vid="148">
+                        </div>
+                        <button type="button" class="w-full bg-aqua-brand text-primary py-5 font-bold text-sm tracking-widest uppercase hover:bg-white transition-colors mt-4" vid="149">
+                            Submit Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="bg-primary text-white border-t border-white/10 py-12" vid="150">
+        <div class="max-w-[1440px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6" vid="151">
+            <div class="flex items-center gap-3" vid="152">
+                <div class="w-8 h-8 bg-white text-primary flex items-center justify-center font-heading font-black text-sm" vid="153">41</div>
+                <span class="font-heading font-black text-sm tracking-widest uppercase" vid="154">Roofing</span>
+            </div>
+            <div class="text-[10px] text-white/50 uppercase tracking-widest flex gap-4" vid="155">
+                <a href="#" class="hover:text-white transition-colors" vid="156">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors" vid="157">Terms of Service</a>
+            </div>
+            <p class="text-[10px] text-white/30 uppercase tracking-widest" vid="158">© 2024 41 Roofing &amp; Restoration. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script vid="159">
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+</body></html>
