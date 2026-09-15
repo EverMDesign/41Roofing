@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useModal } from "@/components/ModalProvider";
 
 const roofingDropdownItems = [
   { label: "Residential Roofing", href: "#residential" },
@@ -38,6 +39,7 @@ const mobileNavItems = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { open: openModal } = useModal();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -110,12 +112,12 @@ export default function Header() {
             >
               Call / Text 817-266-9433
             </a>
-            <a
-              href="#contact"
+            <button
+              onClick={openModal}
               className="hidden md:inline-flex bg-brand-aqua text-brand-black px-8 py-4 rounded-[10px] font-heading font-bold text-sm tracking-widest hover:bg-white transition-colors duration-300"
             >
               Free Roof Inspection
-            </a>
+            </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-2 z-50"

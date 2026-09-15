@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
+import ModalProvider from "@/components/ModalProvider";
+import InspectionModal from "@/components/InspectionModal";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Reviews from "@/components/sections/Reviews";
@@ -17,25 +19,28 @@ import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
-    <div className="w-full overflow-x-hidden bg-brand-white text-brand-charcoal font-sans">
-      <Header />
-      <main>
-        <Hero />
-        <Services />
-        <Reviews />
-        {/* <Projects /> */}
-        <StormDamage />
-        <Diagnosis />
-        <RepairOrReplace />
-        <Owner />
-        <WhyChoose />
-        <StatementBanner />
-        <ServiceAreas />
-        <FAQ />
-        <Contact />
-      </main>
-      <Footer />
-      <MobileBottomBar />
-    </div>
+    <ModalProvider>
+      <div className="w-full overflow-x-hidden bg-brand-white text-brand-charcoal font-sans">
+        <Header />
+        <main>
+          <Hero />
+          <Services />
+          <Reviews />
+          {/* <Projects /> */}
+          <StormDamage />
+          <Diagnosis />
+          <RepairOrReplace />
+          <Owner />
+          <WhyChoose />
+          <StatementBanner />
+          <ServiceAreas />
+          <FAQ />
+          <Contact />
+        </main>
+        <Footer />
+        <MobileBottomBar />
+        <InspectionModal />
+      </div>
+    </ModalProvider>
   );
 }

@@ -1,3 +1,5 @@
+import ModalCTA from "@/components/ModalCTA";
+
 const factors = [
   "Roof Age",
   "Extent of Damage",
@@ -36,12 +38,9 @@ export default function RepairOrReplace() {
             ))}
           </ul>
           {/* Learn About Roof Repair / Learn About Replacement links — moved to docs/revisit.md */}
-          <a
-            href="#contact"
-            className="inline-flex justify-center items-center bg-brand-aqua text-brand-black px-10 py-5 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-white transition-colors duration-300"
-          >
+          <ModalCTA className="inline-flex justify-center items-center bg-brand-aqua text-brand-black px-10 py-5 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-white transition-colors duration-300">
             Schedule An Inspection Or Consultation
-          </a>
+          </ModalCTA>
         </div>
       </div>
     </section>

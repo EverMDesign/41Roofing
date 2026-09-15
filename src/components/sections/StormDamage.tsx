@@ -1,3 +1,5 @@
+import ModalCTA from "@/components/ModalCTA";
+
 const processSteps = [
   { num: "01", title: "INSPECT", desc: "Comprehensive evaluation of your entire roofing system." },
   { num: "02", title: "DOCUMENT", desc: "Photographic evidence of all visible damage." },
@@ -34,12 +36,9 @@ export default function StormDamage() {
               hidden impact damage require immediate professional evaluation to prevent further structural
               deterioration.
             </p>
-            <a
-              href="#contact"
-              className="inline-flex justify-center items-center bg-brand-aqua text-brand-black px-10 py-5 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-white transition-colors duration-300"
-            >
+            <ModalCTA className="inline-flex justify-center items-center bg-brand-aqua text-brand-black px-10 py-5 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-white transition-colors duration-300">
               Book Your Free Inspection
-            </a>
+            </ModalCTA>
           </div>
           <div className="relative h-[350px] md:h-[450px] w-full overflow-hidden rounded-[10px]">
             <video
@@ -88,12 +87,11 @@ export default function StormDamage() {
             </p>
           </div>
 
-          <a
-            href="#contact"
+          <ModalCTA
             className="inline-flex justify-center items-center bg-brand-aqua text-brand-black px-10 py-5 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-white transition-colors duration-300"
           >
             Request A Storm Inspection
-          </a>
+          </ModalCTA>
         </div>
       </div>
     </section>

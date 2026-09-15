@@ -1,3 +1,5 @@
+import ModalCTA from "@/components/ModalCTA";
+
 const problems = [
   "Roof Leak",
   "Missing Shingles",
@@ -36,12 +38,9 @@ export default function Diagnosis() {
             ))}
           </div>
           <div>
-            <a
-              href="#contact"
-              className="inline-flex bg-brand-white text-brand-black px-8 py-4 rounded-[10px] font-heading font-bold text-sm tracking-widest hover:bg-brand-aqua transition-colors duration-300"
-            >
+            <ModalCTA className="inline-flex bg-brand-white text-brand-black px-8 py-4 rounded-[10px] font-heading font-bold text-sm tracking-widest hover:bg-brand-aqua transition-colors duration-300">
               Schedule An Inspection
-            </a>
+            </ModalCTA>
           </div>
         </div>
         <div className="hidden lg:block h-[600px] w-full relative overflow-hidden rounded-[10px] bg-brand-black">

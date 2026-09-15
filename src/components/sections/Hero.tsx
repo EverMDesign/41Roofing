@@ -1,4 +1,5 @@
 import HeroQuoteForm from "@/components/HeroQuoteForm";
+import ModalCTA from "@/components/ModalCTA";
 
 export default function Hero() {
   return (
@@ -34,12 +35,9 @@ export default function Hero() {
               commercial roofing and property restoration throughout Crowley and North Texas.
             </p>
             <div className="hero-animate hero-animate-up flex flex-col sm:flex-row gap-4 mb-12 lg:mb-0" style={{ animationDuration: "900ms", animationDelay: "550ms" }}>
-              <a
-                href="#contact"
-                className="inline-flex justify-center items-center bg-brand-aqua text-brand-black px-10 py-5 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-white transition-colors duration-300"
-              >
+              <ModalCTA className="inline-flex justify-center items-center bg-brand-aqua text-brand-black px-10 py-5 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-white transition-colors duration-300">
                 Get A Free Roof Inspection
-              </a>
+              </ModalCTA>
               <a
                 href="tel:817-266-9433"
                 className="inline-flex justify-center items-center border border-brand-border text-brand-white px-10 py-5 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-brand-white hover:text-brand-black transition-colors duration-300"
