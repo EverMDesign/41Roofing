@@ -43,7 +43,7 @@ export default function StormDamage() {
           </div>
           <div className="relative h-[350px] md:h-[450px] w-full overflow-hidden rounded-[10px]">
             <video
-              src="/41-roofing-inspecting-roofing.mp4"
+              src="https://assets.cdn.filesafe.space/R7DwPt39QmcIooKJtyyM/media/6aa9cec198106dcc4e24915e.mp4"
               autoPlay
               muted
               loop
