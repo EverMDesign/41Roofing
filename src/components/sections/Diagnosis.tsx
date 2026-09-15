@@ -46,8 +46,8 @@ export default function Diagnosis() {
         </div>
         <div className="hidden lg:block h-[600px] w-full relative overflow-hidden rounded-[10px] bg-brand-black">
           <img
-            src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&q=80&w=1000"
-            alt="Roof Inspection Detail"
+            src="/41-roofing-and-restoration-roof-replacement.webp"
+            alt="41 Roofing and Restoration roof replacement"
             className="absolute inset-0 w-full h-full object-cover opacity-80"
           />
           <div className="absolute inset-0 border border-white/10 rounded-[10px] m-4 pointer-events-none" />

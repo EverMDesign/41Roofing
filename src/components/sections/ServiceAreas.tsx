@@ -22,7 +22,13 @@ export default function ServiceAreas() {
               {city}
             </a>
           ))}
-          <span className="font-heading font-black text-2xl md:text-4xl text-brand-muted">SOUTH DFW</span>
+          <a
+              key="KELLER"
+              href="#contact"
+              className="font-heading font-black text-2xl md:text-4xl text-brand-black hover:text-brand-aqua transition-colors"
+            >
+              KELLER
+            </a>
         </div>
         {/* <div className="text-center">
           <a

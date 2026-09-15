@@ -14,8 +14,8 @@ export default function RepairOrReplace() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div className="relative h-[600px] w-full bg-brand-charcoal overflow-hidden rounded-[10px] order-2 lg:order-1">
           <img
-            src="https://images.unsplash.com/photo-1518063223069-70dc4e1074e0?auto=format&fit=crop&q=80&w=1000"
-            alt="Roof assessment"
+            src="/41-roofing-repair-or-replace-image.webp"
+            alt="41 Roofing repair or replace roof assessment"
             className="w-full h-full object-cover opacity-80"
           />
         </div>
