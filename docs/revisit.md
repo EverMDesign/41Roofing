@@ -55,3 +55,16 @@ The following sections were removed from `page.tsx` but their component files st
 - **Restoration.tsx** — "When Your Project Goes Beyond the Roof" (Gutters, Exterior/Interior Restoration, Remodeling, Property Repairs)
 - **Commercial.tsx** — "Commercial Roofing Without the Guesswork"
 - **Process.tsx** — Standalone 6-step process (merged into StormDamage section)
+
+---
+
+## Google Reviews — Full Access via Business Profile API
+
+Currently using Google Places API which only returns 5 "most relevant" reviews (out of 76). To get ALL reviews and filter them by service page (roof, gutters, painting, etc.):
+
+- **Google Business Profile API** requires a one-time OAuth authorization from the business owner (Brandi)
+- Send her a consent link, she clicks "Allow" on her Google account — no password shared
+- Returns a refresh token that grants access to all reviews indefinitely
+- Once authorized: fetch all reviews, store in JSON, filter by service keywords, place on respective service pages
+
+> Revisit when ready to contact Brandi for the one-click authorization.
