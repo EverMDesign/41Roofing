@@ -21,3 +21,13 @@ Session: added 41Roofing as project #12 in CLAUDE.md, conducted competitor analy
 **Status:** ✅ Complete
 
 ---
+
+## 2026-09-16 — 21:59
+
+41Roofing: Consolidated header nav from 7 top-level items to 4 (Services dropdown, Projects, Areas, About) to fix CTA overlap. Services mega menu uses two-column layout (Roofing + Restoration & Remodeling) matching home page service lists, white bg with underline hover animation. Set nav max-width to 1440px, mega menu min-width to 620px. Set base body font size to 16px with 1.6 line-height in globals.css.
+
+**Files:** src/components/Header.tsx, src/app/globals.css
+
+**Status:** ✅ Complete
+
+---

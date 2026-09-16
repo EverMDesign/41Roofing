@@ -58,6 +58,22 @@ The following sections were removed from `page.tsx` but their component files st
 
 ---
 
+## Service Area Pages — Projects Section (Commented Out)
+
+The Projects section on all service area pages has been commented out in `src/components/ServiceAreaTemplate.tsx`. Each city page (`src/app/areas/[city]/page.tsx`) still has its `projects` array and `projectsEyebrow`/`projectsHeading` data — just not rendering.
+
+**Per-city project data still in page files:**
+- **Arlington** — Hail Damage Replacement, Commercial Flat Roof Repair, Wind Damage Restoration
+- **Burleson** — Architectural Shingle Install, Post-Storm Restoration, Valley & Flashing Repair
+- **Crowley** — Full System Replacement, Emergency Tarp & Restore, Chimney Flashing Repair
+- **Joshua** — Storm Damage Replacement, Aging Roof Replacement, Leak Repair & Flashing
+- **Cleburne** — Historic Home Re-Roof, Post-Hail Restoration, Gutter & Fascia Repair
+- **Keller** — Premium Shingle Upgrade, Insurance Restoration, Skylight & Valley Repair
+
+**To restore:** Uncomment the Projects section in `ServiceAreaTemplate.tsx` (search for "Projects — commented out"). All project images currently use Unsplash placeholders — replace with real project photos before re-enabling.
+
+---
+
 ## Google Reviews — Full Access via Business Profile API
 
 Currently using Google Places API which only returns 5 "most relevant" reviews (out of 76). To get ALL reviews and filter them by service page (roof, gutters, painting, etc.):

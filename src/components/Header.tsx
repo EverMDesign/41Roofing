@@ -18,10 +18,17 @@ const restorationServices = [
   { label: "Interior & Exterior Painting", href: "/services/painting" },
 ];
 
+const serviceAreas = [
+  { label: "Crowley", href: "/areas/crowley" },
+  { label: "Burleson", href: "/areas/burleson" },
+  { label: "Arlington", href: "/areas/arlington" },
+  { label: "Joshua", href: "/areas/joshua" },
+  { label: "Cleburne", href: "/areas/cleburne" },
+  { label: "Keller", href: "/areas/keller" },
+];
+
 const navItems = [
   { label: "Projects", href: "#projects" },
-  { label: "Areas", href: "#service-areas" },
-  { label: "About", href: "#owner" },
 ];
 
 const mobileNavItems = [
@@ -35,7 +42,7 @@ const mobileNavItems = [
   { label: "Painting", href: "/services/painting" },
   { label: "Projects", href: "#projects" },
   { label: "Areas", href: "#service-areas" },
-  { label: "About", href: "#owner" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export default function Header() {
@@ -121,6 +128,33 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
+            <div className="relative group h-24 flex items-center">
+              <button className="text-brand-white/80 hover:text-brand-white text-sm font-semibold tracking-wide uppercase transition-colors">
+                Areas
+              </button>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                <div className="p-8 min-w-[240px]">
+                  <span className="text-brand-black text-sm font-black tracking-widest uppercase mb-4 block">Service Areas</span>
+                  <div className="flex flex-col gap-4">
+                    {serviceAreas.map((item) => (
+                      <a
+                        key={item.label}
+                        href={item.href}
+                        className="relative text-brand-black/70 hover:text-brand-black text-base font-medium transition-colors whitespace-nowrap w-fit after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-brand-aqua after:transition-all after:duration-300 hover:after:w-full"
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a
+              href="#faq"
+              className="text-brand-white/80 hover:text-brand-white text-sm font-semibold tracking-wide uppercase transition-colors"
+            >
+              FAQ
+            </a>
           </nav>
 
           <div className="flex items-center gap-6">
