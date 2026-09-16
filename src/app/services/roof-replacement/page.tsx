@@ -75,7 +75,36 @@ const reviews: Review[] = [
   },
 ];
 
+const climatePoints = [
+  {
+    title: "Shortened Lifespan in Texas Heat",
+    desc: "DFW roof surface temperatures hit 160–180°F in summer. That thermal stress cuts standard architectural shingle life from 25–30 years down to 15–20 years — meaning your roof ages faster here than almost anywhere else in the country.",
+  },
+  {
+    title: "Class 4 Impact-Resistant Shingles",
+    desc: "DFW sits in Hail Alley. Class 4 (UL 2218) shingles withstand a 2\" steel ball dropped from 20 feet with no cracking. Many Texas insurers offer 15–30% premium discounts for Class 4 roofs — ask your agent.",
+  },
+  {
+    title: "Storm-Driven Insurance Replacements",
+    desc: "Texas leads the nation in homeowner insurance claims. A single hail event can render an entire roof uninsurable and necessitate a full replacement. We assist with adjuster coordination and supplementing missed line items.",
+  },
+  {
+    title: "Synthetic Underlayment is a Must",
+    desc: "Traditional felt paper deteriorates rapidly in Texas heat. We install polypropylene synthetic underlayment on every job — far more resistant to heat degradation and UV exposure during open installation.",
+  },
+  {
+    title: "High-Wind Fastening Requirements",
+    desc: "DFW sits in a 115 mph wind design zone. Many local jurisdictions require a 6-nail fastening pattern per shingle (vs. the standard 4-nail) to meet wind uplift codes and preserve manufacturer warranties.",
+  },
+  {
+    title: "Ventilation Directly Affects Shingle Life",
+    desc: "Attic temperatures above 150°F stress deck fasteners and bake granules loose prematurely. Proper ridge and soffit ventilation is a code requirement — and one of the most cost-effective ways to extend your new roof's lifespan.",
+  },
+];
+
 const pageData: ServicePageData = {
+  path: "/services/roof-replacement",
+  serviceType: "Roofing Contractor",
   breadcrumbs: [
     { label: "Services", href: "/#services" },
     { label: "Residential" },
@@ -196,6 +225,29 @@ export default function RoofReplacementPage() {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {standards.map((item) => (
+            <div key={item.title} className="border-l-2 border-brand-aqua pl-6">
+              <h4 className="font-bold uppercase tracking-widest text-sm mb-2">
+                {item.title}
+              </h4>
+              <p className="text-brand-charcoal/70 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Texas Climate */}
+      <div>
+        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-4">
+          BUILT FOR THE TEXAS CLIMATE
+        </h3>
+        <p className="text-brand-charcoal/80 text-lg leading-relaxed mb-8">
+          A roof built to national averages isn&rsquo;t built for North Texas.
+          DFW&rsquo;s heat, hail, and high winds demand specific materials,
+          fastening methods, and ventilation systems. Here&rsquo;s what that
+          means for your replacement.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {climatePoints.map((item) => (
             <div key={item.title} className="border-l-2 border-brand-aqua pl-6">
               <h4 className="font-bold uppercase tracking-widest text-sm mb-2">
                 {item.title}

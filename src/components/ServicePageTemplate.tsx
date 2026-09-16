@@ -9,6 +9,7 @@ import SidebarQuoteForm from "@/components/SidebarQuoteForm";
 import ReviewCard, { type Review } from "@/components/ReviewCard";
 import ChevronIcon from "@/components/icons/ChevronIcon";
 import { fetchGoogleReviews } from "@/lib/google-reviews";
+import { generateServicePageSchema } from "@/lib/schema";
 
 interface Breadcrumb {
   label: string;
@@ -21,6 +22,10 @@ interface FAQ {
 }
 
 export interface ServicePageData {
+  /** Route path without domain (e.g. "/services/roof-replacement") */
+  path: string;
+  /** Schema.org serviceType (e.g. "Roofing Contractor") */
+  serviceType: string;
   breadcrumbs: Breadcrumb[];
   title: string;
   subtitle: string;
@@ -64,9 +69,26 @@ export default async function ServicePageTemplate({
   const reviews = liveReviews ?? data.reviews;
   const titleLines = data.title.split("\n");
 
+  const schemas = generateServicePageSchema({
+    title: data.title.replace("\n", " "),
+    description: data.subtitle,
+    path: data.path,
+    serviceType: data.serviceType,
+    image: data.heroImage,
+    breadcrumbs: data.breadcrumbs,
+    faqs: data.faqs,
+  });
+
   return (
     <ModalProvider>
       <div className="w-full overflow-x-clip bg-brand-white text-brand-charcoal font-sans">
+        {schemas.map((schema, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
         <Header />
 
         <main>

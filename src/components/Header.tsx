@@ -4,34 +4,37 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useModal } from "@/components/ModalProvider";
 
-const roofingDropdownItems = [
-  { label: "Roof Replacement", href: "/services/roof-replacement" },
+const roofingServices = [
   { label: "Roof Repair", href: "/services/roof-repair" },
+  { label: "Roof Replacement", href: "/services/roof-replacement" },
+  { label: "Commercial Roofing", href: "/services/commercial-roofing" },
   { label: "Emergency Tarping", href: "/services/emergency-tarping" },
-  { label: "Hail & Storm Damage", href: "#storm" },
-  { label: "Roof Inspections", href: "#residential" },
-  { label: "Skylights", href: "#residential" },
-  { label: "Flashing / Chimney Work", href: "#residential" },
-  { label: "Roof Decking Repair", href: "#residential" },
-  { label: "Roofing Materials", href: "#materials" },
+];
+
+const restorationServices = [
+  { label: "Gutters", href: "/services/gutters" },
+  { label: "Exterior Repairs", href: "/services/exterior-repairs" },
+  { label: "Interior & Exterior Restoration", href: "/services/restoration" },
+  { label: "Interior & Exterior Painting", href: "/services/painting" },
 ];
 
 const navItems = [
-  { label: "Commercial", href: "/services/commercial-roofing" },
-  { label: "Storm Damage", href: "#storm" },
-  { label: "Restoration", href: "/services/restoration" },
   { label: "Projects", href: "#projects" },
-  { label: "Service Areas", href: "#service-areas" },
+  { label: "Areas", href: "#service-areas" },
   { label: "About", href: "#owner" },
 ];
 
 const mobileNavItems = [
-  { label: "Services", href: "#services" },
-  { label: "Commercial", href: "#commercial" },
-  { label: "Storm Damage", href: "#storm" },
-  { label: "Restoration", href: "#restoration" },
+  { label: "Roof Repair", href: "/services/roof-repair" },
+  { label: "Roof Replacement", href: "/services/roof-replacement" },
+  { label: "Commercial Roofing", href: "/services/commercial-roofing" },
+  { label: "Emergency Tarping", href: "/services/emergency-tarping" },
+  { label: "Gutters", href: "/services/gutters" },
+  { label: "Exterior Repairs", href: "/services/exterior-repairs" },
+  { label: "Restoration", href: "/services/restoration" },
+  { label: "Painting", href: "/services/painting" },
   { label: "Projects", href: "#projects" },
-  { label: "Service Areas", href: "#service-areas" },
+  { label: "Areas", href: "#service-areas" },
   { label: "About", href: "#owner" },
 ];
 
@@ -60,7 +63,7 @@ export default function Header() {
           scrolled ? "shadow-md" : ""
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between h-20 md:h-24">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex items-center justify-between h-20 md:h-24">
           <Link
             href="/"
             className="flex items-center gap-3 group z-50"
@@ -74,22 +77,38 @@ export default function Header() {
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-8 xl:gap-12 absolute left-1/2 -translate-x-1/2">
+          <nav className="hidden lg:flex items-center gap-8 xl:gap-12">
             <div className="relative group h-24 flex items-center">
               <button className="text-brand-white/80 hover:text-brand-white text-sm font-semibold tracking-wide uppercase transition-colors">
-                Roofing
+                Services
               </button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 w-64 bg-brand-black border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                <div className="p-4 flex flex-col gap-3">
-                  {roofingDropdownItems.map((item) => (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      className="text-left text-brand-white/70 hover:text-brand-aqua text-sm font-medium transition-colors"
-                    >
-                      {item.label}
-                    </a>
-                  ))}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                <div className="flex gap-12 p-8 min-w-[620px]">
+                  <div className="flex flex-col gap-4">
+                    <span className="text-brand-black text-sm font-black tracking-widest uppercase mb-1">Roofing</span>
+                    {roofingServices.map((item) => (
+                      <a
+                        key={item.label}
+                        href={item.href}
+                        className="relative text-brand-black/70 hover:text-brand-black text-base font-medium transition-colors whitespace-nowrap w-fit after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-brand-aqua after:transition-all after:duration-300 hover:after:w-full"
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
+                  <div className="w-px bg-gray-200" />
+                  <div className="flex flex-col gap-4">
+                    <span className="text-brand-black text-sm font-black tracking-widest uppercase mb-1">Restoration & Remodeling</span>
+                    {restorationServices.map((item) => (
+                      <a
+                        key={item.label}
+                        href={item.href}
+                        className="relative text-brand-black/70 hover:text-brand-black text-base font-medium transition-colors whitespace-nowrap w-fit after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-brand-aqua after:transition-all after:duration-300 hover:after:w-full"
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -137,12 +156,24 @@ export default function Header() {
           >
             CLOSE
           </button>
-          {mobileNavItems.map((item) => (
+          <span className="text-brand-aqua text-xs font-bold tracking-widest uppercase">Services</span>
+          {mobileNavItems.slice(0, 8).map((item) => (
             <a
               key={item.label}
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-brand-white text-xl font-heading font-bold uppercase tracking-wide"
+              className="text-brand-white text-lg font-heading font-bold uppercase tracking-wide"
+            >
+              {item.label}
+            </a>
+          ))}
+          <div className="w-16 h-px bg-white/20" />
+          {mobileNavItems.slice(8).map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-brand-white text-lg font-heading font-bold uppercase tracking-wide"
             >
               {item.label}
             </a>

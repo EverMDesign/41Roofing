@@ -57,6 +57,8 @@ const reviews: Review[] = [
 ];
 
 const pageData: ServicePageData = {
+  path: "/services/roof-repair",
+  serviceType: "Roofing Contractor",
   breadcrumbs: [
     { label: "Services", href: "/#services" },
     { label: "Residential" },
@@ -179,6 +181,55 @@ export default function RoofRepairPage() {
             {
               title: "Warranty Backed",
               desc: "Our repairs come with a workmanship warranty so you have peace of mind long after we leave.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="border-l-2 border-brand-aqua pl-6"
+            >
+              <h4 className="font-bold uppercase tracking-widest text-sm mb-2">
+                {item.title}
+              </h4>
+              <p className="text-brand-charcoal/70 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-4">
+          WHY ROOF REPAIR IS CRITICAL IN NORTH TEXAS
+        </h3>
+        <p className="text-brand-charcoal/80 text-lg leading-relaxed mb-6">
+          North Texas subjects roofs to some of the harshest conditions in the
+          country. Understanding what your roof is up against helps you recognize
+          damage early&mdash;before a small problem becomes a major one.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            {
+              title: "Hail Alley Frequency",
+              desc: "DFW averages 7\u20139 significant hail events per year. Tarrant County consistently ranks in the national top 10 for insurance hail claims. Damage often isn\u2019t visible from the ground until a leak appears months later.",
+            },
+            {
+              title: "Extreme Heat & UV",
+              desc: "Roof surfaces reach 150\u2013170\u00b0F in direct summer sun. Sustained heat and high UV index accelerate granule loss, dry out pipe boots and caulk seals, and cause asphalt to oxidize and crack\u2014especially on roofs with poor attic ventilation.",
+            },
+            {
+              title: "Thermal Cycling",
+              desc: "North Texas temperatures can swing 30\u201340\u00b0F within a single day. Repeated expansion and contraction works fasteners loose, cracks sealants at penetrations, and fatigues metal flashings\u2014often faster than the shingles themselves.",
+            },
+            {
+              title: "Heavy Rainfall Events",
+              desc: "DFW receives 36\u201340 inches of rain annually, typically in intense bursts. High water volume stresses valley flashing, gutter capacity, and drip edge installation\u2014exposing any weakness in the system quickly.",
+            },
+            {
+              title: "Wind & Tornado Exposure",
+              desc: "Severe thunderstorms regularly produce 50\u201380 mph winds, and Tarrant County sits in one of Texas\u2019s most active tornado corridors. Even near-miss tornado events cause widespread shingle and flashing damage across entire neighborhoods.",
+            },
+            {
+              title: "Insurance Claim Context",
+              desc: "Because DFW is a top hail market, most storm-related repairs involve a homeowner\u2019s insurance claim. Damage must be documented to insurance standards\u2014something we handle as part of every storm inspection.",
             },
           ].map((item) => (
             <div

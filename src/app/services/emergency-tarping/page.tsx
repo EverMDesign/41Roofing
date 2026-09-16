@@ -38,6 +38,8 @@ const reviews: Review[] = [
 ];
 
 const pageData: ServicePageData = {
+  path: "/services/emergency-tarping",
+  serviceType: "Roofing Contractor",
   breadcrumbs: [
     { label: "Services", href: "/#services" },
     { label: "Roofing" },
@@ -133,6 +135,52 @@ export default function EmergencyTarpingPage() {
             {
               title: "Commercial Properties",
               desc: "Emergency tarping for flat and low-slope commercial roofs to protect inventory and equipment.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="border-l-2 border-brand-aqua pl-6"
+            >
+              <h4 className="font-bold uppercase tracking-widest text-sm mb-2">
+                {item.title}
+              </h4>
+              <p className="text-brand-charcoal/70 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-4">
+          WHY SPEED MATTERS IN NORTH TEXAS
+        </h3>
+        <p className="text-brand-charcoal/80 text-lg leading-relaxed mb-6">
+          The DFW Metroplex doesn&rsquo;t give you time to wait. Between Texas
+          humidity, a storm season that runs March through June, and a second
+          active window in the fall, a roof breach left unprotected can turn
+          into a mold and insurance problem faster than most homeowners expect.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            {
+              title: "Mold Starts in 24–48 Hours",
+              desc: "North Texas heat and humidity accelerate mold colonization. Attic temperatures can exceed 130°F in summer — a roof breach left open overnight creates ideal conditions for spore growth in insulation, decking, and ceiling framing.",
+            },
+            {
+              title: "Your Policy Requires It",
+              desc: "Texas homeowners policies include a duty-to-mitigate clause. If you take no action and rain on the following day causes ceiling or flooring damage, your carrier may dispute those losses as preventable. Emergency tarping satisfies that obligation and is typically reimbursable.",
+            },
+            {
+              title: "Peak Season: March through June",
+              desc: "April and May carry the highest statistical risk in Tarrant County — hail up to 4.5 inches and straight-line winds exceeding 89 mph have been recorded in recent seasons. The next storm can arrive within days of the first.",
+            },
+            {
+              title: "Beware Storm Chasers",
+              desc: "After every major DFW event, out-of-state crews arrive soliciting emergency work. They leave the market once paid — no local office, no recourse if the tarp fails. A Crowley-based crew has a physical address and a reputation in the community they serve.",
+            },
+            {
+              title: "Common DFW Emergency Scenarios",
+              desc: "Large hail punching through OSB decking, straight-line winds lifting shingle fields, fallen post-oak limbs collapsing framing, displaced ridge cap flashing, and hail-cracked skylights — these are the calls we run regularly across Crowley, Burleson, Mansfield, and southwest Tarrant County.",
             },
           ].map((item) => (
             <div

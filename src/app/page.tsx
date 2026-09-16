@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import ModalProvider from "@/components/ModalProvider";
 import InspectionModal from "@/components/InspectionModal";
+import { generateHomepageSchema } from "@/lib/schema";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Reviews from "@/components/sections/Reviews";
@@ -18,9 +19,15 @@ import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 
 export default function Home() {
+  const homepageSchema = generateHomepageSchema();
+
   return (
     <ModalProvider>
       <div className="w-full overflow-x-hidden bg-brand-white text-brand-charcoal font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }}
+        />
         <Header />
         <main>
           <Hero />

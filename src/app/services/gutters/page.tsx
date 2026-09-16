@@ -38,6 +38,8 @@ const reviews: Review[] = [
 ];
 
 const pageData: ServicePageData = {
+  path: "/services/gutters",
+  serviceType: "Gutter Service",
   breadcrumbs: [
     { label: "Services", href: "/#services" },
     { label: "Restoration" },
@@ -118,6 +120,48 @@ export default function GuttersPage() {
             {
               title: "Fascia Repair",
               desc: "We inspect and repair damaged fascia boards before installing new gutters for a solid mounting surface.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="border-l-2 border-brand-aqua pl-6"
+            >
+              <h4 className="font-bold uppercase tracking-widest text-sm mb-2">
+                {item.title}
+              </h4>
+              <p className="text-brand-charcoal/70 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-4">
+          WHY GUTTERS MATTER MORE IN NORTH TEXAS
+        </h3>
+        <p className="text-brand-charcoal/80 text-lg leading-relaxed mb-6">
+          DFW&apos;s climate and soil conditions put unique demands on gutter
+          systems that homeowners from other parts of the country often don&apos;t
+          anticipate. A gutter setup that works fine in a milder region can fail
+          here—and the consequences go well beyond a wet flowerbed.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            {
+              title: "Extreme Rainfall Rates",
+              desc: "North Texas thunderstorms commonly drop 2–4 inches of rain per hour. Standard 5-inch gutters with a single small downspout can overflow completely in these events. We size systems specifically for Texas storm intensity.",
+            },
+            {
+              title: "Clay Soil and Foundation Risk",
+              desc: "DFW sits on expansive black clay that swells when wet and shrinks when dry. Gutters that dump water against your foundation perimeter cause differential soil movement—a leading driver of slab cracks, sticking doors, and costly foundation repairs.",
+            },
+            {
+              title: "Hail Damage Is Covered by Insurance",
+              desc: "DFW receives significant hail annually. Hail dents, cracks joints, and knocks gutters loose. Insurance claims for roof damage frequently include gutters—we document and assess gutter damage as part of every storm inspection.",
+            },
+            {
+              title: "Year-Round Debris from Local Trees",
+              desc: "Live oaks drop small leaves nearly every month. Pecans shed bulky hulls and nuts in fall. Cottonwoods release spring cotton that clogs downspout screens fast. North Texas trees mean gutters need cleaning more often than the national average.",
             },
           ].map((item) => (
             <div

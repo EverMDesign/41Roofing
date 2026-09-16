@@ -38,6 +38,8 @@ const reviews: Review[] = [
 ];
 
 const pageData: ServicePageData = {
+  path: "/services/exterior-repairs",
+  serviceType: "Property Restoration",
   breadcrumbs: [
     { label: "Services", href: "/#services" },
     { label: "Restoration" },
@@ -117,6 +119,52 @@ export default function ExteriorRepairsPage() {
             {
               title: "Storm Damage",
               desc: "Comprehensive exterior repair following hail, wind, and severe weather events with full insurance documentation.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="border-l-2 border-brand-aqua pl-6"
+            >
+              <h4 className="font-bold uppercase tracking-widest text-sm mb-2">
+                {item.title}
+              </h4>
+              <p className="text-brand-charcoal/70 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-4">
+          HOW TEXAS WEATHER IMPACTS YOUR HOME&rsquo;S EXTERIOR
+        </h3>
+        <p className="text-brand-charcoal/80 text-lg leading-relaxed mb-6">
+          DFW homeowners face a combination of weather stresses that accelerates
+          exterior wear faster than most parts of the country. Knowing what to
+          look for helps you catch damage early&mdash;before it becomes a bigger
+          problem.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            {
+              title: "Hail Damage to Siding",
+              desc: "North Texas sits in Hail Alley. Hail cracks and punctures vinyl siding\u2014especially in cooler temperatures when vinyl turns brittle\u2014and chips fiber cement panels, exposing the substrate to moisture. Even small impact marks allow water behind your walls.",
+            },
+            {
+              title: "UV & Heat Damage",
+              desc: "DFW regularly sees 100+ consecutive days above 90\u00b0F. That relentless heat fades and chalks paint on wood and fiber cement, and causes improperly installed vinyl to buckle and warp. South- and west-facing walls degrade the fastest.",
+            },
+            {
+              title: "Moisture & Wood Rot in Soffits and Fascia",
+              desc: "DFW humidity stays at 70\u201390% on summer mornings even during dry spells. Fascia boards behind clogged gutters and soffit boards at the roof edge are the most common rot locations on area homes\u2014often hidden until the damage is extensive.",
+            },
+            {
+              title: "Clay Soil Movement",
+              desc: "The Blackland Prairie clay soil under most Crowley and DFW homes expands when wet and shrinks when dry. That seasonal shifting cracks exterior stucco and EIFS, separates caulk joints at windows and corners, and steps mortar joints in brick veneer.",
+            },
+            {
+              title: "Insurance Coverage for Storm Damage",
+              desc: "When a hailstorm damages your roof, it almost certainly damaged your siding, soffit, fascia, and gutters at the same time. Filing one bundled claim covering all affected components typically results in better compensation\u2014and we document everything to support your adjuster.",
             },
           ].map((item) => (
             <div

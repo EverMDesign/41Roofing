@@ -38,6 +38,8 @@ const reviews: Review[] = [
 ];
 
 const pageData: ServicePageData = {
+  path: "/services/restoration",
+  serviceType: "Property Restoration",
   breadcrumbs: [
     { label: "Services", href: "/#services" },
     { label: "Restoration" },
@@ -118,6 +120,52 @@ export default function RestorationPage() {
             {
               title: "Painting",
               desc: "Interior and exterior painting to complete the restoration and return your home to its pre-damage condition.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="border-l-2 border-brand-aqua pl-6"
+            >
+              <h4 className="font-bold uppercase tracking-widest text-sm mb-2">
+                {item.title}
+              </h4>
+              <p className="text-brand-charcoal/70 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-4">
+          COMMON RESTORATION SCENARIOS IN NORTH TEXAS
+        </h3>
+        <p className="text-brand-charcoal/80 text-lg leading-relaxed mb-6">
+          North Texas homeowners face a specific set of conditions that make
+          restoration work a recurring reality — not a once-in-a-lifetime event.
+          These are the situations we see most often in Crowley and across
+          Tarrant County.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            {
+              title: "Hail & Wind Storm Damage",
+              desc: "DFW ranks among the most active severe weather corridors in the U.S. Crowley has recorded hail up to 4.5 inches and wind gusts up to 89 mph. A single storm can damage roofing, siding, gutters, windows, and outdoor structures simultaneously.",
+            },
+            {
+              title: "Water Damage from Roof Leaks",
+              desc: "A compromised roof doesn't stay a roofing problem for long. Water migrates into attic insulation, ceiling joists, and interior drywall. In DFW's summer heat, mold can develop within 24–72 hours of water exposure — making fast, full-scope restoration critical.",
+            },
+            {
+              title: "Burst Pipes from Winter Freezes",
+              desc: "Winter Storm Uri (February 2021) burst pipes in hundreds of thousands of DFW homes, including across southwest Fort Worth and Crowley. Pipes in exterior walls and unconditioned attic spaces are most vulnerable. Interior damage from a burst pipe often spreads inside walls and floors before it becomes visible.",
+            },
+            {
+              title: "Insurance Supplement Process",
+              desc: "Most initial adjuster estimates written in Xactimate miss legitimate line items: code-required upgrades, debris removal, and overhead on complex jobs. A contractor who knows the supplement process can recover hundreds to thousands in covered costs the initial estimate left out.",
+            },
+            {
+              title: "Aging DFW Housing Stock",
+              desc: "Much of Crowley and southwest Tarrant County was built in the 1980s and 1990s. These homes often have original siding, early double-pane windows with failed seals, and roofs at or past their designed lifespan. When a storm triggers a claim, the restoration scope frequently expands to address what the new work must tie into.",
             },
           ].map((item) => (
             <div

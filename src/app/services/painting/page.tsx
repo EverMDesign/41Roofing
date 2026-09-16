@@ -38,6 +38,8 @@ const reviews: Review[] = [
 ];
 
 const pageData: ServicePageData = {
+  path: "/services/painting",
+  serviceType: "Home Improvement",
   breadcrumbs: [
     { label: "Services", href: "/#services" },
     { label: "Restoration" },
@@ -117,6 +119,48 @@ export default function PaintingPage() {
             {
               title: "Surface Preparation",
               desc: "Power washing, scraping, sanding, priming, and caulking to ensure paint adhesion and longevity.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="border-l-2 border-brand-aqua pl-6"
+            >
+              <h4 className="font-bold uppercase tracking-widest text-sm mb-2">
+                {item.title}
+              </h4>
+              <p className="text-brand-charcoal/70 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-4">
+          PAINTING IN THE TEXAS CLIMATE
+        </h3>
+        <p className="text-brand-charcoal/80 text-lg leading-relaxed mb-6">
+          DFW&rsquo;s heat, UV intensity, and humidity create conditions that
+          shorten paint life and complicate application. Knowing how the climate
+          affects your paint job helps you make smarter decisions about timing,
+          product selection, and long-term maintenance.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            {
+              title: "UV Fading and Chalking",
+              desc: "Intense Texas sun breaks down paint binders and pigments over time, causing colors to fade and leaving a chalky powder on the surface. UV-resistant 100% acrylic latex paints hold color measurably longer in DFW conditions.",
+            },
+            {
+              title: "Best Painting Seasons",
+              desc: "Spring (March–May) and fall (October–November) are the ideal windows. Summer surface temperatures can exceed 140°F on south- and west-facing walls — well above the safe application range for most paints.",
+            },
+            {
+              title: "Humidity and Adhesion",
+              desc: "High humidity slows drying and can cause latex paint to blush or fail to bond. Surfaces must be completely dry before application, and recoating too soon under humid conditions leads to film failure.",
+            },
+            {
+              title: "HOA Color Approval",
+              desc: "Many DFW subdivisions — including communities in Crowley, Burleson, and Mansfield — require HOA architectural review before any exterior color change. Proceeding without approval can require a costly repaint.",
             },
           ].map((item) => (
             <div

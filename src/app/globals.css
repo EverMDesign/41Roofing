@@ -21,6 +21,8 @@
 
 /* Base styles */
 body {
+  font-size: 16px;
+  line-height: 1.6;
   background-color: var(--color-brand-white);
   color: var(--color-brand-charcoal);
   -webkit-font-smoothing: antialiased;

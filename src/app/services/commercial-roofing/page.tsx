@@ -38,6 +38,8 @@ const reviews: Review[] = [
 ];
 
 const pageData: ServicePageData = {
+  path: "/services/commercial-roofing",
+  serviceType: "Roofing Contractor",
   breadcrumbs: [
     { label: "Services", href: "/#services" },
     { label: "Commercial" },
@@ -151,6 +153,56 @@ export default function CommercialRoofingPage() {
               className="p-4 bg-brand-softGray border border-brand-border text-sm font-bold uppercase tracking-wide text-center"
             >
               {item}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-4">
+          COMMERCIAL ROOFING IN NORTH TEXAS
+        </h3>
+        <p className="text-brand-charcoal/80 text-lg leading-relaxed mb-8">
+          North Texas puts commercial roofs through conditions that accelerate
+          wear faster than almost anywhere else in the country. Understanding
+          these regional stressors is the difference between a roof that lasts
+          and one that requires constant repairs.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            {
+              title: "Extreme Rooftop Heat",
+              desc: "Ambient temps above 100°F drive dark commercial membrane surfaces to 160–180°F. This accelerates seam failure, membrane oxidation, and brittleness. White TPO and reflective coatings can cut surface temps by 40–60°F — one of the highest-ROI upgrades a commercial owner can make.",
+            },
+            {
+              title: "Ponding Water on Flat Roofs",
+              desc: "Water sitting on a flat roof more than 48 hours voids most membrane warranties and adds 5+ lbs per square foot of structural load. Clogged drains and inadequate slope are the leading causes — both preventable with routine maintenance and tapered insulation solutions.",
+            },
+            {
+              title: "Hail Exposure on Large Surface Areas",
+              desc: "DFW averages 40+ severe weather days per year. A 20,000 sq ft warehouse presents 20,000 sq ft of uninterrupted hail target. Single-ply membranes can sustain hidden punctures from 1\"+ hail that visual inspection alone won't catch — infrared scanning is often required to scope the full damage.",
+            },
+            {
+              title: "Wind Uplift on Flat Roofs",
+              desc: "Edge and corner zones on large flat roofs experience uplift forces 2–3x greater than the field. Perimeter flashings and coping caps are the first to fail in straight-line wind events. DFW jurisdictions require systems engineered for 115–130 mph wind exposure under ASCE 7-22.",
+            },
+            {
+              title: "Energy Efficiency & Cool Roofs",
+              desc: "Texas IECC requires minimum R-25 insulation for most commercial assemblies in DFW's Climate Zone 3. Many buildings from the 1990s and 2000s fall well short. ENERGY STAR-rated membranes with an SRI of 78+ can reduce cooling loads and qualify for utility rebates.",
+            },
+            {
+              title: "Aging DFW Inventory",
+              desc: "A large share of DFW commercial roofs installed in the 1990s and early 2000s are at or past end of service life. If your building is in that window, a professional assessment can determine whether restoration or full replacement is the right financial decision.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="border-l-2 border-brand-aqua pl-6"
+            >
+              <h4 className="font-bold uppercase tracking-widest text-sm mb-2">
+                {item.title}
+              </h4>
+              <p className="text-brand-charcoal/70 text-sm">{item.desc}</p>
             </div>
           ))}
         </div>
