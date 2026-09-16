@@ -1,6 +1,13 @@
 import ArrowIcon from "@/components/icons/ArrowIcon";
 
-const cities = ["CROWLEY", "BURLESON", "ARLINGTON", "JOSHUA", "CLEBURNE"];
+const cities = [
+  { name: "CROWLEY", href: "/areas/crowley" },
+  { name: "BURLESON", href: "/areas/burleson" },
+  { name: "ARLINGTON", href: "/areas/arlington" },
+  { name: "JOSHUA", href: "/areas/joshua" },
+  { name: "CLEBURNE", href: "/areas/cleburne" },
+  { name: "KELLER", href: "/areas/keller" },
+];
 
 export default function ServiceAreas() {
   return (
@@ -15,20 +22,13 @@ export default function ServiceAreas() {
         <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 mb-16 max-w-4xl mx-auto text-center">
           {cities.map((city) => (
             <a
-              key={city}
-              href="#contact"
+              key={city.name}
+              href={city.href}
               className="font-heading font-black text-2xl md:text-4xl text-brand-black hover:text-brand-aqua transition-colors"
             >
-              {city}
+              {city.name}
             </a>
           ))}
-          <a
-              key="KELLER"
-              href="#contact"
-              className="font-heading font-black text-2xl md:text-4xl text-brand-black hover:text-brand-aqua transition-colors"
-            >
-              KELLER
-            </a>
         </div>
         {/* <div className="text-center">
           <a

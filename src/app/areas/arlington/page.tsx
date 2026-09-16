@@ -6,6 +6,7 @@ import type { Review } from "@/components/ReviewCard";
 import type { Project } from "@/components/ProjectCard";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/areas/arlington" },
   title: "Roofing in Arlington, TX | 41 Roofing & Restoration",
   description:
     "Trusted roofing contractor serving Arlington, TX. Free inspections, roof repair, replacement, storm damage restoration, and commercial roofing for one of the largest cities in North Texas.",

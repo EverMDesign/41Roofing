@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Roofing in Crowley, TX | 41 Roofing & Restoration",
   description:
     "Crowley's hometown roofing contractor. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping. Based in Crowley — honest assessments from your neighbors.",
+  alternates: { canonical: "/areas/crowley" },
 };
 
 const reviews: Review[] = [

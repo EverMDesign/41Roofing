@@ -9,7 +9,7 @@ export const BUSINESS = {
   phone: "(817) 266-9433",
   email: "info@41roofing.com",
   founder: "Brandi Burk",
-  logo: "/41-roofing-logo.png",
+  logo: "/41-roofing-logo.webp",
   address: {
     street: "208 E Main St Suite D",
     city: "Crowley",
@@ -25,11 +25,13 @@ export const BUSINESS = {
     "Crowley, TX",
     "Burleson, TX",
     "Joshua, TX",
+    "Arlington, TX",
+    "Cleburne, TX",
+    "Keller, TX",
     "Alvarado, TX",
     "Mansfield, TX",
     "Godley, TX",
     "Fort Worth, TX",
-    "Arlington, TX",
   ],
   services: [
     {

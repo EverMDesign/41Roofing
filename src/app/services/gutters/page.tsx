@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Gutters | 41 Roofing & Restoration",
   description:
     "Seamless gutter installation and replacement in Crowley and North Texas. Protect your foundation, landscaping, and siding with a properly functioning gutter system.",
+  alternates: { canonical: "/services/gutters" },
 };
 
 const reviews: Review[] = [

@@ -95,11 +95,6 @@ export default async function ServicePageTemplate({
           {/* Hero */}
           <section className="relative pt-40 md:pt-48 pb-24 md:pb-32 bg-brand-black overflow-hidden border-b border-white/10">
             <div className="absolute inset-0 z-0">
-              <img
-                src={data.heroImage}
-                alt=""
-                className="w-full h-full object-cover opacity-30 grayscale"
-              />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent" />
             </div>
 
@@ -169,6 +164,7 @@ export default async function ServicePageTemplate({
                       {[...Array(5)].map((_, i) => (
                         <svg
                           key={i}
+                          aria-hidden="true"
                           className={`w-4 h-4 ${i < Math.round(googleData.rating) ? "text-yellow-400" : "text-brand-border"} fill-current`}
                           viewBox="0 0 20 20"
                         >

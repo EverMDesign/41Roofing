@@ -27,8 +27,8 @@ const serviceAreas = [
   { label: "Keller", href: "/areas/keller" },
 ];
 
-const navItems = [
-  { label: "Projects", href: "#projects" },
+const navItems: { label: string; href: string }[] = [
+  // { label: "Projects", href: "#projects" },
 ];
 
 const mobileNavItems = [
@@ -40,7 +40,7 @@ const mobileNavItems = [
   { label: "Exterior Repairs", href: "/services/exterior-repairs" },
   { label: "Restoration", href: "/services/restoration" },
   { label: "Painting", href: "/services/painting" },
-  { label: "Projects", href: "#projects" },
+  // { label: "Projects", href: "#projects" },
   { label: "Areas", href: "#service-areas" },
   { label: "FAQ", href: "#faq" },
 ];
@@ -76,12 +76,11 @@ export default function Header() {
             className="flex items-center gap-3 group z-50"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <div className="w-10 h-10 bg-brand-white flex items-center justify-center font-heading font-black text-brand-black text-xl leading-none tracking-tighter">
-              41
-            </div>
-            <span className="font-heading font-bold text-brand-white text-lg tracking-wide hidden md:block">
-              ROOFING
-            </span>
+            <img
+              src="/41-roofing-logo.webp"
+              alt="41 Roofing and Restoration logo — roofing contractor in Crowley TX"
+              className="h-12 md:h-14 w-auto"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8 xl:gap-12">
@@ -172,10 +171,11 @@ export default function Header() {
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-2 z-50"
+              aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-[6px] z-50"
             >
-              <span className="w-6 h-[2px] bg-brand-white block" />
-              <span className="w-6 h-[2px] bg-brand-white block" />
+              <span className={`w-6 h-[2px] bg-brand-white block transition-transform duration-300 ${mobileMenuOpen ? "translate-y-[4px] rotate-45" : ""}`} />
+              <span className={`w-6 h-[2px] bg-brand-white block transition-transform duration-300 ${mobileMenuOpen ? "-translate-y-[4px] -rotate-45" : ""}`} />
             </button>
           </div>
         </div>
@@ -184,12 +184,6 @@ export default function Header() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-brand-black flex flex-col items-center justify-center gap-8 lg:hidden">
-          <button
-            onClick={() => setMobileMenuOpen(false)}
-            className="absolute top-6 right-6 text-brand-white font-heading font-bold text-sm"
-          >
-            CLOSE
-          </button>
           <span className="text-brand-aqua text-xs font-bold tracking-widest uppercase">Services</span>
           {mobileNavItems.slice(0, 8).map((item) => (
             <a
@@ -212,13 +206,12 @@ export default function Header() {
               {item.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            onClick={() => setMobileMenuOpen(false)}
+          <button
+            onClick={() => { setMobileMenuOpen(false); openModal(); }}
             className="bg-brand-aqua text-brand-black px-8 py-4 font-heading font-bold text-sm tracking-widest uppercase mt-4"
           >
             Free Roof Inspection
-          </a>
+          </button>
         </div>
       )}
     </>

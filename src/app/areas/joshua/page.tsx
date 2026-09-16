@@ -6,6 +6,7 @@ import type { Review } from "@/components/ReviewCard";
 import type { Project } from "@/components/ProjectCard";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/areas/joshua" },
   title: "Roofing in Joshua, TX | 41 Roofing & Restoration",
   description:
     "Local roofing contractor serving Joshua, TX. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping for this growing South DFW community.",

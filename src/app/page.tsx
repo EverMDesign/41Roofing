@@ -5,6 +5,7 @@ import ModalProvider from "@/components/ModalProvider";
 import InspectionModal from "@/components/InspectionModal";
 import { generateHomepageSchema } from "@/lib/schema";
 import Hero from "@/components/sections/Hero";
+import TrustBar from "@/components/sections/TrustBar";
 import Services from "@/components/sections/Services";
 import Reviews from "@/components/sections/Reviews";
 // import Projects from "@/components/sections/Projects";
@@ -17,6 +18,7 @@ import StatementBanner from "@/components/sections/StatementBanner";
 import ServiceAreas from "@/components/sections/ServiceAreas";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
+import MapEmbed from "@/components/sections/MapEmbed";
 
 export default function Home() {
   const homepageSchema = generateHomepageSchema();
@@ -31,6 +33,7 @@ export default function Home() {
         <Header />
         <main>
           <Hero />
+          <TrustBar />
           <Services />
           <Reviews />
           {/* <Projects /> */}
@@ -43,6 +46,7 @@ export default function Home() {
           <ServiceAreas />
           <FAQ />
           <Contact />
+          <MapEmbed />
         </main>
         <Footer />
         <MobileBottomBar />

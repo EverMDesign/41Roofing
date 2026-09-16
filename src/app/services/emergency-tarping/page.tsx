@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Emergency Tarping | 41 Roofing & Restoration",
   description:
     "Immediate emergency tarping to protect your property from further damage after storms, fallen trees, or sudden roof failures in North Texas.",
+  alternates: { canonical: "/services/emergency-tarping" },
 };
 
 const reviews: Review[] = [

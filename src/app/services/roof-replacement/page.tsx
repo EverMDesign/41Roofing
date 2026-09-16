@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Roof Replacement | 41 Roofing & Restoration",
   description:
     "Complete tear-offs and expert installation using premium materials. Built to withstand the intense Texas climate, protect your home, and increase your property value.",
+  alternates: { canonical: "/services/roof-replacement" },
 };
 
 const signs = [

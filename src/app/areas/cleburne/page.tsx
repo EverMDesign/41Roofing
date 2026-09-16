@@ -6,6 +6,7 @@ import type { Review } from "@/components/ReviewCard";
 import type { Project } from "@/components/ProjectCard";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/areas/cleburne" },
   title: "Roofing in Cleburne, TX | 41 Roofing & Restoration",
   description:
     "Trusted roofing contractor serving Cleburne, TX. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping for the Johnson County seat.",

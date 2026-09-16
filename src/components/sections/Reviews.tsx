@@ -69,6 +69,7 @@ export default async function Reviews() {
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
+                      aria-hidden="true"
                       className={`w-4 h-4 ${i < Math.round(data.rating) ? "text-yellow-400" : "text-brand-border"} fill-current`}
                       viewBox="0 0 20 20"
                     >

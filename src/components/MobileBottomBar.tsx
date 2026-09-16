@@ -1,4 +1,10 @@
+"use client";
+
+import { useModal } from "@/components/ModalProvider";
+
 export default function MobileBottomBar() {
+  const { open: openModal } = useModal();
+
   return (
     <div className="md:hidden fixed bottom-0 left-0 w-full bg-brand-black border-t border-white/10 z-50 flex">
       <a
@@ -7,12 +13,12 @@ export default function MobileBottomBar() {
       >
         CALL
       </a>
-      <a
-        href="#contact"
+      <button
+        onClick={openModal}
         className="flex-1 py-4 text-center font-heading font-bold text-xs tracking-widest uppercase text-brand-black bg-brand-aqua"
       >
         FREE INSPECTION
-      </a>
+      </button>
     </div>
   );
 }

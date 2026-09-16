@@ -49,7 +49,7 @@ export default function Diagnosis() {
             alt="41 Roofing and Restoration roof replacement"
             className="absolute inset-0 w-full h-full object-cover opacity-80"
           />
-          <div className="absolute inset-0 border border-white/10 rounded-[10px] m-4 pointer-events-none" />
+
         </div>
       </div>
     </section>

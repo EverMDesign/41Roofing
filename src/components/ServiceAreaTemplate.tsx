@@ -225,6 +225,7 @@ export default async function ServiceAreaTemplate({
                       {[...Array(5)].map((_, i) => (
                         <svg
                           key={i}
+                          aria-hidden="true"
                           className={`w-4 h-4 ${i < Math.round(googleData.rating) ? "text-yellow-400" : "text-brand-border"} fill-current`}
                           viewBox="0 0 20 20"
                         >

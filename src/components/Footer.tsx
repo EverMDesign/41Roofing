@@ -3,9 +3,11 @@ export default function Footer() {
     <footer className="bg-brand-black border-t border-white/10 text-brand-white pt-24 pb-12">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div>
-          <div className="w-12 h-12 bg-brand-white flex items-center justify-center font-heading font-black text-brand-black text-2xl leading-none tracking-tighter mb-8">
-            41
-          </div>
+          <img
+            src="/41-roofing-logo.webp"
+            alt="41 Roofing and Restoration logo — roofing contractor in Crowley TX"
+            className="h-14 w-auto mb-8"
+          />
           <p className="font-sans text-brand-white/70 text-sm max-w-xs mb-8">
             Honest inspections. Dependable results. Premier roofing and restoration services in Crowley and North Texas.
           </p>
@@ -44,20 +46,22 @@ export default function Footer() {
             <li><a href="/services/roof-replacement" className="hover:text-brand-aqua transition-colors">Roof Replacement</a></li>
             <li><a href="/services/commercial-roofing" className="hover:text-brand-aqua transition-colors">Commercial Roofing</a></li>
             <li><a href="/services/emergency-tarping" className="hover:text-brand-aqua transition-colors">Emergency Tarping</a></li>
+            <li><a href="/services/gutters" className="hover:text-brand-aqua transition-colors">Gutters</a></li>
+            <li><a href="/services/exterior-repairs" className="hover:text-brand-aqua transition-colors">Exterior Repairs</a></li>
             <li><a href="/services/restoration" className="hover:text-brand-aqua transition-colors">Restoration</a></li>
             <li><a href="/services/painting" className="hover:text-brand-aqua transition-colors">Painting</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-heading font-bold text-lg mb-6 tracking-wide">COMPANY</h4>
+          <h4 className="font-heading font-bold text-lg mb-6 tracking-wide">AREAS</h4>
           <ul className="space-y-3 font-sans text-brand-white/70 text-sm">
-            <li><a href="#owner" className="hover:text-brand-aqua transition-colors">About Us</a></li>
-            <li><a href="#projects" className="hover:text-brand-aqua transition-colors">Projects</a></li>
-            <li><a href="#reviews" className="hover:text-brand-aqua transition-colors">Reviews</a></li>
-            <li><a href="#service-areas" className="hover:text-brand-aqua transition-colors">Service Areas</a></li>
-            <li><a href="#faq" className="hover:text-brand-aqua transition-colors">FAQ</a></li>
-            <li><a href="#contact" className="hover:text-brand-aqua transition-colors">Contact</a></li>
+            <li><a href="/areas/crowley" className="hover:text-brand-aqua transition-colors">Crowley</a></li>
+            <li><a href="/areas/burleson" className="hover:text-brand-aqua transition-colors">Burleson</a></li>
+            <li><a href="/areas/arlington" className="hover:text-brand-aqua transition-colors">Arlington</a></li>
+            <li><a href="/areas/joshua" className="hover:text-brand-aqua transition-colors">Joshua</a></li>
+            <li><a href="/areas/cleburne" className="hover:text-brand-aqua transition-colors">Cleburne</a></li>
+            <li><a href="/areas/keller" className="hover:text-brand-aqua transition-colors">Keller</a></li>
           </ul>
         </div>
       </div>

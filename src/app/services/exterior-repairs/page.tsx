@@ -5,6 +5,7 @@ import ServicePageTemplate, {
 import type { Review } from "@/components/ReviewCard";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services/exterior-repairs" },
   title: "Exterior Repairs | 41 Roofing & Restoration",
   description:
     "Siding, fascia, soffit, and trim restoration for homes in Crowley and North Texas. Repair storm damage and restore your home\u2019s exterior.",

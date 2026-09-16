@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Roof Repair | 41 Roofing & Restoration",
   description:
     "Targeted roof repairs for active leaks, storm damage, and aging materials. Honest assessments and dependable fixes from a local Crowley, TX roofing contractor.",
+  alternates: { canonical: "/services/roof-repair" },
 };
 
 const commonIssues = [

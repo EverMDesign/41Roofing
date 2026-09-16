@@ -6,6 +6,7 @@ import type { Review } from "@/components/ReviewCard";
 import type { Project } from "@/components/ProjectCard";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/areas/keller" },
   title: "Roofing in Keller, TX | 41 Roofing & Restoration",
   description:
     "Professional roofing contractor serving Keller, TX. Free inspections, roof repair, replacement, storm damage restoration, and premium shingle installations for one of North Texas's most desirable communities.",

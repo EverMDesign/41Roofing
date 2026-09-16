@@ -8,6 +8,7 @@ function YellowStars({ rating }: { rating: number }) {
       {[...Array(5)].map((_, i) => (
         <svg
           key={i}
+          aria-hidden="true"
           className={`w-3.5 h-3.5 md:w-4 md:h-4 ${i < Math.round(rating) ? "text-yellow-400" : "text-white/20"} fill-current`}
           viewBox="0 0 20 20"
         >

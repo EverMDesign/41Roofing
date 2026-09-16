@@ -5,6 +5,7 @@ import ServicePageTemplate, {
 import type { Review } from "@/components/ReviewCard";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services/painting" },
   title: "Interior & Exterior Painting | 41 Roofing & Restoration",
   description:
     "Professional interior and exterior painting services in Crowley and North Texas. Expert prep, prime, and finish for any surface.",

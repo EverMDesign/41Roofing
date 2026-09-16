@@ -84,3 +84,39 @@ Currently using Google Places API which only returns 5 "most relevant" reviews (
 - Once authorized: fetch all reviews, store in JSON, filter by service keywords, place on respective service pages
 
 > Revisit when ready to contact Brandi for the one-click authorization.
+
+---
+
+## Non-Functional Forms
+
+The following forms exist in the UI but are not yet wired to a backend/CRM:
+
+- **HeroQuoteForm** (`src/components/HeroQuoteForm.tsx`) — Homepage hero quick-quote form
+- **SidebarQuoteForm** (`src/components/SidebarQuoteForm.tsx`) — Service & area page sidebar form
+- **InspectionModal** (`src/components/InspectionModal.tsx`) — Free roof inspection modal form
+
+> Wire these to GoHighLevel or another CRM endpoint when ready. Reference AvValley's `ghl-client.ts` pattern.
+
+---
+
+## Service Area Page Schema (JSON-LD)
+
+Each service area page (`src/app/areas/[city]/page.tsx`) currently has no Schema.org structured data. Add `LocalBusiness` or `Service` schema with:
+
+- City-specific `areaServed`
+- Business `@id` reference
+- `BreadcrumbList` schema
+- FAQ schema (already have FAQ data in each page)
+
+> Use the existing `generateServicePageSchema()` in `src/lib/schema.ts` as a starting point.
+
+---
+
+## Privacy Policy & Terms of Service
+
+Footer links for "Privacy Policy" and "Terms of Service" currently point to `#contact` (placeholder). Need to:
+
+1. Create `/privacy` and `/terms` pages with actual legal content
+2. Update footer links in `src/components/Footer.tsx` (lines 72-73)
+
+> Revisit when legal copy is ready.

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Commercial Roofing | 41 Roofing & Restoration",
   description:
     "Low-slope and flat roof solutions for businesses in North Texas. Expert inspection, repair, and replacement for commercial properties.",
+  alternates: { canonical: "/services/commercial-roofing" },
 };
 
 const reviews: Review[] = [

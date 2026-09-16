@@ -5,6 +5,7 @@ import ServicePageTemplate, {
 import type { Review } from "@/components/ReviewCard";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services/restoration" },
   title: "Interior & Exterior Restoration | 41 Roofing & Restoration",
   description:
     "Full property restoration after storm or water damage. Interior and exterior restoration services for homes in Crowley and North Texas.",

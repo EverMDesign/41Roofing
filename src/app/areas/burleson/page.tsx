@@ -6,6 +6,7 @@ import type { Review } from "@/components/ReviewCard";
 import type { Project } from "@/components/ProjectCard";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/areas/burleson" },
   title: "Roofing in Burleson, TX | 41 Roofing & Restoration",
   description:
     "Local roofing contractor serving Burleson, TX. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping. Honest assessments from a team that lives and works in your community.",
