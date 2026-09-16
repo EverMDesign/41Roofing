@@ -1,7 +1,8 @@
 import ArrowIcon from "@/components/icons/ArrowIcon";
-import StarRating from "@/components/icons/StarRating";
+import ReviewCard, { type Review } from "@/components/ReviewCard";
+import { fetchGoogleReviews } from "@/lib/google-reviews";
 
-const reviews = [
+const fallbackReviews: Review[] = [
   {
     quote:
       "Brandi and her team were incredibly honest during the inspection. Another company told us we needed a full replacement after a storm, but 41 Roofing showed us it was just minor repair work. The communication was excellent from start to finish.",
@@ -25,7 +26,26 @@ const reviews = [
   },
 ];
 
-export default function Reviews() {
+export default async function Reviews() {
+  const data = await fetchGoogleReviews();
+
+  const reviews: Review[] = data
+    ? data.reviews
+        .filter((r) => r.rating >= 4)
+        .sort((a, b) => new Date(b.publishTime).getTime() - new Date(a.publishTime).getTime())
+        .slice(0, 3)
+        .map((r) => ({
+          quote: r.text.text,
+          name: r.authorAttribution.displayName,
+          location: r.relativePublishTimeDescription,
+          service: "",
+          source: "Google",
+          rating: r.rating,
+        }))
+    : fallbackReviews;
+
+  const showBadge = data && data.totalReviews > 0;
+
   return (
     <section id="reviews" className="py-24 md:py-32 bg-brand-softGray">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
@@ -37,9 +57,17 @@ export default function Reviews() {
               <br />
               PROVEN BY THE PEOPLE WE SERVE.
             </h2>
+            {showBadge && (
+              <p className="mt-6 text-brand-muted font-heading text-sm uppercase tracking-widest">
+                {data.rating.toFixed(1)} stars from {data.totalReviews} Google
+                reviews
+              </p>
+            )}
           </div>
           <a
-            href="#reviews"
+            href={`https://www.google.com/maps/place/?q=place_id:${process.env.GOOGLE_PLACE_ID || ""}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative inline-flex items-center gap-3 font-heading font-bold text-sm tracking-widest text-brand-black uppercase group"
           >
             Read More Reviews
@@ -49,26 +77,7 @@ export default function Reviews() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {reviews.map((review) => (
-            <div
-              key={review.name}
-              className="bg-brand-white p-10 lg:p-12 border border-brand-border rounded-[10px] flex flex-col justify-between h-full relative"
-            >
-              <div className="text-[80px] font-heading font-black text-brand-aqua/20 absolute top-4 left-6 leading-none">
-                &ldquo;
-              </div>
-              <div className="relative z-10 mb-12">
-                <StarRating />
-                <p className="font-sans text-brand-charcoal text-base leading-relaxed">
-                  &ldquo;{review.quote}&rdquo;
-                </p>
-              </div>
-              <div className="mt-auto border-t border-brand-border pt-6">
-                <p className="font-heading font-bold text-sm uppercase tracking-wide">{review.name}</p>
-                <p className="text-brand-muted text-xs uppercase tracking-widest mt-1">
-                  {review.location} &bull; {review.service}
-                </p>
-              </div>
-            </div>
+            <ReviewCard key={review.name} review={review} />
           ))}
         </div>
       </div>

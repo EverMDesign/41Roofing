@@ -1,10 +1,8 @@
 const services = [
-  "Gutters",
-  "Exterior Restoration",
-  "Exterior Repairs",
-  "Interior Restoration",
-  "Remodeling",
-  "Property Repairs",
+  { label: "Gutters", href: "/services/gutters" },
+  { label: "Exterior Repairs", href: "/services/exterior-repairs" },
+  { label: "Interior & Exterior Restoration", href: "/services/restoration" },
+  { label: "Interior & Exterior Painting", href: "/services/painting" },
 ];
 
 export default function Restoration() {
@@ -20,11 +18,11 @@ export default function Restoration() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-y-8 gap-x-12 border-t border-white/20 pt-16">
           {services.map((item) => (
             <a
-              key={item}
-              href="#contact"
+              key={item.label}
+              href={item.href}
               className="font-heading font-bold text-xl md:text-2xl hover:text-brand-aqua transition-colors cursor-pointer text-left"
             >
-              {item}
+              {item.label}
             </a>
           ))}
         </div>

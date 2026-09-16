@@ -6,21 +6,17 @@ interface ServiceItem {
 }
 
 const roofingServices: ServiceItem[] = [
-  { title: "Roof Repair", desc: "Targeted fixes for active leaks and damage.", href: "/roof-repair" },
-  { title: "Roof Replacement", desc: "Complete tear-offs and new system installations.", href: "/roof-replacement" },
-  // { title: "Storm Damage", desc: "Rapid response and thorough damage assessment.", href: "/storm-damage" },
-  { title: "Commercial Roofing", desc: "Low-slope and flat roof solutions for businesses.", href: "/commercial-roofing" },
-  // { title: "Roof Inspections", desc: "Honest assessments and clear documentation.", href: "/roof-inspections" },
-  { title: "Emergency Tarping", desc: "Immediate protection to prevent further damage.", href: "/emergency-tarping" },
+  { title: "Roof Repair", desc: "Targeted fixes for active leaks and damage.", href: "/services/roof-repair" },
+  { title: "Roof Replacement", desc: "Complete tear-offs and new system installations.", href: "/services/roof-replacement" },
+  { title: "Commercial Roofing", desc: "Low-slope and flat roof solutions for businesses.", href: "/services/commercial-roofing" },
+  { title: "Emergency Tarping", desc: "Immediate protection to prevent further damage.", href: "/services/emergency-tarping" },
 ];
 
 const restorationServices: ServiceItem[] = [
-  { title: "Gutters", desc: "Seamless gutter installation and replacement.", href: "/gutters" },
-  // { title: "Remodeling", desc: "Interior and exterior renovation projects.", href: "/remodeling" },
-  { title: "Exterior Repairs", desc: "Siding, fascia, soffit, and trim restoration.", href: "/exterior-repairs" },
-  { title: "Interior & Exterior Restoration", desc: "Full property restoration after storm or water damage.", href: "/restoration" },
-  // { title: "Property Repairs", desc: "General maintenance and structural repairs.", href: "/property-repairs" },
-  { title: "Interior & Exterior Painting", desc: "Professional prep, prime, and finish for any surface.", href: "/painting" },
+  { title: "Gutters", desc: "Seamless gutter installation and replacement.", href: "/services/gutters" },
+  { title: "Exterior Repairs", desc: "Siding, fascia, soffit, and trim restoration.", href: "/services/exterior-repairs" },
+  { title: "Interior & Exterior Restoration", desc: "Full property restoration after storm or water damage.", href: "/services/restoration" },
+  { title: "Interior & Exterior Painting", desc: "Professional prep, prime, and finish for any surface.", href: "/services/painting" },
 ];
 
 function ServiceList({ items }: { items: ServiceItem[] }) {

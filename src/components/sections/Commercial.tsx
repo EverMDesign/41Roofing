@@ -16,7 +16,7 @@ export default function Commercial() {
             repair, and replacement services for low-slope and commercial systems.
           </p>
           <a
-            href="#contact"
+            href="/services/commercial-roofing"
             className="inline-flex justify-center items-center bg-brand-white text-brand-black px-8 py-4 font-heading font-bold text-sm tracking-widest uppercase hover:bg-brand-aqua transition-colors duration-300"
           >
             Explore Commercial Roofing

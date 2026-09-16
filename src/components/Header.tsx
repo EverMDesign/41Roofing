@@ -5,12 +5,11 @@ import Link from "next/link";
 import { useModal } from "@/components/ModalProvider";
 
 const roofingDropdownItems = [
-  { label: "Residential Roofing", href: "#residential" },
-  { label: "Roof Replacement", href: "#repair-replace" },
-  { label: "Roof Repair", href: "#residential" },
-  { label: "Roof Inspections", href: "#residential" },
+  { label: "Roof Replacement", href: "/services/roof-replacement" },
+  { label: "Roof Repair", href: "/services/roof-repair" },
+  { label: "Emergency Tarping", href: "/services/emergency-tarping" },
   { label: "Hail & Storm Damage", href: "#storm" },
-  { label: "Emergency Tarping", href: "#services" },
+  { label: "Roof Inspections", href: "#residential" },
   { label: "Skylights", href: "#residential" },
   { label: "Flashing / Chimney Work", href: "#residential" },
   { label: "Roof Decking Repair", href: "#residential" },
@@ -18,9 +17,9 @@ const roofingDropdownItems = [
 ];
 
 const navItems = [
-  { label: "Commercial", href: "#commercial" },
+  { label: "Commercial", href: "/services/commercial-roofing" },
   { label: "Storm Damage", href: "#storm" },
-  { label: "Restoration", href: "#restoration" },
+  { label: "Restoration", href: "/services/restoration" },
   { label: "Projects", href: "#projects" },
   { label: "Service Areas", href: "#service-areas" },
   { label: "About", href: "#owner" },

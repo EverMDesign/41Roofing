@@ -40,12 +40,12 @@ export default function Footer() {
         <div>
           <h4 className="font-heading font-bold text-lg mb-6 tracking-wide">SERVICES</h4>
           <ul className="space-y-3 font-sans text-brand-white/70 text-sm">
-            <li><a href="#residential" className="hover:text-brand-aqua transition-colors">Residential Roofing</a></li>
-            <li><a href="#commercial" className="hover:text-brand-aqua transition-colors">Commercial Roofing</a></li>
-            <li><a href="#residential" className="hover:text-brand-aqua transition-colors">Roof Repair</a></li>
-            <li><a href="#repair-replace" className="hover:text-brand-aqua transition-colors">Roof Replacement</a></li>
-            <li><a href="#storm" className="hover:text-brand-aqua transition-colors">Storm Damage</a></li>
-            <li><a href="#restoration" className="hover:text-brand-aqua transition-colors">Restoration</a></li>
+            <li><a href="/services/roof-repair" className="hover:text-brand-aqua transition-colors">Roof Repair</a></li>
+            <li><a href="/services/roof-replacement" className="hover:text-brand-aqua transition-colors">Roof Replacement</a></li>
+            <li><a href="/services/commercial-roofing" className="hover:text-brand-aqua transition-colors">Commercial Roofing</a></li>
+            <li><a href="/services/emergency-tarping" className="hover:text-brand-aqua transition-colors">Emergency Tarping</a></li>
+            <li><a href="/services/restoration" className="hover:text-brand-aqua transition-colors">Restoration</a></li>
+            <li><a href="/services/painting" className="hover:text-brand-aqua transition-colors">Painting</a></li>
           </ul>
         </div>
 
