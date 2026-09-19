@@ -105,8 +105,8 @@ export default function InspectionModal() {
       });
       const result = await res.json();
       if (result.success) {
-        close();
-        window.location.href = "/confirmation";
+        setStatus("success");
+        setFormData(initialFormData);
       } else {
         console.error("Form error:", result.error);
         setStatus("error");
@@ -149,6 +149,27 @@ export default function InspectionModal() {
         </button>
 
         <div className="p-8 md:p-10">
+          {status === "success" ? (
+            <div className="flex flex-col items-center justify-center text-center py-8">
+              <div className="w-16 h-16 rounded-full bg-brand-aqua flex items-center justify-center text-brand-black mb-6">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-3">REQUEST RECEIVED</h3>
+              <p className="text-brand-muted font-sans text-sm mb-6 max-w-xs">
+                Thank you! Our team will contact you within 2 business hours to schedule your inspection.
+              </p>
+              <button
+                type="button"
+                onClick={() => { setStatus("idle"); close(); }}
+                className="bg-brand-black text-brand-white px-8 py-3 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-brand-aqua hover:text-brand-black transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          ) : (
+          <>
           <h3 className="font-heading font-black text-2xl md:text-3xl text-brand-black mb-2">
             BOOK YOUR FREE INSPECTION
           </h3>
@@ -233,6 +254,8 @@ export default function InspectionModal() {
                 {status === "submitting" ? "Submitting..." : "Request My Inspection"}
               </button>
             </form>
+          </>
+          )}
         </div>
       </div>
     </div>

@@ -105,7 +105,9 @@ export default function QuoteForm({
       });
       const result = await res.json();
       if (result.success) {
-        window.location.href = "/confirmation";
+        setStatus("success");
+        setRoofingForm(initialFormData);
+        setRemodelingForm(initialFormData);
       } else {
         console.error("Form error:", result.error);
         setStatus("error");
@@ -154,6 +156,31 @@ export default function QuoteForm({
   );
 
   const idPrefix = `${variant}-`;
+
+  if (status === "success") {
+    return (
+      <div className={wrapperClass}>
+        <div className="flex flex-col items-center justify-center text-center py-8">
+          <div className="w-16 h-16 rounded-full bg-brand-aqua flex items-center justify-center text-brand-black mb-6">
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-3">REQUEST RECEIVED</h3>
+          <p className="text-brand-muted font-sans text-sm mb-6 max-w-xs">
+            Thank you! Our team will contact you within 2 business hours to schedule your inspection.
+          </p>
+          <button
+            type="button"
+            onClick={() => setStatus("idle")}
+            className="text-sm font-heading font-bold text-brand-charcoal underline underline-offset-4 hover:text-brand-aqua transition-colors"
+          >
+            Submit another request
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={wrapperClass}>

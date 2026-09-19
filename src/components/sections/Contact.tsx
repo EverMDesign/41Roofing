@@ -91,7 +91,8 @@ export default function Contact() {
       });
       const result = await res.json();
       if (result.success) {
-        window.location.href = "/confirmation";
+        setFormStatus("success");
+        setFormData(initialFormData);
       } else {
         console.error("Form error:", result.error);
         setFormStatus("error");
@@ -126,6 +127,26 @@ export default function Contact() {
 
         {/* Right Panel - Form */}
         <div className="w-full lg:w-1/2 p-12 lg:p-24 xl:p-32 bg-brand-charcoal">
+          {formStatus === "success" ? (
+            <div className="flex flex-col items-center justify-center text-center py-12">
+              <div className="w-16 h-16 rounded-full bg-brand-aqua flex items-center justify-center text-brand-black mb-6">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="font-heading font-black text-xl md:text-2xl text-brand-white mb-3">REQUEST RECEIVED</h3>
+              <p className="text-brand-white/60 font-sans text-sm mb-6 max-w-xs">
+                Thank you! Our team will contact you within 2 business hours to schedule your inspection.
+              </p>
+              <button
+                type="button"
+                onClick={() => setFormStatus("idle")}
+                className="text-sm font-heading font-bold text-brand-white underline underline-offset-4 hover:text-brand-aqua transition-colors"
+              >
+                Submit another request
+              </button>
+            </div>
+          ) : (
           <form id="contact-form" onSubmit={handleSubmit} className="flex flex-col gap-10">
               <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -221,6 +242,7 @@ export default function Contact() {
                 {formStatus === "submitting" ? "Submitting..." : "Request My Inspection"}
               </button>
             </form>
+          )}
         </div>
       </div>
     </section>
