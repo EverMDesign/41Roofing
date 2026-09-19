@@ -13,3 +13,13 @@ A running log of work sessions, changes, and decisions for this project.
 **Status:** ✅ Complete
 
 ---
+
+## 2026-09-19 — 09:10
+
+Added layered spam protection (honeypot + Cloudflare Turnstile) to all 41Roofing forms. Honeypot: hidden name="company" field catches lazy bots with silent 200 response. Turnstile: invisible browser challenge catches sophisticated bots — reusable Turnstile.tsx component renders widget in invisible mode, each form passes cf-turnstile-response token in submit body, API endpoint verifies token server-side via Cloudflare siteverify before processing. Added per-field validation errors, checkbox accessibility (id/htmlFor/cursor-pointer), address validation (2 commas + state abbreviation + ZIP), and address parsing into separate GHL fields (address1, city, state, postalCode). Updated three skills: /form-check owns client-side (honeypot field, Turnstile widget, validation, NEXT_PUBLIC_TURNSTILE_SITE_KEY); /ghl-connect owns server-side (API endpoint, honeypot rejection, Turnstile verification, TURNSTILE_SECRET_KEY); /site-check audits both layers and delegates to the appropriate skill.
+
+**Files:** src/components/Turnstile.tsx, src/components/QuoteForm.tsx, src/components/InspectionModal.tsx, src/components/sections/Contact.tsx, src/app/api/submit-form/route.ts, src/app/layout.tsx, src/lib/validation.ts, src/lib/ghl-client.ts, .env.local, ~/.claude/skills/form-check/SKILL.md, ~/.claude/skills/ghl-connect/SKILL.md, ~/.claude/skills/site-check/SKILL.md
+
+**Status:** ✅ Complete
+
+---
