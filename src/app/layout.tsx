@@ -53,6 +53,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${inter.variable} ${montserrat.variable} h-full scroll-smooth antialiased`}
     >
+      <head>
+        <script
+          src="https://api.everreach.link/js/external-tracking.js"
+          data-tracking-id="tk_7a7ed648e29d43ee8cdae8eaa43adca9"
+        ></script>
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

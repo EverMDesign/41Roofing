@@ -1,6 +1,9 @@
 "use client";
 
-import { useState, type FormEvent, type ChangeEvent } from "react";
+import { useState, useCallback, type FormEvent, type ChangeEvent } from "react";
+import { useRouter } from "next/navigation";
+import { validateName, validatePhone, validateEmail, validateAddress } from "@/lib/validation";
+import Turnstile from "@/components/Turnstile";
 
 interface FormData {
   fname: string;
@@ -43,8 +46,12 @@ const labelClasses =
   "absolute left-0 -top-4 text-xs font-heading font-bold uppercase tracking-widest text-brand-white/50 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-brand-white/70 peer-placeholder-shown:top-1 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brand-aqua";
 
 export default function Contact() {
+  const router = useRouter();
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const handleToken = useCallback((token: string) => setTurnstileToken(token), []);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const target = e.target;
@@ -55,16 +62,46 @@ export default function Contact() {
       [id]: isCheckbox ? (target as HTMLInputElement).checked : value,
     }));
     if (formStatus === "error") setFormStatus("idle");
+    if (errors[id]) setErrors((prev) => { const next = { ...prev }; delete next[id]; return next; });
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!formData.fname || !formData.lname || !formData.phone || !formData.email || !formData.address) {
+    const newErrors: Record<string, string> = {};
+    const fnameErr = validateName(formData.fname);
+    if (fnameErr) newErrors.fname = fnameErr;
+    const lnameErr = validateName(formData.lname);
+    if (lnameErr) newErrors.lname = lnameErr;
+    const phoneErr = validatePhone(formData.phone);
+    if (phoneErr) newErrors.phone = phoneErr;
+    const emailErr = validateEmail(formData.email);
+    if (emailErr) newErrors.email = emailErr;
+    const addressErr = validateAddress(formData.address);
+    if (addressErr) newErrors.address = addressErr;
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       setFormStatus("error");
       return;
     }
+    setErrors({});
     setFormStatus("submitting");
-    setTimeout(() => setFormStatus("success"), 1500);
+    try {
+      const res = await fetch("/api/submit-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, formType: "contact", "cf-turnstile-response": turnstileToken }),
+      });
+      const result = await res.json();
+      if (result.success) {
+        router.push("/confirmation");
+      } else {
+        console.error("Form error:", result.error);
+        setFormStatus("error");
+      }
+    } catch (err) {
+      console.error("Submission failed:", err);
+      setFormStatus("error");
+    }
   };
 
   return (
@@ -91,51 +128,51 @@ export default function Contact() {
 
         {/* Right Panel - Form */}
         <div className="w-full lg:w-1/2 p-12 lg:p-24 xl:p-32 bg-brand-charcoal">
-          {formStatus === "success" ? (
-            <div className="h-full flex flex-col justify-center items-center text-center">
-              <h3 className="font-heading font-black text-3xl text-brand-white mb-4">THANK YOU!</h3>
-              <p className="text-brand-white/80 font-sans text-lg">
-                We have received your request and will contact you shortly to schedule your inspection.
-              </p>
-              <button
-                onClick={() => {
-                  setFormStatus("idle");
-                  setFormData(initialFormData);
-                }}
-                className="mt-8 inline-flex justify-center items-center border border-brand-white text-brand-white px-8 py-4 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-brand-white hover:text-brand-black transition-colors"
-              >
-                Submit Another Request
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-10">
+          <form id="contact-form" onSubmit={handleSubmit} className="flex flex-col gap-10">
+              <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div className="relative">
-                  <input type="text" id="fname" value={formData.fname} onChange={handleInputChange} className={inputClasses} placeholder="First Name" required />
-                  <label htmlFor="fname" className={labelClasses}>First Name</label>
+                <div>
+                  <div className="relative">
+                    <input type="text" id="fname" name="fname" value={formData.fname} onChange={handleInputChange} className={errors.fname ? `${inputClasses} !border-red-400 focus:!border-red-400` : inputClasses} placeholder="First Name" required />
+                    <label htmlFor="fname" className={labelClasses}>First Name</label>
+                  </div>
+                  {errors.fname && <p className="text-red-400 text-xs mt-1">{errors.fname}</p>}
                 </div>
-                <div className="relative">
-                  <input type="text" id="lname" value={formData.lname} onChange={handleInputChange} className={inputClasses} placeholder="Last Name" required />
-                  <label htmlFor="lname" className={labelClasses}>Last Name</label>
+                <div>
+                  <div className="relative">
+                    <input type="text" id="lname" name="lname" value={formData.lname} onChange={handleInputChange} className={errors.lname ? `${inputClasses} !border-red-400 focus:!border-red-400` : inputClasses} placeholder="Last Name" required />
+                    <label htmlFor="lname" className={labelClasses}>Last Name</label>
+                  </div>
+                  {errors.lname && <p className="text-red-400 text-xs mt-1">{errors.lname}</p>}
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div className="relative">
-                  <input type="tel" id="phone" value={formData.phone} onChange={handleInputChange} className={inputClasses} placeholder="Phone" required />
-                  <label htmlFor="phone" className={labelClasses}>Phone</label>
+                <div>
+                  <div className="relative">
+                    <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleInputChange} className={errors.phone ? `${inputClasses} !border-red-400 focus:!border-red-400` : inputClasses} placeholder="Phone" required />
+                    <label htmlFor="phone" className={labelClasses}>Phone</label>
+                  </div>
+                  {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
                 </div>
-                <div className="relative">
-                  <input type="email" id="email" value={formData.email} onChange={handleInputChange} className={inputClasses} placeholder="Email" required />
-                  <label htmlFor="email" className={labelClasses}>Email</label>
+                <div>
+                  <div className="relative">
+                    <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} className={errors.email ? `${inputClasses} !border-red-400 focus:!border-red-400` : inputClasses} placeholder="Email" required />
+                    <label htmlFor="email" className={labelClasses}>Email</label>
+                  </div>
+                  {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
                 </div>
               </div>
-              <div className="relative">
-                <input type="text" id="address" value={formData.address} onChange={handleInputChange} className={inputClasses} placeholder="Property Address / ZIP" required />
-                <label htmlFor="address" className={labelClasses}>Property Address / ZIP</label>
+              <div>
+                <div className="relative">
+                  <input type="text" id="address" name="address" value={formData.address} onChange={handleInputChange} className={errors.address ? `${inputClasses} !border-red-400 focus:!border-red-400` : inputClasses} placeholder="123 Main St, City, TX 76036" required />
+                  <label htmlFor="address" className={labelClasses}>Property Address</label>
+                </div>
+                {errors.address && <p className="text-red-400 text-xs mt-1">{errors.address}</p>}
               </div>
               <div className="relative">
                 <select
                   id="service"
+                  name="service"
                   value={formData.service}
                   onChange={handleInputChange}
                   className="w-full bg-brand-charcoal border-b border-white/20 pb-3 text-brand-white/70 focus:outline-none focus:border-brand-aqua transition-colors font-sans text-lg appearance-none rounded-none cursor-pointer"
@@ -154,6 +191,7 @@ export default function Contact() {
               <div className="relative">
                 <textarea
                   id="message"
+                  name="message"
                   rows={3}
                   value={formData.message}
                   onChange={handleInputChange}
@@ -166,18 +204,17 @@ export default function Contact() {
                 <input
                   type="checkbox"
                   id="sms"
+                  name="sms"
                   checked={formData.sms}
                   onChange={handleInputChange}
                   className="mt-1 accent-brand-aqua cursor-pointer w-4 h-4 rounded-none bg-brand-charcoal border-white/20"
                 />
-                <label htmlFor="sms" className="text-xs text-brand-white/50 font-sans leading-tight">
+                <label htmlFor="sms" className="text-xs text-brand-white/50 font-sans leading-tight cursor-pointer">
                   I consent to receive SMS notifications, alerts &amp; occasional marketing communication from 41
                   Roofing &amp; Restoration. View Privacy Policy and Terms of Service.
                 </label>
               </div>
-              {formStatus === "error" && (
-                <p className="text-red-400 text-sm font-sans">Please fill in all required fields.</p>
-              )}
+              <Turnstile onToken={handleToken} />
               <button
                 type="submit"
                 disabled={formStatus === "submitting"}
@@ -186,7 +223,6 @@ export default function Contact() {
                 {formStatus === "submitting" ? "Submitting..." : "Request My Inspection"}
               </button>
             </form>
-          )}
         </div>
       </div>
     </section>

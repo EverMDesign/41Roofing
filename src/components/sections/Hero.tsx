@@ -1,4 +1,4 @@
-import HeroQuoteForm from "@/components/HeroQuoteForm";
+import QuoteForm from "@/components/QuoteForm";
 import ModalCTA from "@/components/ModalCTA";
 import { fetchGoogleReviews } from "@/lib/google-reviews";
 
@@ -71,7 +71,7 @@ export default async function Hero() {
           {/* Right — Quote Form */}
           <div className="hero-animate hero-animate-right lg:col-span-5" style={{ animationDuration: "1000ms", animationDelay: "500ms" }}>
             <div className="hero-form-glow">
-              <HeroQuoteForm />
+              <QuoteForm variant="hero" formType="hero-quote" />
             </div>
           </div>
         </div>

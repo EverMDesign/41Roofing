@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import ModalProvider from "@/components/ModalProvider";
 import InspectionModal from "@/components/InspectionModal";
-import SidebarQuoteForm from "@/components/SidebarQuoteForm";
+import QuoteForm from "@/components/QuoteForm";
 import ReviewCard, { type Review } from "@/components/ReviewCard";
 import ChevronIcon from "@/components/icons/ChevronIcon";
 import { fetchGoogleReviews } from "@/lib/google-reviews";
@@ -138,7 +138,7 @@ export default async function ServicePageTemplate({
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
                 <div className="lg:col-span-7 space-y-16">{children}</div>
                 <div className="lg:col-span-5 lg:self-stretch">
-                  <SidebarQuoteForm defaultTab={data.defaultTab} defaultService={data.defaultService} />
+                  <QuoteForm variant="sidebar" formType="sidebar-quote" defaultTab={data.defaultTab} defaultService={data.defaultService} />
                 </div>
               </div>
             </div>

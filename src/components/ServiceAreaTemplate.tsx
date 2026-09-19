@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import ModalProvider from "@/components/ModalProvider";
 import InspectionModal from "@/components/InspectionModal";
-import SidebarQuoteForm from "@/components/SidebarQuoteForm";
+import QuoteForm from "@/components/QuoteForm";
 import ReviewCard, { type Review } from "@/components/ReviewCard";
 import ProjectCard, { type Project } from "@/components/ProjectCard";
 import ChevronIcon from "@/components/icons/ChevronIcon";
@@ -177,7 +177,7 @@ export default async function ServiceAreaTemplate({
 
                 {/* Sidebar Form */}
                 <div className="lg:w-1/3 lg:sticky lg:top-32">
-                  <SidebarQuoteForm />
+                  <QuoteForm variant="sidebar" formType="sidebar-quote" />
                 </div>
               </div>
             </div>

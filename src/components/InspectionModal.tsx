@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, useEffect, type FormEvent, type ChangeEvent } from "react";
+import { useState, useEffect, useCallback, type FormEvent, type ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
+import { validateName, validatePhone, validateEmail, validateAddress } from "@/lib/validation";
 import { useModal } from "@/components/ModalProvider";
+import Turnstile from "@/components/Turnstile";
 
 interface FormData {
   fname: string;
@@ -12,6 +14,7 @@ interface FormData {
   address: string;
   service: string;
   message: string;
+  sms: boolean;
 }
 
 const initialFormData: FormData = {
@@ -22,6 +25,7 @@ const initialFormData: FormData = {
   address: "",
   service: "",
   message: "",
+  sms: false,
 };
 
 const serviceOptions = [
@@ -64,22 +68,55 @@ export default function InspectionModal() {
     return () => window.removeEventListener("keydown", handleEsc);
   }, [isOpen, close]);
 
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const handleToken = useCallback((token: string) => setTurnstileToken(token), []);
+
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({ ...prev, [e.target.id.replace("modal-", "")]: e.target.value }));
+    const field = e.target.id.replace("modal-", "");
+    setFormData((prev) => ({ ...prev, [field]: e.target.value }));
     if (status === "error") setStatus("idle");
+    if (errors[field]) setErrors((prev) => { const next = { ...prev }; delete next[field]; return next; });
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!formData.fname || !formData.lname || !formData.phone || !formData.email || !formData.address) {
+    const newErrors: Record<string, string> = {};
+    const fnameErr = validateName(formData.fname);
+    if (fnameErr) newErrors.fname = fnameErr;
+    const lnameErr = validateName(formData.lname);
+    if (lnameErr) newErrors.lname = lnameErr;
+    const phoneErr = validatePhone(formData.phone);
+    if (phoneErr) newErrors.phone = phoneErr;
+    const emailErr = validateEmail(formData.email);
+    if (emailErr) newErrors.email = emailErr;
+    const addressErr = validateAddress(formData.address);
+    if (addressErr) newErrors.address = addressErr;
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       setStatus("error");
       return;
     }
+    setErrors({});
     setStatus("submitting");
-    setTimeout(() => {
-      close();
-      router.push("/confirmation");
-    }, 1500);
+    try {
+      const res = await fetch("/api/submit-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, formType: "inspection-modal", "cf-turnstile-response": turnstileToken }),
+      });
+      const result = await res.json();
+      if (result.success) {
+        close();
+        router.push("/confirmation");
+      } else {
+        console.error("Form error:", result.error);
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error("Submission failed:", err);
+      setStatus("error");
+    }
   };
 
   const handleClose = () => {
@@ -121,34 +158,36 @@ export default function InspectionModal() {
             Fill out the form below and we&rsquo;ll contact you to schedule your inspection.
           </p>
 
-          {status === "success" ? (
-            <div className="flex flex-col items-center justify-center text-center py-8">
-              <h4 className="font-heading font-black text-2xl text-brand-black mb-3">THANK YOU!</h4>
-              <p className="text-brand-muted font-sans text-sm mb-6">
-                We&rsquo;ll contact you shortly to schedule your free inspection.
-              </p>
-              <button
-                type="button"
-                onClick={() => { setStatus("idle"); setFormData(initialFormData); }}
-                className="border border-brand-black text-brand-black px-6 py-3 rounded-[10px] font-heading font-bold text-xs tracking-widest uppercase hover:bg-brand-black hover:text-brand-white transition-colors"
-              >
-                Submit Another
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <form id="inspection-modal-form" onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
               <div className="grid grid-cols-2 gap-4">
-                <input type="text" id="modal-fname" value={formData.fname} onChange={handleChange} className={inputClasses} placeholder="First Name *" required />
-                <input type="text" id="modal-lname" value={formData.lname} onChange={handleChange} className={inputClasses} placeholder="Last Name *" required />
+                <div>
+                  <input type="text" id="modal-fname" name="fname" value={formData.fname} onChange={handleChange} className={errors.fname ? `${inputClasses} !border-red-400 focus:!border-red-500` : inputClasses} placeholder="First Name *" required />
+                  {errors.fname && <p className="text-red-500 text-xs mt-1">{errors.fname}</p>}
+                </div>
+                <div>
+                  <input type="text" id="modal-lname" name="lname" value={formData.lname} onChange={handleChange} className={errors.lname ? `${inputClasses} !border-red-400 focus:!border-red-500` : inputClasses} placeholder="Last Name *" required />
+                  {errors.lname && <p className="text-red-500 text-xs mt-1">{errors.lname}</p>}
+                </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
-                <input type="tel" id="modal-phone" value={formData.phone} onChange={handleChange} className={inputClasses} placeholder="Phone *" required />
-                <input type="email" id="modal-email" value={formData.email} onChange={handleChange} className={inputClasses} placeholder="Email *" required />
+                <div>
+                  <input type="tel" id="modal-phone" name="phone" value={formData.phone} onChange={handleChange} className={errors.phone ? `${inputClasses} !border-red-400 focus:!border-red-500` : inputClasses} placeholder="Phone *" required />
+                  {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+                </div>
+                <div>
+                  <input type="email" id="modal-email" name="email" value={formData.email} onChange={handleChange} className={errors.email ? `${inputClasses} !border-red-400 focus:!border-red-500` : inputClasses} placeholder="Email *" required />
+                  {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                </div>
               </div>
-              <input type="text" id="modal-address" value={formData.address} onChange={handleChange} className={inputClasses} placeholder="Property Address / ZIP *" required />
+              <div>
+                <input type="text" id="modal-address" name="address" value={formData.address} onChange={handleChange} className={errors.address ? `${inputClasses} !border-red-400 focus:!border-red-500` : inputClasses} placeholder="123 Main St, City, TX 76036 *" required />
+                {errors.address && <p className="text-red-500 text-xs mt-1">{errors.address}</p>}
+              </div>
               <div className="relative">
                 <select
                   id="modal-service"
+                  name="service"
                   value={formData.service}
                   onChange={handleChange}
                   className={`${inputClasses} appearance-none cursor-pointer`}
@@ -166,15 +205,28 @@ export default function InspectionModal() {
               </div>
               <textarea
                 id="modal-message"
+                name="message"
                 rows={3}
                 value={formData.message}
                 onChange={handleChange}
                 className={`${inputClasses} resize-none`}
                 placeholder="Message (Optional)"
               />
-              {status === "error" && (
-                <p className="text-red-500 text-xs font-sans">Please fill in all required fields.</p>
-              )}
+              <div className="flex items-start gap-3 mt-1">
+                <input
+                  type="checkbox"
+                  id="modal-sms"
+                  name="sms"
+                  checked={formData.sms}
+                  onChange={(e) => setFormData((prev) => ({ ...prev, sms: e.target.checked }))}
+                  className="mt-1 accent-brand-aqua cursor-pointer w-4 h-4"
+                />
+                <label htmlFor="modal-sms" className="text-[10px] text-brand-muted font-sans leading-tight cursor-pointer">
+                  I consent to receive SMS notifications, alerts &amp; occasional marketing communication from 41
+                  Roofing &amp; Restoration. View Privacy Policy and Terms of Service.
+                </label>
+              </div>
+              <Turnstile onToken={handleToken} />
               <button
                 type="submit"
                 disabled={status === "submitting"}
@@ -183,7 +235,6 @@ export default function InspectionModal() {
                 {status === "submitting" ? "Submitting..." : "Request My Inspection"}
               </button>
             </form>
-          )}
         </div>
       </div>
     </div>
