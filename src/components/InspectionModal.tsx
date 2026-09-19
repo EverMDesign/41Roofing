@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback, type FormEvent, type ChangeEvent } from "react";
-import { useRouter } from "next/navigation";
 import { validateName, validatePhone, validateEmail, validateAddress } from "@/lib/validation";
 import { useModal } from "@/components/ModalProvider";
 import Turnstile from "@/components/Turnstile";
@@ -44,7 +43,6 @@ const inputClasses =
   "w-full bg-brand-softGray border border-brand-border rounded-[10px] px-4 py-3 text-brand-charcoal placeholder-brand-muted focus:outline-none focus:border-brand-aqua transition-colors font-sans text-sm";
 
 export default function InspectionModal() {
-  const router = useRouter();
   const { isOpen, close } = useModal();
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -108,7 +106,7 @@ export default function InspectionModal() {
       const result = await res.json();
       if (result.success) {
         close();
-        router.push("/confirmation");
+        window.location.href = "/confirmation";
       } else {
         console.error("Form error:", result.error);
         setStatus("error");

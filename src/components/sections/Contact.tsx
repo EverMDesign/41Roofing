@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useCallback, type FormEvent, type ChangeEvent } from "react";
-import { useRouter } from "next/navigation";
 import { validateName, validatePhone, validateEmail, validateAddress } from "@/lib/validation";
 import Turnstile from "@/components/Turnstile";
 
@@ -46,7 +45,6 @@ const labelClasses =
   "absolute left-0 -top-4 text-xs font-heading font-bold uppercase tracking-widest text-brand-white/50 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-brand-white/70 peer-placeholder-shown:top-1 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brand-aqua";
 
 export default function Contact() {
-  const router = useRouter();
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -93,7 +91,7 @@ export default function Contact() {
       });
       const result = await res.json();
       if (result.success) {
-        router.push("/confirmation");
+        window.location.href = "/confirmation";
       } else {
         console.error("Form error:", result.error);
         setFormStatus("error");

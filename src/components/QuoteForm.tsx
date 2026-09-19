@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useCallback, type FormEvent, type ChangeEvent } from "react";
-import { useRouter } from "next/navigation";
 import { validateName, validatePhone, validateEmail, validateAddress } from "@/lib/validation";
 import Turnstile from "@/components/Turnstile";
 
@@ -61,7 +60,6 @@ export default function QuoteForm({
   defaultTab = "roofing",
   defaultService = "",
 }: QuoteFormProps) {
-  const router = useRouter();
   const [activeTab, setActiveTab] = useState<Tab>(defaultTab);
   const [roofingForm, setRoofingForm] = useState<FormData>({
     ...initialFormData,
@@ -107,7 +105,7 @@ export default function QuoteForm({
       });
       const result = await res.json();
       if (result.success) {
-        router.push("/confirmation");
+        window.location.href = "/confirmation";
       } else {
         console.error("Form error:", result.error);
         setStatus("error");
