@@ -64,6 +64,29 @@ export async function POST(request: Request) {
       );
     }
 
+    // Server-side format validation (mirrors client-side rules)
+    const fname = (formData.fname as string).trim();
+    const lname = (formData.lname as string).trim();
+    if (fname.length < 2 || lname.length < 2) {
+      return NextResponse.json({ success: false, error: 'Name must be at least 2 characters' }, { status: 400 });
+    }
+
+    const phoneDigits = (formData.phone as string).replace(/\D/g, '');
+    const normalizedPhone = phoneDigits.startsWith('1') && phoneDigits.length === 11 ? phoneDigits.slice(1) : phoneDigits;
+    if (normalizedPhone.length !== 10 || normalizedPhone[0] === '0' || normalizedPhone[0] === '1') {
+      return NextResponse.json({ success: false, error: 'Enter a valid 10-digit phone number' }, { status: 400 });
+    }
+
+    const emailVal = (formData.email as string).trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailVal)) {
+      return NextResponse.json({ success: false, error: 'Enter a valid email address' }, { status: 400 });
+    }
+
+    const addressVal = (formData.address as string).trim();
+    if (!/\d/.test(addressVal) || (addressVal.match(/,/g) || []).length < 2 || !/\b[A-Z]{2}\b/.test(addressVal) || !/\b\d{5}\b/.test(addressVal)) {
+      return NextResponse.json({ success: false, error: 'Use format: 123 Main St, City, TX 76036' }, { status: 400 });
+    }
+
     const formType = (formData.formType as string) || 'contact';
     const mapping = fieldMappings[formType] || {};
 
