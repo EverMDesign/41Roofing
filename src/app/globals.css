@@ -5,8 +5,8 @@
   --color-brand-black: #050505;
   --color-brand-charcoal: #171A1B;
   --color-brand-white: #FFFFFF;
-  --color-brand-lightAqua: #E9FBFD;
-  --color-brand-aqua: #bbe3e7;
+  --color-brand-lightAqua: #e0f0ee;
+  --color-brand-aqua: #46968b;
   --color-brand-softGray: #F4F6F6;
   --color-brand-border: #DCE5E6;
   --color-brand-muted: #606568;
@@ -144,12 +144,12 @@ details[open] summary ~ * {
 }
 
 @keyframes glow-full-shadow {
-  0%   { box-shadow: 0 0 0px 0px rgba(191, 239, 243, 0), 0 0 0px 0px rgba(191, 239, 243, 0); }
-  20%  { box-shadow: 0 0 15px 3px rgba(191, 239, 243, 0.4), 0 0 30px 6px rgba(191, 239, 243, 0.15); }
-  40%  { box-shadow: 0 0 25px 5px rgba(191, 239, 243, 0.6), 0 0 45px 10px rgba(191, 239, 243, 0.2); }
-  60%  { box-shadow: 0 0 20px 4px rgba(191, 239, 243, 0.4), 0 0 35px 8px rgba(191, 239, 243, 0.12); }
-  80%  { box-shadow: 0 0 8px 2px rgba(191, 239, 243, 0.15), 0 0 15px 4px rgba(191, 239, 243, 0.05); }
-  100% { box-shadow: 0 0 0px 0px rgba(191, 239, 243, 0), 0 0 0px 0px rgba(191, 239, 243, 0); }
+  0%   { box-shadow: 0 0 0px 0px rgba(70, 150, 139, 0), 0 0 0px 0px rgba(70, 150, 139, 0); }
+  20%  { box-shadow: 0 0 15px 3px rgba(70, 150, 139, 0.4), 0 0 30px 6px rgba(70, 150, 139, 0.15); }
+  40%  { box-shadow: 0 0 25px 5px rgba(70, 150, 139, 0.6), 0 0 45px 10px rgba(70, 150, 139, 0.2); }
+  60%  { box-shadow: 0 0 20px 4px rgba(70, 150, 139, 0.4), 0 0 35px 8px rgba(70, 150, 139, 0.12); }
+  80%  { box-shadow: 0 0 8px 2px rgba(70, 150, 139, 0.15), 0 0 15px 4px rgba(70, 150, 139, 0.05); }
+  100% { box-shadow: 0 0 0px 0px rgba(70, 150, 139, 0), 0 0 0px 0px rgba(70, 150, 139, 0); }
 }
 
 .hero-form-glow {
@@ -166,11 +166,11 @@ details[open] summary ~ * {
     from var(--glow-angle),
     transparent 0%,
     transparent 55%,
-    rgba(191, 239, 243, 0.3) 70%,
-    rgba(191, 239, 243, 0.8) 80%,
-    rgba(140, 235, 242, 1) 88%,
-    rgba(191, 239, 243, 0.8) 93%,
-    rgba(191, 239, 243, 0.3) 97%,
+    rgba(70, 150, 139, 0.3) 70%,
+    rgba(70, 150, 139, 0.8) 80%,
+    rgba(70, 150, 139, 1) 88%,
+    rgba(70, 150, 139, 0.8) 93%,
+    rgba(70, 150, 139, 0.3) 97%,
     transparent 100%
   );
   z-index: -1;
@@ -188,9 +188,9 @@ details[open] summary ~ * {
     from var(--glow-angle),
     transparent 0%,
     transparent 60%,
-    rgba(191, 239, 243, 0.5) 78%,
-    rgba(191, 239, 243, 1) 88%,
-    rgba(191, 239, 243, 0.5) 95%,
+    rgba(70, 150, 139, 0.5) 78%,
+    rgba(70, 150, 139, 1) 88%,
+    rgba(70, 150, 139, 0.5) 95%,
     transparent 100%
   );
   z-index: -1;

@@ -23,3 +23,13 @@ Added layered spam protection (honeypot + Cloudflare Turnstile) to all 41Roofing
 **Status:** ✅ Complete
 
 ---
+
+## 2026-09-22 — 21:27
+
+Diagnosed production form issues on 41Roofing. (1) Forms not redirecting after submit: replaced router.push('/confirmation') with inline success messages on all 3 forms (QuoteForm, InspectionModal, Contact) — form swaps to aqua checkmark + 'REQUEST RECEIVED' message on success, matching Kingdom Care pattern. Removed useRouter imports. (2) Names not saving in GHL on prod: identified root cause — Turnstile verification failing in production (domain not configured or code not deployed), causing API to reject submission, while EverReach tracking script auto-captures the form data and creates a contact with raw fname/lname fields instead of mapped firstName/lastName. Fix: ensure Turnstile site key includes production domain in Cloudflare dashboard and deploy latest code.
+
+**Files:** src/components/QuoteForm.tsx, src/components/InspectionModal.tsx, src/components/sections/Contact.tsx
+
+**Status:** ✅ Complete
+
+---

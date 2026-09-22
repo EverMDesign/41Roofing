@@ -69,8 +69,8 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-sans text-brand-white/50">
         <p>&copy; {new Date().getFullYear()} 41 Roofing &amp; Restoration. All rights reserved.</p>
         <div className="flex gap-4">
-          <a href="#contact" className="hover:text-brand-white transition-colors">Privacy Policy</a>
-          <a href="#contact" className="hover:text-brand-white transition-colors">Terms of Service</a>
+          <a href="/privacy-policy" className="hover:text-brand-white transition-colors">Privacy Policy</a>
+          <a href="/terms-and-conditions" className="hover:text-brand-white transition-colors">Terms of Service</a>
         </div>
       </div>
     </footer>
