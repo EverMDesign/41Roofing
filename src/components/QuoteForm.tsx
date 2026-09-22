@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, type FormEvent, type ChangeEvent } from "react";
+import { useState, useCallback, useRef, type ChangeEvent } from "react";
 import { validateName, validatePhone, validateEmail, validateAddress } from "@/lib/validation";
 import Turnstile from "@/components/Turnstile";
 
@@ -73,12 +73,14 @@ export default function QuoteForm({
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [turnstileToken, setTurnstileToken] = useState("");
   const handleToken = useCallback((token: string) => setTurnstileToken(token), []);
+  const roofingRef = useRef<HTMLFormElement>(null);
+  const remodelingRef = useRef<HTMLFormElement>(null);
 
   const formData = activeTab === "roofing" ? roofingForm : remodelingForm;
   const setFormData = activeTab === "roofing" ? setRoofingForm : setRemodelingForm;
+  const activeFormRef = activeTab === "roofing" ? roofingRef : remodelingRef;
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
+  const handleClick = async () => {
     const newErrors: Record<string, string> = {};
     const fnameErr = validateName(formData.fname);
     if (fnameErr) newErrors.fname = fnameErr;
@@ -96,6 +98,7 @@ export default function QuoteForm({
       return;
     }
     setErrors({});
+    activeFormRef.current?.requestSubmit();
     setStatus("submitting");
     try {
       const res = await fetch("/api/submit-form", {
@@ -198,6 +201,7 @@ export default function QuoteForm({
         >
           <div className="w-1/2 pr-4">
             <FormFields
+              formRef={roofingRef}
               formId={`${idPrefix}roofing-form`}
               formData={roofingForm}
               errors={activeTab === "roofing" ? errors : {}}
@@ -207,7 +211,7 @@ export default function QuoteForm({
                 if (errors[e.target.name]) setErrors((prev) => { const next = { ...prev }; delete next[e.target.name]; return next; });
               }}
               onCheckbox={(checked) => setRoofingForm((prev) => ({ ...prev, sms: checked }))}
-              onSubmit={handleSubmit}
+              onClickSubmit={handleClick}
               status={activeTab === "roofing" ? status : "idle"}
               serviceOptions={roofingOptions}
               submitLabel="Request My Inspection"
@@ -216,6 +220,7 @@ export default function QuoteForm({
 
           <div className="w-1/2 pl-4">
             <FormFields
+              formRef={remodelingRef}
               formId={`${idPrefix}remodeling-form`}
               formData={remodelingForm}
               errors={activeTab === "remodeling" ? errors : {}}
@@ -225,7 +230,7 @@ export default function QuoteForm({
                 if (errors[e.target.name]) setErrors((prev) => { const next = { ...prev }; delete next[e.target.name]; return next; });
               }}
               onCheckbox={(checked) => setRemodelingForm((prev) => ({ ...prev, sms: checked }))}
-              onSubmit={handleSubmit}
+              onClickSubmit={handleClick}
               status={activeTab === "remodeling" ? status : "idle"}
               serviceOptions={remodelingOptions}
               submitLabel="Request My Consultation"
@@ -238,22 +243,24 @@ export default function QuoteForm({
 }
 
 function FormFields({
+  formRef,
   formId,
   formData,
   errors,
   onChange,
   onCheckbox,
-  onSubmit,
+  onClickSubmit,
   status,
   serviceOptions,
   submitLabel,
 }: {
+  formRef: React.RefObject<HTMLFormElement | null>;
   formId: string;
   formData: FormData;
   errors: Record<string, string>;
   onChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
   onCheckbox: (checked: boolean) => void;
-  onSubmit: (e: FormEvent) => void;
+  onClickSubmit: () => void;
   status: string;
   serviceOptions: { value: string; label: string }[];
   submitLabel: string;
@@ -264,7 +271,7 @@ function FormFields({
       : inputClasses;
 
   return (
-    <form id={formId} onSubmit={onSubmit} className="flex flex-col gap-4">
+    <form ref={formRef} id={formId} onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4">
       <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       <div className="grid grid-cols-2 gap-4">
         <div>
@@ -323,7 +330,8 @@ function FormFields({
         </label>
       </div>
       <button
-        type="submit"
+        type="button"
+        onClick={onClickSubmit}
         disabled={status === "submitting"}
         className="w-full bg-brand-black text-brand-white py-4 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-brand-aqua hover:text-brand-black transition-colors disabled:opacity-50"
       >

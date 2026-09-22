@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, type FormEvent, type ChangeEvent } from "react";
+import { useState, useEffect, useCallback, useRef, type ChangeEvent } from "react";
 import { validateName, validatePhone, validateEmail, validateAddress } from "@/lib/validation";
 import { useModal } from "@/components/ModalProvider";
 import Turnstile from "@/components/Turnstile";
@@ -44,6 +44,7 @@ const inputClasses =
 
 export default function InspectionModal() {
   const { isOpen, close } = useModal();
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
@@ -77,8 +78,7 @@ export default function InspectionModal() {
     if (errors[field]) setErrors((prev) => { const next = { ...prev }; delete next[field]; return next; });
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
+  const handleClick = async () => {
     const newErrors: Record<string, string> = {};
     const fnameErr = validateName(formData.fname);
     if (fnameErr) newErrors.fname = fnameErr;
@@ -96,6 +96,7 @@ export default function InspectionModal() {
       return;
     }
     setErrors({});
+    formRef.current?.requestSubmit();
     setStatus("submitting");
     try {
       const res = await fetch("/api/submit-form", {
@@ -177,7 +178,7 @@ export default function InspectionModal() {
             Fill out the form below and we&rsquo;ll contact you to schedule your inspection.
           </p>
 
-          <form id="inspection-modal-form" onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <form ref={formRef} id="inspection-modal-form" onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4">
               <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -247,7 +248,8 @@ export default function InspectionModal() {
               </div>
               <Turnstile onToken={handleToken} />
               <button
-                type="submit"
+                type="button"
+                onClick={handleClick}
                 disabled={status === "submitting"}
                 className="w-full bg-brand-black text-brand-white py-4 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-brand-aqua hover:text-brand-black transition-colors disabled:opacity-50"
               >

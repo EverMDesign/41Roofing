@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, type FormEvent, type ChangeEvent } from "react";
+import { useState, useCallback, useRef, type ChangeEvent } from "react";
 import { validateName, validatePhone, validateEmail, validateAddress } from "@/lib/validation";
 import Turnstile from "@/components/Turnstile";
 
@@ -45,6 +45,7 @@ const labelClasses =
   "absolute left-0 -top-4 text-xs font-heading font-bold uppercase tracking-widest text-brand-white/50 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-brand-white/70 peer-placeholder-shown:top-1 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brand-aqua";
 
 export default function Contact() {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -63,8 +64,7 @@ export default function Contact() {
     if (errors[id]) setErrors((prev) => { const next = { ...prev }; delete next[id]; return next; });
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
+  const handleClick = async () => {
     const newErrors: Record<string, string> = {};
     const fnameErr = validateName(formData.fname);
     if (fnameErr) newErrors.fname = fnameErr;
@@ -82,6 +82,7 @@ export default function Contact() {
       return;
     }
     setErrors({});
+    formRef.current?.requestSubmit();
     setFormStatus("submitting");
     try {
       const res = await fetch("/api/submit-form", {
@@ -147,7 +148,7 @@ export default function Contact() {
               </button>
             </div>
           ) : (
-          <form id="contact-form" onSubmit={handleSubmit} className="flex flex-col gap-10">
+          <form ref={formRef} id="contact-form" onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-10">
               <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
@@ -235,7 +236,8 @@ export default function Contact() {
               </div>
               <Turnstile onToken={handleToken} />
               <button
-                type="submit"
+                type="button"
+                onClick={handleClick}
                 disabled={formStatus === "submitting"}
                 className="w-full border border-brand-white text-brand-white py-5 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-brand-white hover:text-brand-black transition-colors mt-4 disabled:opacity-50"
               >
