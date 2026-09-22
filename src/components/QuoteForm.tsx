@@ -109,8 +109,11 @@ export default function QuoteForm({
       const result = await res.json();
       if (result.success) {
         setStatus("success");
-        setRoofingForm(initialFormData);
-        setRemodelingForm(initialFormData);
+        setTimeout(() => {
+          setStatus("idle");
+          setRoofingForm(initialFormData);
+          setRemodelingForm(initialFormData);
+        }, 5000);
       } else {
         console.error("Form error:", result.error);
         setStatus("error");

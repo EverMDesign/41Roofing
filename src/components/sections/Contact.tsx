@@ -93,7 +93,10 @@ export default function Contact() {
       const result = await res.json();
       if (result.success) {
         setFormStatus("success");
-        setFormData(initialFormData);
+        setTimeout(() => {
+          setFormStatus("idle");
+          setFormData(initialFormData);
+        }, 5000);
       } else {
         console.error("Form error:", result.error);
         setFormStatus("error");

@@ -33,3 +33,13 @@ Diagnosed production form issues on 41Roofing. (1) Forms not redirecting after s
 **Status:** ✅ Complete
 
 ---
+
+## 2026-09-22 — 13:40
+
+Form system overhaul: fixed validation bypass, added requestSubmit pattern, auto-reset success messages, server-side format validation, privacy/terms pages, footer links, brand color update, URL slug corrections. Aligned all 3 forms (QuoteForm, Contact, InspectionModal) with Kingdom Care pattern — type="button" + requestSubmit() prevents EverReach from capturing invalid submissions. Updated /form-check skill with all new patterns.
+
+**Files:** src/components/QuoteForm.tsx, src/components/sections/Contact.tsx, src/components/InspectionModal.tsx, src/components/Footer.tsx, src/app/api/submit-form/route.ts, src/app/privacy-policy/page.tsx, src/app/terms-and-conditions/page.tsx, src/app/globals.css, ~/.claude/skills/form-check/SKILL.md
+
+**Status:** ✅ Complete
+
+---
