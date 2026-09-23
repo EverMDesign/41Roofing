@@ -163,12 +163,13 @@ export default function Header() {
             >
               Call / Text 817-266-9433
             </a>
-            <button
+            {/* TODO: Re-enable after A2P approval */}
+            {/* <button
               onClick={openModal}
               className="hidden md:inline-flex bg-brand-aqua text-brand-black px-8 py-4 rounded-[10px] font-heading font-bold text-sm tracking-widest hover:bg-white transition-colors duration-300"
             >
               Free Roof Inspection
-            </button>
+            </button> */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -206,12 +207,13 @@ export default function Header() {
               {item.label}
             </a>
           ))}
-          <button
+          {/* TODO: Re-enable after A2P approval */}
+          {/* <button
             onClick={() => { setMobileMenuOpen(false); openModal(); }}
             className="bg-brand-aqua text-brand-black px-8 py-4 font-heading font-bold text-sm tracking-widest uppercase mt-4"
           >
             Free Roof Inspection
-          </button>
+          </button> */}
         </div>
       )}
     </>

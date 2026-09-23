@@ -4,8 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import ModalProvider from "@/components/ModalProvider";
-import InspectionModal from "@/components/InspectionModal";
-import QuoteForm from "@/components/QuoteForm";
+// TODO: Re-enable after A2P approval
+// import InspectionModal from "@/components/InspectionModal";
+// import QuoteForm from "@/components/QuoteForm";
 import ReviewCard, { type Review } from "@/components/ReviewCard";
 import ProjectCard, { type Project } from "@/components/ProjectCard";
 import ChevronIcon from "@/components/icons/ChevronIcon";
@@ -116,7 +117,7 @@ export default async function ServiceAreaTemplate({
             <div className="max-w-[1440px] mx-auto px-6 md:px-12">
               <div className="flex flex-col lg:flex-row gap-16 items-start">
                 {/* Main Content */}
-                <div className="lg:w-2/3 space-y-24">
+                <div className="w-full space-y-24">
                   {/* About Section */}
                   <div>
                     <p className="eyebrow mb-4">{data.aboutEyebrow}</p>
@@ -175,10 +176,10 @@ export default async function ServiceAreaTemplate({
                   </div>
                 </div>
 
-                {/* Sidebar Form */}
-                <div className="lg:w-1/3 lg:sticky lg:top-32">
+                {/* TODO: Re-enable sidebar QuoteForm after A2P approval */}
+                {/* <div className="lg:w-1/3 lg:sticky lg:top-32">
                   <QuoteForm variant="sidebar" formType="sidebar-quote" />
-                </div>
+                </div> */}
               </div>
             </div>
           </section>
@@ -280,7 +281,8 @@ export default async function ServiceAreaTemplate({
 
         <Footer />
         <MobileBottomBar />
-        <InspectionModal />
+        {/* TODO: Re-enable after A2P approval */}
+        {/* <InspectionModal /> */}
       </div>
     </ModalProvider>
   );

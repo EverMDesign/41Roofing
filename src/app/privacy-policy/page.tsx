@@ -3,7 +3,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import ModalProvider from "@/components/ModalProvider";
-import InspectionModal from "@/components/InspectionModal";
+// TODO: Re-enable after A2P approval
+// import InspectionModal from "@/components/InspectionModal";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | 41 Roofing & Restoration",
@@ -225,7 +226,8 @@ export default function PrivacyPage() {
         </main>
         <Footer />
         <MobileBottomBar />
-        <InspectionModal />
+        {/* TODO: Re-enable after A2P approval */}
+        {/* <InspectionModal /> */}
       </div>
     </ModalProvider>
   );

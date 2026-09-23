@@ -2,7 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import ModalProvider from "@/components/ModalProvider";
-import InspectionModal from "@/components/InspectionModal";
+// TODO: Re-enable after A2P approval
+// import InspectionModal from "@/components/InspectionModal";
 import { generateHomepageSchema } from "@/lib/schema";
 import Hero from "@/components/sections/Hero";
 import TrustBar from "@/components/sections/TrustBar";
@@ -17,7 +18,8 @@ import WhyChoose from "@/components/sections/WhyChoose";
 import StatementBanner from "@/components/sections/StatementBanner";
 import ServiceAreas from "@/components/sections/ServiceAreas";
 import FAQ from "@/components/sections/FAQ";
-import Contact from "@/components/sections/Contact";
+// TODO: Re-enable after A2P approval
+// import Contact from "@/components/sections/Contact";
 import MapEmbed from "@/components/sections/MapEmbed";
 
 export default function Home() {
@@ -45,12 +47,14 @@ export default function Home() {
           <StatementBanner />
           <ServiceAreas />
           <FAQ />
-          <Contact />
+          {/* TODO: Re-enable after A2P approval */}
+          {/* <Contact /> */}
           <MapEmbed />
         </main>
         <Footer />
         <MobileBottomBar />
-        <InspectionModal />
+        {/* TODO: Re-enable after A2P approval */}
+        {/* <InspectionModal /> */}
       </div>
     </ModalProvider>
   );

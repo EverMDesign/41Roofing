@@ -1,5 +1,6 @@
-import QuoteForm from "@/components/QuoteForm";
-import ModalCTA from "@/components/ModalCTA";
+// TODO: Re-enable after A2P approval
+// import QuoteForm from "@/components/QuoteForm";
+// import ModalCTA from "@/components/ModalCTA";
 import { fetchGoogleReviews } from "@/lib/google-reviews";
 
 function YellowStars({ rating }: { rating: number }) {
@@ -37,7 +38,7 @@ export default async function Hero() {
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-end">
           {/* Left — Copy */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-12">
             <p className="hero-animate hero-animate-up font-heading font-bold text-brand-aqua tracking-[0.2em] text-xs md:text-sm mb-6 uppercase" style={{ animationDuration: "800ms", animationDelay: "100ms" }}>
               Crowley, Texas &bull; Serving North Texas
             </p>
@@ -56,9 +57,10 @@ export default async function Hero() {
               commercial roofing and property restoration throughout Crowley and North Texas.
             </p>
             <div className="hero-animate hero-animate-up flex flex-col sm:flex-row gap-4 mb-12 lg:mb-0" style={{ animationDuration: "900ms", animationDelay: "550ms" }}>
-              <ModalCTA className="inline-flex justify-center items-center bg-brand-aqua text-brand-black px-10 py-5 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-white transition-colors duration-300">
+              {/* TODO: Re-enable ModalCTA after A2P approval */}
+              {/* <ModalCTA className="inline-flex justify-center items-center bg-brand-aqua text-brand-black px-10 py-5 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-white transition-colors duration-300">
                 Get A Free Roof Inspection
-              </ModalCTA>
+              </ModalCTA> */}
               <a
                 href="tel:817-266-9433"
                 className="inline-flex justify-center items-center border border-brand-border text-brand-white px-10 py-5 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-brand-white hover:text-brand-black transition-colors duration-300"
@@ -68,12 +70,12 @@ export default async function Hero() {
             </div>
           </div>
 
-          {/* Right — Quote Form */}
-          <div className="hero-animate hero-animate-right lg:col-span-5" style={{ animationDuration: "1000ms", animationDelay: "500ms" }}>
+          {/* TODO: Re-enable QuoteForm after A2P approval */}
+          {/* <div className="hero-animate hero-animate-right lg:col-span-5" style={{ animationDuration: "1000ms", animationDelay: "500ms" }}>
             <div className="hero-form-glow">
               <QuoteForm variant="hero" formType="hero-quote" />
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Trust Bar */}

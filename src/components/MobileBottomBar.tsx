@@ -13,12 +13,13 @@ export default function MobileBottomBar() {
       >
         CALL
       </a>
-      <button
+      {/* TODO: Re-enable after A2P approval */}
+      {/* <button
         onClick={openModal}
         className="flex-1 py-4 text-center font-heading font-bold text-xs tracking-widest uppercase text-brand-black bg-brand-aqua"
       >
         FREE INSPECTION
-      </button>
+      </button> */}
     </div>
   );
 }
