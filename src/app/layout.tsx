@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -60,7 +61,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ></script>
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6ab2a70a5853991db9f57899"
+          data-source="WEB_USER"
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   );
 }
