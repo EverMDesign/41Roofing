@@ -43,6 +43,7 @@ const mobileNavItems = [
   // { label: "Projects", href: "#projects" },
   { label: "Areas", href: "#service-areas" },
   { label: "FAQ", href: "#faq" },
+  { label: "Reviews", href: "/reviews" },
 ];
 
 export default function Header() {
@@ -153,6 +154,12 @@ export default function Header() {
               className="text-brand-white/80 hover:text-brand-white text-sm font-semibold tracking-wide uppercase transition-colors"
             >
               FAQ
+            </a>
+            <a
+              href="/reviews"
+              className="text-brand-white/80 hover:text-brand-white text-sm font-semibold tracking-wide uppercase transition-colors"
+            >
+              Reviews
             </a>
           </nav>
 

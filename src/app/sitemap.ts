@@ -96,6 +96,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    // Reviews
+    {
+      url: `${BASE_URL}/reviews`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
     // Legal pages
     {
       url: `${BASE_URL}/privacy-policy`,
