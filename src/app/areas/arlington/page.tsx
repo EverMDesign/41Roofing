@@ -78,8 +78,12 @@ const projects: Project[] = [
 const pageData: ServiceAreaData = {
   city: "Arlington",
   state: "TX",
+  stateFull: "Texas",
   slug: "arlington",
+  metaDescription:
+    "Trusted roofing contractor serving Arlington, TX. Free inspections, roof repair, replacement, storm damage restoration, and commercial roofing for one of the largest cities in North Texas.",
   heroImage: "/arlington-landmark.webp",
+  heroImageAlt: "Downtown Arlington TX skyline near AT&T Stadium and Globe Life Field",
   eyebrow: "Local Roofing Experts",
   heroTitle: "Roofing & Restoration\nIn Arlington, TX",
   heroSubtitle: "The Midpoint City of DFW — dependable roofing from AT&T Stadium to Lake Arlington.",
@@ -131,19 +135,19 @@ const pageData: ServiceAreaData = {
   faqHeading: "Answers for your local property.",
   faqs: [
     {
-      q: "DO YOU SERVICE ALL OF ARLINGTON?",
+      q: "Do you service all of Arlington?",
       a: "Yes. We serve all of Arlington — north, south, east, and west. From neighborhoods near Lake Arlington to commercial properties along I-20 and Division Street, we cover the entire city.",
     },
     {
-      q: "DO I NEED A PERMIT FOR A ROOF REPLACEMENT IN ARLINGTON?",
+      q: "Do I need a permit for a roof replacement in Arlington?",
       a: "Yes, the City of Arlington requires a permit for roof replacements. We handle all permitting and schedule the required inspections as part of our standard process.",
     },
     {
-      q: "DO YOU HANDLE COMMERCIAL ROOFING IN ARLINGTON?",
+      q: "Do you handle commercial roofing in Arlington?",
       a: "Absolutely. We service both residential and commercial properties in Arlington, including flat roofs, TPO membrane systems, and multi-unit buildings.",
     },
     {
-      q: "HOW SOON CAN YOU INSPECT MY ARLINGTON PROPERTY?",
+      q: "How soon can you inspect my Arlington property?",
       a: "We typically schedule inspections within 24-48 hours. For emergency situations like active leaks or storm damage with exposed decking, we offer same-day emergency response.",
     },
   ],

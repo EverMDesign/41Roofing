@@ -11,6 +11,7 @@ import ReviewCard, { type Review } from "@/components/ReviewCard";
 import ProjectCard, { type Project } from "@/components/ProjectCard";
 import ChevronIcon from "@/components/icons/ChevronIcon";
 import { fetchGoogleReviews } from "@/lib/google-reviews";
+import { generateServiceAreaSchema } from "@/lib/schema";
 
 interface FAQ {
   q: string;
@@ -25,8 +26,11 @@ interface ServiceCard {
 export interface ServiceAreaData {
   city: string;
   state: string;
+  stateFull: string;
   slug: string;
+  metaDescription: string;
   heroImage: string;
+  heroImageAlt: string;
   eyebrow: string;
   heroTitle: string;
   heroSubtitle: string;
@@ -79,9 +83,24 @@ export default async function ServiceAreaTemplate({
 
   const reviews = liveReviews ?? data.reviews;
 
+  const schema = generateServiceAreaSchema({
+    city: data.city,
+    stateFull: data.stateFull,
+    stateAbbr: data.state,
+    path: `/areas/${data.slug}`,
+    metaDescription: data.metaDescription,
+    image: data.heroImage,
+    imageAlt: data.heroImageAlt,
+    faqs: data.faqs,
+  });
+
   return (
     <ModalProvider>
       <div className="w-full overflow-x-clip bg-brand-white text-brand-charcoal font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
         <Header />
 
         <main>

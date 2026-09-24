@@ -1,9 +1,11 @@
 /**
  * 41 Roofing & Restoration — Schema.org JSON-LD Generators
  *
- * Two generators:
- *   1. generateHomepageSchema()    — Full @graph: RoofingContractor + Services + WebPage + WebSite
- *   2. generateServicePageSchema() — Service + BreadcrumbList + WebPage + FAQPage
+ * Four generators:
+ *   1. generateSitewideSchema()      — RoofingContractor + WebSite (output on every page via layout)
+ *   2. generateHomepageSchema()      — Full @graph: RoofingContractor + Services + WebPage + WebSite
+ *   3. generateServicePageSchema()   — @graph: Service + BreadcrumbList + WebPage + FAQPage
+ *   4. generateServiceAreaSchema()   — @graph: Service + BreadcrumbList + WebPage + FAQPage (geo-scoped)
  *
  * Business data lives in schema-business.ts. These functions are pure — no side effects.
  */
@@ -11,6 +13,25 @@
 import { BUSINESS } from "./schema-business";
 
 // ── Types ────────────────────────────────────────────────────────────────────
+
+interface ServiceAreaSchemaInput {
+  /** City name (e.g. "Crowley") */
+  city: string;
+  /** State full name (e.g. "Texas") */
+  stateFull: string;
+  /** State abbreviation (e.g. "TX") */
+  stateAbbr: string;
+  /** Page route without domain (e.g. "/areas/crowley") */
+  path: string;
+  /** Meta description for the page (used for WebPage description) */
+  metaDescription: string;
+  /** Hero image path */
+  image?: string;
+  /** Descriptive alt text for the hero image */
+  imageAlt?: string;
+  /** FAQ items from the page — full text, sentence case questions */
+  faqs?: { q: string; a: string }[];
+}
 
 interface ServicePageSchemaInput {
   /** Page title (e.g. "Roof Replacement") */
@@ -93,6 +114,29 @@ function businessEntity() {
   };
 }
 
+function webSiteEntity() {
+  return {
+    "@type": "WebSite" as const,
+    "@id": `${BUSINESS.url}/#website`,
+    "name": BUSINESS.name,
+    "url": BUSINESS.url,
+    "publisher": { "@id": `${BUSINESS.url}/#business` },
+  };
+}
+
+// ── Sitewide Schema (layout) ────────────────────────────────────────────────
+
+/**
+ * RoofingContractor + WebSite nodes, output on every page via layout.
+ * Ensures /#business and /#website @id references resolve everywhere.
+ */
+export function generateSitewideSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [businessEntity(), webSiteEntity()],
+  };
+}
+
 // ── Homepage Schema ──────────────────────────────────────────────────────────
 
 /**
@@ -122,32 +166,22 @@ export function generateHomepageSchema() {
     "mainEntity": { "@id": `${BUSINESS.url}/#business` },
   };
 
-  const webSite = {
-    "@type": "WebSite" as const,
-    "@id": `${BUSINESS.url}/#website`,
-    "name": BUSINESS.name,
-    "url": BUSINESS.url,
-    "publisher": { "@id": `${BUSINESS.url}/#business` },
-  };
-
   return {
     "@context": "https://schema.org",
-    "@graph": [business, ...serviceEntities, webPage, webSite],
+    "@graph": [business, ...serviceEntities, webPage, webSiteEntity()],
   };
 }
 
 // ── Service Page Schema ──────────────────────────────────────────────────────
 
 /**
- * Generate schema blocks for a service page.
- * Returns an array of schema objects: Service, BreadcrumbList, WebPage, and optionally FAQPage.
+ * Generate @graph schema for a service page.
+ * Returns a single object with @context and @graph array.
  */
 export function generateServicePageSchema(input: ServicePageSchemaInput) {
   const pageUrl = `${BUSINESS.url}${input.path}`;
 
-  // Service
-  const serviceSchema = {
-    "@context": "https://schema.org" as const,
+  const serviceNode = {
     "@type": "Service" as const,
     "@id": `${pageUrl}#service`,
     "name": input.title,
@@ -170,7 +204,6 @@ export function generateServicePageSchema(input: ServicePageSchemaInput) {
       : {}),
   };
 
-  // BreadcrumbList
   const breadcrumbItems = [
     { "@type": "ListItem" as const, position: 1, name: "Home", item: BUSINESS.url },
     ...input.breadcrumbs.map((crumb, i) => ({
@@ -187,16 +220,13 @@ export function generateServicePageSchema(input: ServicePageSchemaInput) {
     },
   ];
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org" as const,
+  const breadcrumbNode = {
     "@type": "BreadcrumbList" as const,
     "@id": `${pageUrl}#breadcrumb`,
     "itemListElement": breadcrumbItems,
   };
 
-  // WebPage
-  const webPageSchema = {
-    "@context": "https://schema.org" as const,
+  const webPageNode = {
     "@type": "WebPage" as const,
     "@id": `${pageUrl}#webpage`,
     "url": pageUrl,
@@ -208,12 +238,10 @@ export function generateServicePageSchema(input: ServicePageSchemaInput) {
     "publisher": { "@id": `${BUSINESS.url}/#business` },
   };
 
-  const schemas: Record<string, unknown>[] = [serviceSchema, breadcrumbSchema, webPageSchema];
+  const graph: Record<string, unknown>[] = [serviceNode, breadcrumbNode, webPageNode];
 
-  // FAQPage (if FAQs exist)
   if (input.faqs && input.faqs.length > 0) {
-    const faqSchema = {
-      "@context": "https://schema.org" as const,
+    graph.push({
       "@type": "FAQPage" as const,
       "@id": `${pageUrl}#faq`,
       "mainEntity": input.faqs.map((faq) => ({
@@ -224,9 +252,91 @@ export function generateServicePageSchema(input: ServicePageSchemaInput) {
           "text": faq.a,
         },
       })),
-    };
-    schemas.push(faqSchema);
+    });
   }
 
-  return schemas;
+  return {
+    "@context": "https://schema.org",
+    "@graph": graph,
+  };
+}
+
+// ── Service Area Page Schema ────────────────────────────────────────────────
+
+/**
+ * Generate @graph schema for a service area page.
+ * City-scoped Service with containedInPlace, proper breadcrumbs, and FAQPage.
+ */
+export function generateServiceAreaSchema(input: ServiceAreaSchemaInput) {
+  const pageUrl = `${BUSINESS.url}${input.path}`;
+
+  const serviceNode = {
+    "@type": "Service" as const,
+    "@id": `${pageUrl}#service`,
+    "name": `Roofing & Restoration in ${input.city}, ${input.stateAbbr}`,
+    "description": `Roof replacement, repair, and storm damage restoration for homes in ${input.city}, ${input.stateAbbr}.`,
+    "serviceType": ["Roof Replacement", "Roof Repair", "Storm Damage Restoration"],
+    "provider": { "@id": `${BUSINESS.url}/#business` },
+    "areaServed": {
+      "@type": "City" as const,
+      "name": input.city,
+      "containedInPlace": {
+        "@type": "State" as const,
+        "name": input.stateFull,
+      },
+    },
+    "url": pageUrl,
+    ...(input.image
+      ? {
+          image: {
+            "@type": "ImageObject" as const,
+            "url": `${BUSINESS.url}${input.image}`,
+            "name": input.imageAlt || `${input.city}, ${input.stateAbbr}`,
+          },
+        }
+      : {}),
+  };
+
+  const breadcrumbNode = {
+    "@type": "BreadcrumbList" as const,
+    "@id": `${pageUrl}#breadcrumb`,
+    "itemListElement": [
+      { "@type": "ListItem" as const, position: 1, name: "Home", item: BUSINESS.url },
+      { "@type": "ListItem" as const, position: 2, name: input.city, item: pageUrl },
+    ],
+  };
+
+  const webPageNode = {
+    "@type": "WebPage" as const,
+    "@id": `${pageUrl}#webpage`,
+    "url": pageUrl,
+    "name": `Roofing in ${input.city}, ${input.stateAbbr} | ${BUSINESS.name}`,
+    "description": input.metaDescription,
+    "isPartOf": { "@id": `${BUSINESS.url}/#website` },
+    "about": { "@id": `${pageUrl}#service` },
+    "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
+    "publisher": { "@id": `${BUSINESS.url}/#business` },
+  };
+
+  const graph: Record<string, unknown>[] = [serviceNode, breadcrumbNode, webPageNode];
+
+  if (input.faqs && input.faqs.length > 0) {
+    graph.push({
+      "@type": "FAQPage" as const,
+      "@id": `${pageUrl}#faq`,
+      "mainEntity": input.faqs.map((faq) => ({
+        "@type": "Question" as const,
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer" as const,
+          "text": faq.a,
+        },
+      })),
+    });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": graph,
+  };
 }

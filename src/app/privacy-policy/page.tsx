@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy | 41 Roofing & Restoration",
   description:
     "Learn how 41 Roofing & Restoration collects, uses, and protects your personal information.",
+  alternates: { canonical: "/privacy-policy" },
 };
 
 export default function PrivacyPage() {

@@ -16,12 +16,14 @@ export default function ReviewsWidget() {
       <iframe
         className="lc_reviews_widget"
         src="https://reputationhub.site/reputation/widgets/review_widget/csavg1y6oz1jNxRuSEwz?widgetId=6ab2d99beab39e3931b188dd"
-        frameBorder="0"
+        title="41 Roofing and Restoration Reviews"
+        loading="lazy"
         scrolling="no"
         onLoad={() => setLoaded(true)}
         style={{
           minWidth: "100%",
           width: "100%",
+          border: "none",
           opacity: loaded ? 1 : 0,
           transition: "opacity 0.3s ease-in",
         }}

@@ -1,6 +1,7 @@
 /**
  * 41 Roofing & Restoration — Business data for Schema.org JSON-LD.
  * Source: Extracted from live site schema on 2026-09-15.
+ * Updated: 2026-09-24 — aligned services with actual site pages.
  */
 
 export const BUSINESS = {
@@ -35,10 +36,31 @@ export const BUSINESS = {
   ],
   services: [
     {
-      id: "roofing",
-      name: "Roofing",
+      id: "roof-repair",
+      name: "Roof Repair",
       description:
-        "Professional roof repair, replacement, and inspection services for residential and commercial properties. We provide honest assessments, quality materials, and dependable workmanship to protect your property.",
+        "Expert roof repairs for leaks, storm damage, missing shingles, and flashing issues. We diagnose the problem and fix it right — no unnecessary upselling.",
+      serviceType: "Roofing Contractor",
+    },
+    {
+      id: "roof-replacement",
+      name: "Roof Replacement",
+      description:
+        "Complete roof replacement with premium architectural and impact-resistant shingle systems. Full tear-off, new underlayment, and dependable installation.",
+      serviceType: "Roofing Contractor",
+    },
+    {
+      id: "commercial-roofing",
+      name: "Commercial Roofing",
+      description:
+        "Commercial roofing services for flat roofs, metal roofs, and multi-unit properties. Inspections, repairs, and full replacements for business owners across North Texas.",
+      serviceType: "Roofing Contractor",
+    },
+    {
+      id: "emergency-tarping",
+      name: "Emergency Tarping",
+      description:
+        "Same-day emergency tarping to protect your property from further damage after storms, fallen trees, or sudden roof failures. Fast response when you need it most.",
       serviceType: "Roofing Contractor",
     },
     {
@@ -56,25 +78,18 @@ export const BUSINESS = {
       serviceType: "Gutter Service",
     },
     {
-      id: "tile",
-      name: "Tile and Countertops",
+      id: "painting",
+      name: "Interior and Exterior Painting",
       description:
-        "Expert tile and countertop installation and repair for kitchens and bathrooms. We work with quality materials to create durable, beautiful surfaces that enhance your space.",
+        "Professional painting services for residential and commercial properties. Interior and exterior painting with quality materials and clean, detailed workmanship.",
+      serviceType: "Painting Service",
+    },
+    {
+      id: "exterior-repairs",
+      name: "Exterior Repairs",
+      description:
+        "Siding, fascia, soffit, fence, and general exterior repairs. We restore and protect the exterior of your property with dependable craftsmanship.",
       serviceType: "Home Improvement",
-    },
-    {
-      id: "asphalt",
-      name: "Asphalt Services",
-      description:
-        "Asphalt repair, sealing, and maintenance for driveways and parking areas. We extend the life of your asphalt surfaces with professional, dependable work.",
-      serviceType: "Asphalt Services",
-    },
-    {
-      id: "concrete",
-      name: "Concrete Services",
-      description:
-        "Concrete repair, installation, and maintenance for driveways, patios, and foundations. We deliver strong, durable concrete solutions built to last.",
-      serviceType: "Concrete Services",
     },
   ],
 } as const;

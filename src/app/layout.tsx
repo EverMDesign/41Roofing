@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import Script from "next/script";
+import { generateSitewideSchema } from "@/lib/schema";
 import "./globals.css";
 
 const inter = Inter({
@@ -62,6 +63,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
       </head>
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateSitewideSchema()) }}
+        />
         {children}
         <Script
           src="https://widgets.leadconnectorhq.com/loader.js"

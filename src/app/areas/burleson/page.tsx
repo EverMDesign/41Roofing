@@ -78,8 +78,12 @@ const projects: Project[] = [
 const pageData: ServiceAreaData = {
   city: "Burleson",
   state: "TX",
+  stateFull: "Texas",
   slug: "burleson",
+  metaDescription:
+    "Local roofing contractor serving Burleson, TX. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping. Honest assessments from a team that lives and works in your community.",
   heroImage: "/burleson-landmark.webp",
+  heroImageAlt: "Old Town Burleson TX streetscape near historic downtown and railroad depot",
   eyebrow: "Local Roofing Experts",
   heroTitle: "Roofing & Restoration\nIn Burleson, TX",
   heroSubtitle: "From the 1895 Opera House to Tallgrass — protecting one of DFW's fastest-growing communities.",
@@ -131,19 +135,19 @@ const pageData: ServiceAreaData = {
   faqHeading: "Answers for your local property.",
   faqs: [
     {
-      q: "DO I NEED A PERMIT FOR A ROOF REPLACEMENT IN BURLESON?",
+      q: "Do I need a permit for a roof replacement in Burleson?",
       a: "Yes, the City of Burleson requires a permit for a full roof replacement. As a local contractor, 41 Roofing handles all the necessary permitting and ensures all work complies with current municipal building codes, taking that stress off your plate.",
     },
     {
-      q: "HOW QUICKLY CAN YOU INSPECT MY ROOF AFTER A BURLESON STORM?",
+      q: "How quickly can you inspect my roof after a Burleson storm?",
       a: "Because we operate locally, we can typically be on-site within 24-48 hours after a major weather event. In cases of severe leaks or structural exposure, we offer emergency tarping services to protect your home immediately.",
     },
     {
-      q: "WHAT ARE COMMON SIGNS OF HAIL DAMAGE IN THIS AREA?",
+      q: "What are common signs of hail damage in this area?",
       a: "Look for missing granules (often washing out of your downspouts), bruised or indented shingles, cracked shingle mats, and small dents on metal roof vents, flashing, or AC units. Damage isn't always obvious from the ground level.",
     },
     {
-      q: "DO YOU PROVIDE FREE ROOF INSPECTIONS IN BURLESON?",
+      q: "Do you provide free roof inspections in Burleson?",
       a: "Absolutely. We believe in diagnosing the problem before selling a solution. We offer free, honest, and comprehensive roof inspections for homeowners and commercial property owners throughout the Burleson area.",
     },
   ],

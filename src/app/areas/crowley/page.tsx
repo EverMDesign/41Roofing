@@ -78,8 +78,11 @@ const projects: Project[] = [
 const pageData: ServiceAreaData = {
   city: "Crowley",
   state: "TX",
+  stateFull: "Texas",
   slug: "crowley",
+  metaDescription: "Crowley's hometown roofing contractor. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping. Based in Crowley — honest assessments from your neighbors.",
   heroImage: "/crowley-landmark.webp",
+  heroImageAlt: "Downtown Crowley, TX near 41 Roofing headquarters on East Main Street",
   eyebrow: "Our Home Base",
   heroTitle: "Roofing & Restoration\nIn Crowley, TX",
   heroSubtitle: "Our home base since day one — your neighbors on East Main Street.",
@@ -131,19 +134,19 @@ const pageData: ServiceAreaData = {
   faqHeading: "Answers for your local property.",
   faqs: [
     {
-      q: "WHERE IS 41 ROOFING LOCATED?",
+      q: "Where is 41 Roofing located?",
       a: "We're headquartered at 208 East Main Street, Suite D, in Crowley, TX. We're a locally owned and operated business — not a storm chaser or franchise. When you call us, you're calling your neighbors.",
     },
     {
-      q: "DO I NEED A PERMIT FOR A ROOF REPLACEMENT IN CROWLEY?",
+      q: "Do I need a permit for a roof replacement in Crowley?",
       a: "Yes, the City of Crowley requires a building permit for roof replacements. We handle all permitting as part of our standard process so you don't have to worry about compliance or inspections.",
     },
     {
-      q: "HOW FAST CAN YOU RESPOND AFTER A STORM IN CROWLEY?",
+      q: "How fast can you respond after a storm in Crowley?",
       a: "Because we're based right here in Crowley, we can typically be on-site within hours — not days. For active leaks or exposed decking, we offer same-day emergency tarping to prevent further damage.",
     },
     {
-      q: "DO YOU OFFER FREE ROOF INSPECTIONS IN CROWLEY?",
+      q: "Do you offer free roof inspections in Crowley?",
       a: "Absolutely. We provide free, thorough, and honest inspections for every homeowner in Crowley. We document everything with photos so you can make an informed decision — no pressure, no obligation.",
     },
   ],

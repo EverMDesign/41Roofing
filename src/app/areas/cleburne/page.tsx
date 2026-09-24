@@ -78,8 +78,12 @@ const projects: Project[] = [
 const pageData: ServiceAreaData = {
   city: "Cleburne",
   state: "TX",
+  stateFull: "Texas",
   slug: "cleburne",
+  metaDescription:
+    "Trusted roofing contractor serving Cleburne, TX. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping for the Johnson County seat.",
   heroImage: "/cleburne-landmark.webp",
+  heroImageAlt: "Historic Johnson County Courthouse in downtown Cleburne TX with pink granite exterior",
   eyebrow: "Local Roofing Experts",
   heroTitle: "Roofing & Restoration\nIn Cleburne, TX",
   heroSubtitle: "The Heart of Johnson County — from the 1913 Courthouse to Cleburne State Park.",
@@ -131,19 +135,19 @@ const pageData: ServiceAreaData = {
   faqHeading: "Answers for your local property.",
   faqs: [
     {
-      q: "HOW FAR IS 41 ROOFING FROM CLEBURNE?",
+      q: "How far is 41 Roofing from Cleburne?",
       a: "Our Crowley headquarters is about 20 minutes from Cleburne. We service the entire Cleburne area regularly and can typically schedule inspections within 24-48 hours.",
     },
     {
-      q: "DO YOU WORK ON OLDER HOMES IN CLEBURNE?",
+      q: "Do you work on older homes in Cleburne?",
       a: "Yes. We have experience working with the older construction common in Cleburne's historic neighborhoods. We take extra care to inspect decking condition and ensure proper ventilation on aging structures.",
     },
     {
-      q: "CAN YOU HELP WITH INSURANCE CLAIMS IN CLEBURNE?",
+      q: "Can you help with insurance claims in Cleburne?",
       a: "Absolutely. We provide thorough damage documentation with photos, measurements, and detailed reports that support your insurance claim. We work with your adjuster to ensure nothing is missed.",
     },
     {
-      q: "WHAT SHOULD I DO IF I SEE STORM DAMAGE ON MY CLEBURNE PROPERTY?",
+      q: "What should I do if I see storm damage on my Cleburne property?",
       a: "Document what you can see safely from the ground, then call us for a free professional inspection. We'll assess the full extent of the damage and advise you on whether an insurance claim is warranted before you contact your carrier.",
     },
   ],

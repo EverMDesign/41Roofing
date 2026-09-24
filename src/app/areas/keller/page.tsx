@@ -78,8 +78,12 @@ const projects: Project[] = [
 const pageData: ServiceAreaData = {
   city: "Keller",
   state: "TX",
+  stateFull: "Texas",
   slug: "keller",
+  metaDescription:
+    "Professional roofing contractor serving Keller, TX. Free inspections, roof repair, replacement, storm damage restoration, and premium shingle installations for one of North Texas's most desirable communities.",
   heroImage: "/keller-landmark.webp",
+  heroImageAlt: "Upscale residential neighborhood in Keller TX near Bear Creek Park and Old Town Keller",
   eyebrow: "Local Roofing Experts",
   heroTitle: "Roofing & Restoration\nIn Keller, TX",
   heroSubtitle: "One of North Texas's most desirable communities — premium roofing from Hidden Lakes to Old Town Keller.",
@@ -131,19 +135,19 @@ const pageData: ServiceAreaData = {
   faqHeading: "Answers for your local property.",
   faqs: [
     {
-      q: "DO YOU WORK WITH KELLER HOAs?",
+      q: "Do you work with Keller HOAs?",
       a: "Yes. Many Keller neighborhoods have HOA requirements for roofing materials, colors, and styles. We're experienced in meeting these specifications and can coordinate directly with your HOA if needed.",
     },
     {
-      q: "CAN IMPACT-RESISTANT SHINGLES LOWER MY INSURANCE PREMIUM?",
+      q: "Can impact-resistant shingles lower my insurance premium?",
       a: "In many cases, yes. Texas insurance carriers often offer premium discounts for Class 4 impact-resistant shingles. We can help you select a qualifying product and provide the documentation your insurer needs.",
     },
     {
-      q: "HOW DO I KNOW IF MY KELLER HOME HAS HAIL DAMAGE?",
+      q: "How do I know if my Keller home has hail damage?",
       a: "Hail damage isn't always visible from the ground. Common signs include dented gutters, damaged vent caps, and dark circular marks on shingles. We provide free inspections to identify damage you might not see.",
     },
     {
-      q: "DO YOU PROVIDE FREE INSPECTIONS IN KELLER?",
+      q: "Do you provide free inspections in Keller?",
       a: "Absolutely. We provide free, comprehensive roof inspections for Keller homeowners. We document everything with photos and provide a clear assessment — no obligation, no pressure.",
     },
   ],

@@ -78,8 +78,12 @@ const projects: Project[] = [
 const pageData: ServiceAreaData = {
   city: "Joshua",
   state: "TX",
+  stateFull: "Texas",
   slug: "joshua",
+  metaDescription:
+    "Local roofing contractor serving Joshua, TX. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping for this growing South DFW community.",
   heroImage: "/joshua-landmark.webp",
+  heroImageAlt: "Small-town Joshua TX streetscape along Highway 174 in Johnson County",
   eyebrow: "Local Roofing Experts",
   heroTitle: "Roofing & Restoration\nIn Joshua, TX",
   heroSubtitle: "Home of the Fighting Owls — small-town roots, professional roofing.",
@@ -131,19 +135,19 @@ const pageData: ServiceAreaData = {
   faqHeading: "Answers for your local property.",
   faqs: [
     {
-      q: "DO YOU SERVICE PROPERTIES ON ACREAGE IN JOSHUA?",
+      q: "Do you service properties on acreage in Joshua?",
       a: "Yes. We service all property types in Joshua, including homes on larger rural lots and acreage. We bring everything we need — no job is too remote for our team.",
     },
     {
-      q: "HOW QUICKLY CAN YOU GET TO JOSHUA AFTER A STORM?",
+      q: "How quickly can you get to Joshua after a storm?",
       a: "Joshua is just minutes from our Crowley headquarters. We can typically be on-site within hours for emergency situations and within 24-48 hours for standard inspections.",
     },
     {
-      q: "DO YOU HANDLE INSURANCE CLAIMS FOR JOSHUA HOMEOWNERS?",
+      q: "Do you handle insurance claims for Joshua homeowners?",
       a: "We work directly with your insurance company by providing detailed documentation, photos, and damage reports to support your claim. We make the process as smooth as possible.",
     },
     {
-      q: "WHAT ROOFING MATERIALS WORK BEST FOR JOSHUA HOMES?",
+      q: "What roofing materials work best for Joshua homes?",
       a: "Given the open exposure to wind and hail, we often recommend impact-resistant architectural shingles for Joshua properties. We'll assess your specific situation and recommend the best option for your home and budget.",
     },
   ],

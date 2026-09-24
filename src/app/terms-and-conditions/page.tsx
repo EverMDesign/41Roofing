@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Terms & Conditions | 41 Roofing and Restoration LLC",
   description:
     "Read the Terms & Conditions for 41 Roofing and Restoration LLC.",
+  alternates: { canonical: "/terms-and-conditions" },
 };
 
 export default function TermsPage() {

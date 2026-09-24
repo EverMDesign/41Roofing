@@ -70,7 +70,7 @@ export default async function ServicePageTemplate({
   const reviews = liveReviews ?? data.reviews;
   const titleLines = data.title.split("\n");
 
-  const schemas = generateServicePageSchema({
+  const schema = generateServicePageSchema({
     title: data.title.replace("\n", " "),
     description: data.subtitle,
     path: data.path,
@@ -83,13 +83,10 @@ export default async function ServicePageTemplate({
   return (
     <ModalProvider>
       <div className="w-full overflow-x-clip bg-brand-white text-brand-charcoal font-sans">
-        {schemas.map((schema, i) => (
-          <script
-            key={i}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-          />
-        ))}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
         <Header />
 
         <main>

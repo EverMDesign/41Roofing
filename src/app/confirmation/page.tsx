@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: "Request Confirmed | 41 Roofing & Restoration",
   description:
     "Your roof inspection request has been received. Learn what happens next and how to prepare for your inspection.",
+  alternates: { canonical: "/confirmation" },
 };
 
 export default function ConfirmationPage() {
