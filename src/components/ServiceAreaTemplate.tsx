@@ -4,9 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import ModalProvider from "@/components/ModalProvider";
-// TODO: Re-enable after A2P approval
-// import InspectionModal from "@/components/InspectionModal";
-// import QuoteForm from "@/components/QuoteForm";
+import InspectionModal from "@/components/InspectionModal";
+import QuoteForm from "@/components/QuoteForm";
 import ReviewCard, { type Review } from "@/components/ReviewCard";
 import ProjectCard, { type Project } from "@/components/ProjectCard";
 import ChevronIcon from "@/components/icons/ChevronIcon";
@@ -201,10 +200,9 @@ export default async function ServiceAreaTemplate({
                   </div>
                 </div>
 
-                {/* TODO: Re-enable sidebar QuoteForm after A2P approval */}
-                {/* <div className="lg:w-1/3 lg:sticky lg:top-32">
+                <div className="lg:w-1/3 lg:sticky lg:top-32">
                   <QuoteForm variant="sidebar" formType="sidebar-quote" />
-                </div> */}
+                </div>
               </div>
             </div>
           </section>
@@ -326,8 +324,7 @@ export default async function ServiceAreaTemplate({
 
         <Footer />
         <MobileBottomBar />
-        {/* TODO: Re-enable after A2P approval */}
-        {/* <InspectionModal /> */}
+        <InspectionModal />
       </div>
     </ModalProvider>
   );

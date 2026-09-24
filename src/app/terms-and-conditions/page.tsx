@@ -4,8 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import ModalProvider from "@/components/ModalProvider";
-// TODO: Re-enable after A2P approval
-// import InspectionModal from "@/components/InspectionModal";
+import InspectionModal from "@/components/InspectionModal";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | 41 Roofing and Restoration LLC",
@@ -211,8 +210,7 @@ export default function TermsPage() {
         </main>
         <Footer />
         <MobileBottomBar />
-        {/* TODO: Re-enable after A2P approval */}
-        {/* <InspectionModal /> */}
+        <InspectionModal />
       </div>
     </ModalProvider>
   );

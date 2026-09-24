@@ -4,8 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import ModalProvider from "@/components/ModalProvider";
-// TODO: Re-enable after A2P approval
-// import InspectionModal from "@/components/InspectionModal";
+import InspectionModal from "@/components/InspectionModal";
 import ConfirmationHero from "@/components/sections/ConfirmationHero";
 import NextSteps from "@/components/sections/NextSteps";
 import PrepareForInspection from "@/components/sections/PrepareForInspection";
@@ -56,8 +55,7 @@ export default function ConfirmationPage() {
         </main>
         <Footer />
         <MobileBottomBar />
-        {/* TODO: Re-enable after A2P approval */}
-        {/* <InspectionModal /> */}
+        <InspectionModal />
       </div>
     </ModalProvider>
   );
