@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import Script from "next/script";
-import { generateSitewideSchema } from "@/lib/schema";
+import { buildSitewideSchema } from "@/lib/schema-business";
 import { fetchGoogleReviews } from "@/lib/google-reviews";
 import "./globals.css";
 
@@ -71,7 +71,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateSitewideSchema(rating)) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildSitewideSchema(rating)) }}
         />
         {children}
         <Script

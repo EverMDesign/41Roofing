@@ -70,19 +70,19 @@ const pageData: ServicePageData = {
   faqHeading: "GUTTER INSTALLATION QUESTIONS.",
   faqs: [
     {
-      q: "WHAT TYPE OF GUTTERS DO YOU INSTALL?",
+      q: "What type of gutters do you install?",
       a: "We install seamless aluminum gutters custom-fabricated on-site to fit your home perfectly. Seamless gutters eliminate joints where leaks commonly develop and provide a clean, professional appearance.",
     },
     {
-      q: "HOW DO I KNOW IF MY GUTTERS NEED REPLACING?",
+      q: "How do I know if my gutters need replacing?",
       a: "Signs include gutters pulling away from the fascia, visible rust or cracks, water overflowing during rain, sagging sections, and water pooling near your foundation. If repairs are no longer effective, replacement is the best long-term solution.",
     },
     {
-      q: "CAN YOU REPLACE GUTTERS DURING A ROOF REPLACEMENT?",
+      q: "Can you replace gutters during a roof replacement?",
       a: "Yes, and we recommend it. Replacing gutters at the same time as your roof ensures everything integrates properly and saves you from scheduling a separate project. We often include gutter replacement in our roofing proposals.",
     },
     {
-      q: "DO YOU INSTALL GUTTER GUARDS?",
+      q: "Do you install gutter guards?",
       a: "Yes, we offer gutter guard installation to reduce debris buildup and minimize maintenance. We can discuss the best options for your property during the estimate.",
     },
   ],

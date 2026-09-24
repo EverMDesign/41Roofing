@@ -70,19 +70,19 @@ const pageData: ServicePageData = {
   faqHeading: "PAINTING PROJECT QUESTIONS.",
   faqs: [
     {
-      q: "DO YOU OFFER STANDALONE PAINTING SERVICES?",
+      q: "Do you offer standalone painting services?",
       a: "Yes. While painting is often part of a larger restoration project, we also take on standalone interior and exterior painting projects for homeowners throughout North Texas.",
     },
     {
-      q: "WHAT PREP WORK DO YOU DO BEFORE PAINTING?",
+      q: "What prep work do you do before painting?",
       a: "Proper preparation is critical for a lasting finish. We power wash exteriors, scrape and sand peeling paint, repair damaged surfaces, caulk gaps, prime bare materials, and protect all surrounding areas before applying any finish coats.",
     },
     {
-      q: "WHAT TYPE OF PAINT DO YOU USE?",
+      q: "What type of paint do you use?",
       a: "We use premium-grade paints from trusted manufacturers that are formulated for the Texas climate. Exterior paints are selected for UV resistance, moisture protection, and durability. Interior paints are chosen for coverage, finish quality, and low VOC.",
     },
     {
-      q: "WILL INSURANCE COVER PAINTING AFTER STORM DAMAGE?",
+      q: "Will insurance cover painting after storm damage?",
       a: "If painting is required as part of a covered storm damage claim (such as after siding replacement or interior water damage repair), it is typically included in the insurance settlement. We document the need for painting in our scope of work.",
     },
   ],

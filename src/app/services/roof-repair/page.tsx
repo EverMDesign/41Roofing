@@ -91,19 +91,19 @@ const pageData: ServicePageData = {
   faqHeading: "COMMON REPAIR QUESTIONS.",
   faqs: [
     {
-      q: "HOW DO I KNOW IF I NEED A REPAIR OR A REPLACEMENT?",
+      q: "How do I know if I need a repair or a replacement?",
       a: "It depends on the age of the roof, the extent of the damage, and the condition of the materials. We perform a thorough inspection to determine if a targeted repair will resolve the issue or if a full replacement is the most cost-effective long-term solution. We will never push a replacement if a repair is viable.",
     },
     {
-      q: "HOW QUICKLY CAN YOU FIX AN ACTIVE LEAK?",
+      q: "How quickly can you fix an active leak?",
       a: "For active leaks, we prioritize same-day or next-day response. Emergency tarping is available immediately to prevent further water intrusion while we schedule the full repair.",
     },
     {
-      q: "WILL MY INSURANCE COVER ROOF REPAIRS?",
+      q: "Will my insurance cover roof repairs?",
       a: "If the damage was caused by a covered event like hail or wind, your homeowner\u2019s insurance will typically cover the repair cost minus your deductible. We can help document the damage for your claim.",
     },
     {
-      q: "HOW LONG DOES A TYPICAL ROOF REPAIR TAKE?",
+      q: "How long does a typical roof repair take?",
       a: "Most residential roof repairs are completed in a few hours to one day, depending on the scope. We\u2019ll communicate the expected timeline before starting work.",
     },
   ],

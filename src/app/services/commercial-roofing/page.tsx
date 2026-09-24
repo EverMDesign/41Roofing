@@ -70,19 +70,19 @@ const pageData: ServicePageData = {
   faqHeading: "COMMERCIAL ROOFING QUESTIONS.",
   faqs: [
     {
-      q: "WHAT TYPES OF COMMERCIAL ROOFS DO YOU SERVICE?",
+      q: "What types of commercial roofs do you service?",
       a: "We service all major commercial roofing systems including TPO, EPDM, modified bitumen, built-up roofing (BUR), and metal systems. We handle both low-slope and flat roof configurations.",
     },
     {
-      q: "CAN YOU WORK AROUND OUR BUSINESS HOURS?",
+      q: "Can you work around our business hours?",
       a: "Absolutely. We understand that commercial properties have unique scheduling requirements. We can coordinate work during off-hours, weekends, or in phases to minimize disruption to your tenants and operations.",
     },
     {
-      q: "DO YOU OFFER COMMERCIAL ROOF MAINTENANCE PROGRAMS?",
+      q: "Do you offer commercial roof maintenance programs?",
       a: "Yes. Regular inspections and preventive maintenance extend the life of commercial roofing systems significantly. We offer scheduled maintenance programs tailored to your building\u2019s needs.",
     },
     {
-      q: "HOW DO YOU HANDLE COMMERCIAL INSURANCE CLAIMS?",
+      q: "How do you handle commercial insurance claims?",
       a: "We provide comprehensive documentation including drone imagery, detailed damage reports, and scope-of-work estimates that meet insurance adjuster requirements. We work directly with your insurance company throughout the process.",
     },
   ],

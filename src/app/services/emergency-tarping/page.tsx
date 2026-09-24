@@ -70,19 +70,19 @@ const pageData: ServicePageData = {
   faqHeading: "EMERGENCY TARPING QUESTIONS.",
   faqs: [
     {
-      q: "HOW QUICKLY CAN YOU RESPOND TO AN EMERGENCY?",
+      q: "How quickly can you respond to an emergency?",
       a: "We prioritize emergency tarping requests and typically respond within hours. For active water intrusion, call us directly at 817-266-9433 for the fastest response.",
     },
     {
-      q: "HOW LONG DOES A TARP LAST?",
+      q: "How long does a tarp last?",
       a: "Our emergency tarps are installed to withstand additional weather events and typically last several weeks to months. They are a temporary measure to protect your property while we schedule the permanent repair or replacement.",
     },
     {
-      q: "WILL MY INSURANCE COVER EMERGENCY TARPING?",
+      q: "Will my insurance cover emergency tarping?",
       a: "Most homeowner\u2019s insurance policies cover emergency tarping as part of your duty to mitigate further damage. We provide documentation of the emergency service for your insurance claim.",
     },
     {
-      q: "WHAT SHOULD I DO WHILE WAITING FOR THE TARPING CREW?",
+      q: "What should I do while waiting for the tarping crew?",
       a: "Move valuables away from the affected area, place buckets or containers to catch water, and avoid going on the roof yourself. If there is a risk of structural collapse, evacuate the area and call 911.",
     },
   ],

@@ -135,19 +135,19 @@ const pageData: ServicePageData = {
   faqHeading: "WHAT TO KNOW BEFORE YOU BUILD.",
   faqs: [
     {
-      q: "HOW LONG DOES A ROOF REPLACEMENT TAKE?",
+      q: "How long does a roof replacement take?",
       a: "For a standard residential home, most roof replacements are completed in 1 to 2 days. Weather conditions, the size of your roof, and the complexity of the job can sometimes extend this timeline, but we always communicate the expected schedule upfront.",
     },
     {
-      q: "WILL MY INSURANCE COVER A ROOF REPLACEMENT?",
+      q: "Will my insurance cover a roof replacement?",
       a: "If your roof sustained damage from a storm (like hail or high winds), your homeowner\u2019s insurance will likely cover the replacement cost minus your deductible. If the replacement is due to age or normal wear and tear, it is typically out-of-pocket. We can help assess the damage to determine if an insurance claim is viable.",
     },
     {
-      q: "WHAT HAPPENS TO MY GUTTERS DURING A REPLACEMENT?",
+      q: "What happens to my gutters during a replacement?",
       a: "We take careful measures to protect your existing gutters during the tear-off and installation phases. If your gutters were damaged in a storm or are failing, we can also provide a quote to replace them at the same time as your roof.",
     },
     {
-      q: "DO I NEED TO LEAVE MY HOUSE DURING THE INSTALLATION?",
+      q: "Do I need to leave my house during the installation?",
       a: "You do not need to leave your house, but it will be noisy. There will be constant hammering and footsteps on your roof throughout the day. If you work from home or have small children/pets sensitive to noise, you might prefer to make other arrangements for the day of installation.",
     },
   ],

@@ -70,19 +70,19 @@ const pageData: ServicePageData = {
   faqHeading: "RESTORATION PROJECT QUESTIONS.",
   faqs: [
     {
-      q: "WHAT DOES FULL PROPERTY RESTORATION INCLUDE?",
+      q: "What does full property restoration include?",
       a: "Full restoration can include roofing, siding, fascia, soffit, gutters, interior drywall, painting, flooring, and any other components damaged by storms, water intrusion, or other events. We assess the full scope and handle everything under one project.",
     },
     {
-      q: "CAN YOU HANDLE BOTH INTERIOR AND EXTERIOR WORK?",
+      q: "Can you handle both interior and exterior work?",
       a: "Yes. Unlike many roofing companies that only handle the exterior, we provide both interior and exterior restoration. This means one crew, one schedule, and one point of contact for your entire project.",
     },
     {
-      q: "HOW DO YOU COORDINATE WITH INSURANCE FOR RESTORATION?",
+      q: "How do you coordinate with insurance for restoration?",
       a: "We provide detailed scope-of-work documentation, damage reports, and photographic evidence for your insurance company. We work directly with adjusters and supplement claims when the initial assessment doesn\u2019t cover the full scope of damage.",
     },
     {
-      q: "HOW LONG DOES A FULL RESTORATION PROJECT TAKE?",
+      q: "How long does a full restoration project take?",
       a: "Timeline depends on the scope of damage. A roof-and-exterior project might take 1\u20132 weeks, while a full interior-and-exterior restoration could take several weeks. We provide a detailed timeline before starting and communicate any changes.",
     },
   ],

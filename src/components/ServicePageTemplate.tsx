@@ -10,8 +10,8 @@ import ModalProvider from "@/components/ModalProvider";
 import ReviewCard, { type Review } from "@/components/ReviewCard";
 import ChevronIcon from "@/components/icons/ChevronIcon";
 import { fetchGoogleReviews } from "@/lib/google-reviews";
-import { generateServicePageSchema } from "@/lib/schema";
-import { BUSINESS } from "@/lib/schema-business";
+import { buildServicePageSchema } from "@/lib/schema";
+import { BUSINESS, BUSINESS_CONFIG } from "@/lib/schema-business";
 
 interface Breadcrumb {
   label: string;
@@ -71,15 +71,24 @@ export default async function ServicePageTemplate({
   const reviews = liveReviews ?? data.reviews;
   const titleLines = data.title.split("\n");
 
-  const schema = generateServicePageSchema({
-    title: data.title.replace("\n", " "),
-    description: data.subtitle,
-    path: data.path,
-    serviceType: data.serviceType,
-    image: data.heroImage,
-    breadcrumbs: data.breadcrumbs,
-    faqs: data.faqs,
-  });
+  const { jsonLd: schema } = buildServicePageSchema(
+    BUSINESS_CONFIG,
+    {
+      name: data.title.replace("\n", " "),
+      description: data.subtitle,
+      slug: data.path.replace("/services/", ""),
+      serviceTypes: [data.serviceType],
+      serviceAreas: BUSINESS_CONFIG.areaServed ?? [],
+      image: data.heroImage
+        ? { url: `${BUSINESS_CONFIG.url}${data.heroImage}`, name: data.title.replace("\n", " ") }
+        : undefined,
+      breadcrumbParent: data.breadcrumbs[0]
+        ? { name: data.breadcrumbs[0].label, path: data.breadcrumbs[0].href ?? "/services" }
+        : undefined,
+      faqs: data.faqs.map((f) => ({ question: f.q, answer: f.a })),
+    },
+    { includeSitewide: false, strict: false },
+  );
 
   return (
     <ModalProvider>

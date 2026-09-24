@@ -70,19 +70,19 @@ const pageData: ServicePageData = {
   faqHeading: "EXTERIOR REPAIR QUESTIONS.",
   faqs: [
     {
-      q: "WHAT EXTERIOR COMPONENTS DO YOU REPAIR?",
+      q: "What exterior components do you repair?",
       a: "We repair and replace siding, fascia, soffit, trim, window wraps, and other exterior components. If your home\u2019s exterior was damaged by a storm, age, or moisture, we can restore it.",
     },
     {
-      q: "CAN YOU MATCH MY EXISTING SIDING AND TRIM?",
+      q: "Can you match my existing siding and trim?",
       a: "In most cases, yes. We work to match existing materials, colors, and profiles as closely as possible. If an exact match isn\u2019t available, we\u2019ll discuss the best options with you before starting work.",
     },
     {
-      q: "DO YOU HANDLE INSURANCE CLAIMS FOR EXTERIOR DAMAGE?",
+      q: "Do you handle insurance claims for exterior damage?",
       a: "Yes. Storm damage to siding, fascia, and soffit is often covered by homeowner\u2019s insurance. We provide detailed documentation and work with your adjuster to ensure your claim covers the necessary repairs.",
     },
     {
-      q: "CAN EXTERIOR REPAIRS BE DONE AT THE SAME TIME AS ROOFING?",
+      q: "Can exterior repairs be done at the same time as roofing?",
       a: "Absolutely, and it\u2019s often more efficient and cost-effective to combine exterior repairs with roofing work. One project, one crew, one cleanup.",
     },
   ],

@@ -11,8 +11,8 @@ import ReviewCard, { type Review } from "@/components/ReviewCard";
 import ProjectCard, { type Project } from "@/components/ProjectCard";
 import ChevronIcon from "@/components/icons/ChevronIcon";
 import { fetchGoogleReviews } from "@/lib/google-reviews";
-import { generateServiceAreaSchema } from "@/lib/schema";
-import { BUSINESS } from "@/lib/schema-business";
+import { buildServiceAreaSchema } from "@/lib/schema";
+import { BUSINESS, BUSINESS_CONFIG } from "@/lib/schema-business";
 
 interface FAQ {
   q: string;
@@ -84,16 +84,21 @@ export default async function ServiceAreaTemplate({
 
   const reviews = liveReviews ?? data.reviews;
 
-  const schema = generateServiceAreaSchema({
-    city: data.city,
-    stateFull: data.stateFull,
-    stateAbbr: data.state,
-    path: `/areas/${data.slug}`,
-    metaDescription: data.metaDescription,
-    image: data.heroImage,
-    imageAlt: data.heroImageAlt,
-    faqs: data.faqs,
-  });
+  const { jsonLd: schema } = buildServiceAreaSchema(
+    BUSINESS_CONFIG,
+    {
+      city: data.city,
+      state: data.stateFull,
+      stateCode: data.state,
+      slug: data.slug,
+      description: data.metaDescription,
+      image: data.heroImage
+        ? { url: `${BUSINESS_CONFIG.url}${data.heroImage}`, name: data.heroImageAlt }
+        : undefined,
+      faqs: data.faqs.map((f) => ({ question: f.q, answer: f.a })),
+    },
+    { includeSitewide: false, strict: false },
+  );
 
   return (
     <ModalProvider>

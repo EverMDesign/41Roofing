@@ -4,7 +4,7 @@ import MobileBottomBar from "@/components/MobileBottomBar";
 import ModalProvider from "@/components/ModalProvider";
 // TODO: Re-enable after A2P approval
 // import InspectionModal from "@/components/InspectionModal";
-import { generateHomepageSchema } from "@/lib/schema";
+import { buildHomepageSchema } from "@/lib/schema-business";
 import { fetchGoogleReviews } from "@/lib/google-reviews";
 import Hero from "@/components/sections/Hero";
 import TrustBar from "@/components/sections/TrustBar";
@@ -28,7 +28,7 @@ export default async function Home() {
   const rating = reviewsData
     ? { ratingValue: reviewsData.rating, reviewCount: reviewsData.totalReviews }
     : undefined;
-  const homepageSchema = generateHomepageSchema(homepageFaqs, rating);
+  const homepageSchema = buildHomepageSchema(homepageFaqs, rating);
 
   return (
     <ModalProvider>
