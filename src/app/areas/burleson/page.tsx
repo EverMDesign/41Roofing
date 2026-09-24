@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   title: "Roofing in Burleson, TX | 41 Roofing & Restoration",
   description:
     "Local roofing contractor serving Burleson, TX. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping. Honest assessments from a team that lives and works in your community.",
+  openGraph: {
+    title: "Roofing in Burleson, TX | 41 Roofing & Restoration",
+    description: "Local roofing contractor serving Burleson, TX. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping. Honest assessments from a team that lives and works in your community.",
+    url: "/areas/burleson",
+    images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — roofing in Burleson TX" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Roofing in Burleson, TX | 41 Roofing & Restoration",
+    description: "Local roofing contractor serving Burleson, TX. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping. Honest assessments from a team that lives and works in your community.",
+    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+  },
 };
 
 const reviews: Review[] = [

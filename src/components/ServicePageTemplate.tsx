@@ -11,6 +11,7 @@ import ReviewCard, { type Review } from "@/components/ReviewCard";
 import ChevronIcon from "@/components/icons/ChevronIcon";
 import { fetchGoogleReviews } from "@/lib/google-reviews";
 import { generateServicePageSchema } from "@/lib/schema";
+import { BUSINESS } from "@/lib/schema-business";
 
 interface Breadcrumb {
   label: string;
@@ -178,6 +179,26 @@ export default async function ServicePageTemplate({
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
                 {reviews.map((review) => (
                   <ReviewCard key={review.name} review={review} />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Service Areas Cross-Links */}
+          <section className="py-16 md:py-20 bg-brand-white border-t border-brand-border">
+            <div className="max-w-[1400px] mx-auto px-6 md:px-12 text-center">
+              <h2 className="font-heading font-black text-[24px] md:text-[32px] text-brand-black uppercase mb-8">
+                Areas We Serve
+              </h2>
+              <div className="flex flex-wrap justify-center gap-3">
+                {BUSINESS.areaPages.map((area) => (
+                  <Link
+                    key={area.slug}
+                    href={`/areas/${area.slug}`}
+                    className="px-5 py-2.5 bg-brand-softGray border border-brand-border rounded-full font-heading font-bold text-sm uppercase tracking-wide text-brand-charcoal hover:bg-brand-aqua hover:text-brand-black hover:border-brand-aqua transition-colors"
+                  >
+                    {area.name}, TX
+                  </Link>
                 ))}
               </div>
             </div>

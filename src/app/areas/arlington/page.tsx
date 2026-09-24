@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   title: "Roofing in Arlington, TX | 41 Roofing & Restoration",
   description:
     "Trusted roofing contractor serving Arlington, TX. Free inspections, roof repair, replacement, storm damage restoration, and commercial roofing for one of the largest cities in North Texas.",
+  openGraph: {
+    title: "Roofing in Arlington, TX | 41 Roofing & Restoration",
+    description: "Trusted roofing contractor serving Arlington, TX. Free inspections, roof repair, replacement, storm damage restoration, and commercial roofing for one of the largest cities in North Texas.",
+    url: "/areas/arlington",
+    images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — roofing in Arlington TX" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Roofing in Arlington, TX | 41 Roofing & Restoration",
+    description: "Trusted roofing contractor serving Arlington, TX. Free inspections, roof repair, replacement, storm damage restoration, and commercial roofing for one of the largest cities in North Texas.",
+    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+  },
 };
 
 const reviews: Review[] = [

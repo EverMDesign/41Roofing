@@ -120,3 +120,22 @@ Footer links for "Privacy Policy" and "Terms of Service" currently point to `#co
 2. Update footer links in `src/components/Footer.tsx` (lines 72-73)
 
 > Revisit when legal copy is ready.
+
+---
+
+## SEO & LLM Optimization — P2 Items
+
+### Blog / Resources Hub
+Create `/blog` or `/resources` with 5–10 educational guides targeting top-of-funnel keywords (e.g. "how to know if you need a new roof", "hail damage signs in Texas"). Helps Google and AI assistants cite 41 Roofing as an authority.
+
+### Custom 404 Page
+Create `src/app/not-found.tsx` with branded design, helpful links back to services/areas, and a CTA. Currently uses the default Next.js 404.
+
+### Viewport Export
+Add explicit `viewport` export to `src/app/layout.tsx` per Next.js best practices. Currently relying on the framework default.
+
+### TrustBar Badge Optimization
+Convert the TrustBar PNG badges in `src/components/sections/TrustBar.tsx` to WebP for faster load times. Check `public/` for the source images.
+
+### Auto-Generate `llms.txt` at Build Time
+Write a build script that pulls from `schema-business.ts` (services, areas) and `FAQ.tsx` (FAQ data) to auto-generate `public/llms.txt`. Keeps the AI crawler cheat sheet in sync without manual updates.

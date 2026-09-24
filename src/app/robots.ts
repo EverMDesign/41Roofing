@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/confirmation"],
     },
-    sitemap: "https://41roofing.com/sitemap.xml",
+    sitemap: "https://www.41roofing.com/sitemap.xml",
   };
 }

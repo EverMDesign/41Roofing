@@ -6,7 +6,7 @@
 
 export const BUSINESS = {
   name: "41 Roofing & Restoration",
-  url: "https://41roofing.com",
+  url: "https://www.41roofing.com",
   phone: "(817) 266-9433",
   email: "info@41roofing.com",
   founder: "Brandi Burk",
@@ -33,6 +33,15 @@ export const BUSINESS = {
     "Mansfield, TX",
     "Godley, TX",
     "Fort Worth, TX",
+  ],
+  /** Areas with dedicated pages — used for cross-linking */
+  areaPages: [
+    { slug: "crowley", name: "Crowley" },
+    { slug: "burleson", name: "Burleson" },
+    { slug: "arlington", name: "Arlington" },
+    { slug: "joshua", name: "Joshua" },
+    { slug: "cleburne", name: "Cleburne" },
+    { slug: "keller", name: "Keller" },
   ],
   services: [
     {

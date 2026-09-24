@@ -5,10 +5,22 @@ import ServicePageTemplate, {
 import type { Review } from "@/components/ReviewCard";
 
 export const metadata: Metadata = {
-  title: "Gutters | 41 Roofing & Restoration",
+  title: "Gutters in Crowley, TX | 41 Roofing & Restoration",
   description:
     "Seamless gutter installation and replacement in Crowley and North Texas. Protect your foundation, landscaping, and siding with a properly functioning gutter system.",
   alternates: { canonical: "/services/gutters" },
+  openGraph: {
+    title: "Gutters in Crowley, TX | 41 Roofing & Restoration",
+    description: "Seamless gutter installation and replacement in Crowley and North Texas. Protect your foundation, landscaping, and siding with a properly functioning gutter system.",
+    url: "/services/gutters",
+    images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — gutter services" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gutters in Crowley, TX | 41 Roofing & Restoration",
+    description: "Seamless gutter installation and replacement in Crowley and North Texas. Protect your foundation, landscaping, and siding with a properly functioning gutter system.",
+    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+  },
 };
 
 const reviews: Review[] = [

@@ -12,6 +12,7 @@ import ProjectCard, { type Project } from "@/components/ProjectCard";
 import ChevronIcon from "@/components/icons/ChevronIcon";
 import { fetchGoogleReviews } from "@/lib/google-reviews";
 import { generateServiceAreaSchema } from "@/lib/schema";
+import { BUSINESS } from "@/lib/schema-business";
 
 interface FAQ {
   q: string;
@@ -199,6 +200,26 @@ export default async function ServiceAreaTemplate({
                 {/* <div className="lg:w-1/3 lg:sticky lg:top-32">
                   <QuoteForm variant="sidebar" formType="sidebar-quote" />
                 </div> */}
+              </div>
+            </div>
+          </section>
+
+          {/* Services Cross-Links */}
+          <section className="py-16 md:py-20 bg-brand-softGray border-t border-brand-border">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-12 text-center">
+              <h2 className="font-heading font-black text-[24px] md:text-[32px] text-brand-black uppercase mb-8">
+                Our Services in {data.city}
+              </h2>
+              <div className="flex flex-wrap justify-center gap-3">
+                {BUSINESS.services.map((svc) => (
+                  <Link
+                    key={svc.id}
+                    href={`/services/${svc.id}`}
+                    className="px-5 py-2.5 bg-brand-white border border-brand-border rounded-full font-heading font-bold text-sm uppercase tracking-wide text-brand-charcoal hover:bg-brand-aqua hover:text-brand-black hover:border-brand-aqua transition-colors"
+                  >
+                    {svc.name}
+                  </Link>
+                ))}
               </div>
             </div>
           </section>

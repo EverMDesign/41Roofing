@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import Script from "next/script";
 import { generateSitewideSchema } from "@/lib/schema";
+import { fetchGoogleReviews } from "@/lib/google-reviews";
 import "./globals.css";
 
 const inter = Inter({
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   title: "41 Roofing & Restoration | Crowley, TX Roofing Contractor",
   description:
     "Honest inspections. Dependable results. 41 Roofing & Restoration provides roof inspections, repairs, replacements, storm restoration, and commercial roofing throughout Crowley and North Texas.",
-  metadataBase: new URL("https://41roofing.com"),
+  metadataBase: new URL("https://www.41roofing.com"),
   alternates: {
     canonical: "/",
   },
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     title: "41 Roofing & Restoration | Crowley, TX Roofing Contractor",
     description:
       "Honest inspections. Dependable results. Premier roofing and restoration services in Crowley and North Texas.",
-    url: "https://41roofing.com",
+    url: "https://www.41roofing.com",
     siteName: "41 Roofing & Restoration",
     locale: "en_US",
     type: "website",
@@ -49,7 +50,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const reviewsData = await fetchGoogleReviews();
+  const rating = reviewsData
+    ? { ratingValue: reviewsData.rating, reviewCount: reviewsData.totalReviews }
+    : undefined;
+
   return (
     <html
       lang="en"
@@ -65,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateSitewideSchema()) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateSitewideSchema(rating)) }}
         />
         {children}
         <Script

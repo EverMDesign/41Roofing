@@ -39,7 +39,7 @@ export default function PrivacyPage() {
                 <div className="mt-3 space-y-1">
                   <p><strong className="text-brand-black">Business Contact Information:</strong></p>
                   <p>41 Roofing and Restoration LLC</p>
-                  <p>208 East Main Street Suite D</p>
+                  <p>208 E Main St Suite D</p>
                   <p>Crowley, TX 76036</p>
                   <p>Call/Text: <a href="tel:817-266-9433" className="text-brand-aqua hover:underline">(817) 266-9433</a></p>
                   <p>Office: <a href="tel:+1-817-887-9200" className="text-brand-aqua hover:underline">(817) 887-9200</a></p>
@@ -215,7 +215,7 @@ export default function PrivacyPage() {
                 <p>If you have questions about this Privacy Policy or how your information is handled, contact us at:</p>
                 <div className="mt-3 space-y-1">
                   <p><strong className="text-brand-black">41 Roofing and Restoration LLC</strong></p>
-                  <p>208 East Main Street Suite D</p>
+                  <p>208 E Main St Suite D</p>
                   <p>Crowley, TX 76036</p>
                   <p>Call/Text: <a href="tel:817-266-9433" className="text-brand-aqua hover:underline">(817) 266-9433</a></p>
                   <p>Office: <a href="tel:+1-817-887-9200" className="text-brand-aqua hover:underline">(817) 887-9200</a></p>

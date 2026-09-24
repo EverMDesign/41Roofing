@@ -6,9 +6,21 @@ import type { Review } from "@/components/ReviewCard";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/services/restoration" },
-  title: "Interior & Exterior Restoration | 41 Roofing & Restoration",
+  title: "Interior & Exterior Restoration in Crowley, TX | 41 Roofing & Restoration",
   description:
     "Full property restoration after storm or water damage. Interior and exterior restoration services for homes in Crowley and North Texas.",
+  openGraph: {
+    title: "Interior & Exterior Restoration in Crowley, TX | 41 Roofing & Restoration",
+    description: "Full property restoration after storm or water damage. Interior and exterior restoration services for homes in Crowley and North Texas.",
+    url: "/services/restoration",
+    images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — restoration services" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Interior & Exterior Restoration in Crowley, TX | 41 Roofing & Restoration",
+    description: "Full property restoration after storm or water damage. Interior and exterior restoration services for homes in Crowley and North Texas.",
+    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+  },
 };
 
 const reviews: Review[] = [

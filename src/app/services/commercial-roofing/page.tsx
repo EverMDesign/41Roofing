@@ -5,10 +5,22 @@ import ServicePageTemplate, {
 import type { Review } from "@/components/ReviewCard";
 
 export const metadata: Metadata = {
-  title: "Commercial Roofing | 41 Roofing & Restoration",
+  title: "Commercial Roofing in Crowley, TX | 41 Roofing & Restoration",
   description:
     "Low-slope and flat roof solutions for businesses in North Texas. Expert inspection, repair, and replacement for commercial properties.",
   alternates: { canonical: "/services/commercial-roofing" },
+  openGraph: {
+    title: "Commercial Roofing in Crowley, TX | 41 Roofing & Restoration",
+    description: "Low-slope and flat roof solutions for businesses in North Texas. Expert inspection, repair, and replacement for commercial properties.",
+    url: "/services/commercial-roofing",
+    images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — commercial roofing services" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Commercial Roofing in Crowley, TX | 41 Roofing & Restoration",
+    description: "Low-slope and flat roof solutions for businesses in North Texas. Expert inspection, repair, and replacement for commercial properties.",
+    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+  },
 };
 
 const reviews: Review[] = [

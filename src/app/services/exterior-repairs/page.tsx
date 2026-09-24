@@ -6,9 +6,21 @@ import type { Review } from "@/components/ReviewCard";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/services/exterior-repairs" },
-  title: "Exterior Repairs | 41 Roofing & Restoration",
+  title: "Exterior Repairs in Crowley, TX | 41 Roofing & Restoration",
   description:
     "Siding, fascia, soffit, and trim restoration for homes in Crowley and North Texas. Repair storm damage and restore your home\u2019s exterior.",
+  openGraph: {
+    title: "Exterior Repairs in Crowley, TX | 41 Roofing & Restoration",
+    description: "Siding, fascia, soffit, and trim restoration for homes in Crowley and North Texas. Repair storm damage and restore your home\u2019s exterior.",
+    url: "/services/exterior-repairs",
+    images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — exterior repair services" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Exterior Repairs in Crowley, TX | 41 Roofing & Restoration",
+    description: "Siding, fascia, soffit, and trim restoration for homes in Crowley and North Texas. Repair storm damage and restore your home\u2019s exterior.",
+    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+  },
 };
 
 const reviews: Review[] = [

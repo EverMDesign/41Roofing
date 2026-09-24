@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   title: "Roofing in Joshua, TX | 41 Roofing & Restoration",
   description:
     "Local roofing contractor serving Joshua, TX. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping for this growing South DFW community.",
+  openGraph: {
+    title: "Roofing in Joshua, TX | 41 Roofing & Restoration",
+    description: "Local roofing contractor serving Joshua, TX. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping for this growing South DFW community.",
+    url: "/areas/joshua",
+    images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — roofing in Joshua TX" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Roofing in Joshua, TX | 41 Roofing & Restoration",
+    description: "Local roofing contractor serving Joshua, TX. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping for this growing South DFW community.",
+    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+  },
 };
 
 const reviews: Review[] = [

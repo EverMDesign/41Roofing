@@ -5,6 +5,7 @@ import ModalProvider from "@/components/ModalProvider";
 // TODO: Re-enable after A2P approval
 // import InspectionModal from "@/components/InspectionModal";
 import { generateHomepageSchema } from "@/lib/schema";
+import { fetchGoogleReviews } from "@/lib/google-reviews";
 import Hero from "@/components/sections/Hero";
 import TrustBar from "@/components/sections/TrustBar";
 import Services from "@/components/sections/Services";
@@ -17,13 +18,17 @@ import Owner from "@/components/sections/Owner";
 import WhyChoose from "@/components/sections/WhyChoose";
 import StatementBanner from "@/components/sections/StatementBanner";
 import ServiceAreas from "@/components/sections/ServiceAreas";
-import FAQ from "@/components/sections/FAQ";
+import FAQ, { faqs as homepageFaqs } from "@/components/sections/FAQ";
 // TODO: Re-enable after A2P approval
 // import Contact from "@/components/sections/Contact";
 import MapEmbed from "@/components/sections/MapEmbed";
 
-export default function Home() {
-  const homepageSchema = generateHomepageSchema();
+export default async function Home() {
+  const reviewsData = await fetchGoogleReviews();
+  const rating = reviewsData
+    ? { ratingValue: reviewsData.rating, reviewCount: reviewsData.totalReviews }
+    : undefined;
+  const homepageSchema = generateHomepageSchema(homepageFaqs, rating);
 
   return (
     <ModalProvider>

@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   description:
     "Crowley's hometown roofing contractor. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping. Based in Crowley — honest assessments from your neighbors.",
   alternates: { canonical: "/areas/crowley" },
+  openGraph: {
+    title: "Roofing in Crowley, TX | 41 Roofing & Restoration",
+    description: "Crowley's hometown roofing contractor. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping. Based in Crowley — honest assessments from your neighbors.",
+    url: "/areas/crowley",
+    images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — roofing in Crowley TX" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Roofing in Crowley, TX | 41 Roofing & Restoration",
+    description: "Crowley's hometown roofing contractor. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping. Based in Crowley — honest assessments from your neighbors.",
+    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+  },
 };
 
 const reviews: Review[] = [
@@ -82,16 +94,16 @@ const pageData: ServiceAreaData = {
   slug: "crowley",
   metaDescription: "Crowley's hometown roofing contractor. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping. Based in Crowley — honest assessments from your neighbors.",
   heroImage: "/crowley-landmark.webp",
-  heroImageAlt: "Downtown Crowley, TX near 41 Roofing headquarters on East Main Street",
+  heroImageAlt: "Downtown Crowley, TX near 41 Roofing headquarters on E Main St",
   eyebrow: "Our Home Base",
   heroTitle: "Roofing & Restoration\nIn Crowley, TX",
-  heroSubtitle: "Our home base since day one — your neighbors on East Main Street.",
+  heroSubtitle: "Our home base since day one — your neighbors on E Main St.",
   aboutEyebrow: "About Crowley",
   aboutHeading: "Built here. Based here. Not going anywhere.",
   aboutImage: "/crowley-homes.webp",
   aboutImageAlt: "Residential roofing neighborhoods near Bicentennial Park in Crowley TX 76036",
   aboutParagraphs: [
-    "Crowley is more than our service area — it's our home. Named after S.H. Crowley, the Gulf, Colorado and Santa Fe Railway's master of transportation when the railroad built its station here in 1885, this community has grown from a dairy farming settlement into a thriving suburb of over 21,000 residents. 41 Roofing & Restoration is headquartered right here on East Main Street, and we take immense pride in protecting the properties of the community we live in every day.",
+    "Crowley is more than our service area — it's our home. Named after S.H. Crowley, the Gulf, Colorado and Santa Fe Railway's master of transportation when the railroad built its station here in 1885, this community has grown from a dairy farming settlement into a thriving suburb of over 21,000 residents. 41 Roofing & Restoration is headquartered right here on E Main St, and we take immense pride in protecting the properties of the community we live in every day.",
     "Crowley sits in one of the most hail-active corridors in the country — 302 storm reports in a recent 12-month period with hail up to 4.5 inches and winds reaching 89 mph. The 1995 Fort Worth hailstorm caused over $1 billion in Tarrant County damage, and the pattern hasn't slowed down. From the established homes in Deer Creek Estates and Mayfair Estates to the growing Chisholm Trail Ranch community, we know these neighborhoods and what our weather does to them.",
   ],
   servicesHeading: "How we serve Crowley homeowners",
@@ -135,7 +147,7 @@ const pageData: ServiceAreaData = {
   faqs: [
     {
       q: "Where is 41 Roofing located?",
-      a: "We're headquartered at 208 East Main Street, Suite D, in Crowley, TX. We're a locally owned and operated business — not a storm chaser or franchise. When you call us, you're calling your neighbors.",
+      a: "We're headquartered at 208 E Main St, Suite D, in Crowley, TX. We're a locally owned and operated business — not a storm chaser or franchise. When you call us, you're calling your neighbors.",
     },
     {
       q: "Do I need a permit for a roof replacement in Crowley?",

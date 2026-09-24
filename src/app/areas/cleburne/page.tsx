@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   title: "Roofing in Cleburne, TX | 41 Roofing & Restoration",
   description:
     "Trusted roofing contractor serving Cleburne, TX. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping for the Johnson County seat.",
+  openGraph: {
+    title: "Roofing in Cleburne, TX | 41 Roofing & Restoration",
+    description: "Trusted roofing contractor serving Cleburne, TX. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping for the Johnson County seat.",
+    url: "/areas/cleburne",
+    images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — roofing in Cleburne TX" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Roofing in Cleburne, TX | 41 Roofing & Restoration",
+    description: "Trusted roofing contractor serving Cleburne, TX. Free inspections, roof repair, replacement, storm damage restoration, and emergency tarping for the Johnson County seat.",
+    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+  },
 };
 
 const reviews: Review[] = [

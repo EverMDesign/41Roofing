@@ -1,6 +1,6 @@
 import ChevronIcon from "@/components/icons/ChevronIcon";
 
-const faqs = [
+export const faqs = [
   {
     q: "HOW DO I KNOW IF I SHOULD REPAIR OR REPLACE MY ROOF?",
     a: "It depends on the age of the roof, the extent of the damage, and the condition of the materials. We perform a thorough inspection to determine if a targeted repair will resolve the issue or if a full replacement is the most cost-effective long-term solution. We will never push a replacement if a repair is viable.",

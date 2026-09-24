@@ -6,9 +6,21 @@ import type { Review } from "@/components/ReviewCard";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/services/painting" },
-  title: "Interior & Exterior Painting | 41 Roofing & Restoration",
+  title: "Interior & Exterior Painting in Crowley, TX | 41 Roofing & Restoration",
   description:
     "Professional interior and exterior painting services in Crowley and North Texas. Expert prep, prime, and finish for any surface.",
+  openGraph: {
+    title: "Interior & Exterior Painting in Crowley, TX | 41 Roofing & Restoration",
+    description: "Professional interior and exterior painting services in Crowley and North Texas. Expert prep, prime, and finish for any surface.",
+    url: "/services/painting",
+    images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — painting services" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Interior & Exterior Painting in Crowley, TX | 41 Roofing & Restoration",
+    description: "Professional interior and exterior painting services in Crowley and North Texas. Expert prep, prime, and finish for any surface.",
+    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+  },
 };
 
 const reviews: Review[] = [

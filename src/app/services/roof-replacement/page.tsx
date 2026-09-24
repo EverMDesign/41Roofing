@@ -5,10 +5,22 @@ import ServicePageTemplate, {
 import type { Review } from "@/components/ReviewCard";
 
 export const metadata: Metadata = {
-  title: "Roof Replacement | 41 Roofing & Restoration",
+  title: "Roof Replacement in Crowley, TX | 41 Roofing & Restoration",
   description:
     "Complete tear-offs and expert installation using premium materials. Built to withstand the intense Texas climate, protect your home, and increase your property value.",
   alternates: { canonical: "/services/roof-replacement" },
+  openGraph: {
+    title: "Roof Replacement in Crowley, TX | 41 Roofing & Restoration",
+    description: "Complete tear-offs and expert installation using premium materials. Built to withstand the intense Texas climate, protect your home, and increase your property value.",
+    url: "/services/roof-replacement",
+    images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — roof replacement services" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Roof Replacement in Crowley, TX | 41 Roofing & Restoration",
+    description: "Complete tear-offs and expert installation using premium materials. Built to withstand the intense Texas climate, protect your home, and increase your property value.",
+    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+  },
 };
 
 const signs = [

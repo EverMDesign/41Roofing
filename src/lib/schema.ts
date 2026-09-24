@@ -50,12 +50,22 @@ interface ServicePageSchemaInput {
   faqs?: { q: string; a: string }[];
 }
 
+// ── Types ────────────────────────────────────────────────────────────────────
+
+export interface RatingData {
+  ratingValue: number;
+  reviewCount: number;
+}
+
 // ── Shared Helpers ───────────────────────────────────────────────────────────
 
-function businessEntity() {
+function businessEntity(rating?: RatingData) {
   return {
     "@type": "RoofingContractor" as const,
     "@id": `${BUSINESS.url}/#business`,
+    "sameAs": [
+      "https://share.google/lptYzXmBTygQYyjS4",
+    ],
     "name": BUSINESS.name,
     "image": `${BUSINESS.url}${BUSINESS.logo}`,
     "logo": {
@@ -111,6 +121,17 @@ function businessEntity() {
       "@type": "Person" as const,
       "name": BUSINESS.founder,
     },
+    ...(rating
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating" as const,
+            "ratingValue": rating.ratingValue,
+            "reviewCount": rating.reviewCount,
+            "bestRating": 5,
+            "worstRating": 1,
+          },
+        }
+      : {}),
   };
 }
 
@@ -130,10 +151,10 @@ function webSiteEntity() {
  * RoofingContractor + WebSite nodes, output on every page via layout.
  * Ensures /#business and /#website @id references resolve everywhere.
  */
-export function generateSitewideSchema() {
+export function generateSitewideSchema(rating?: RatingData) {
   return {
     "@context": "https://schema.org",
-    "@graph": [businessEntity(), webSiteEntity()],
+    "@graph": [businessEntity(rating), webSiteEntity()],
   };
 }
 
@@ -143,8 +164,8 @@ export function generateSitewideSchema() {
  * Full @graph for the homepage — matches the live site's schema structure.
  * Includes: RoofingContractor, all Service entities, WebPage, WebSite.
  */
-export function generateHomepageSchema() {
-  const business = businessEntity();
+export function generateHomepageSchema(faqs?: { q: string; a: string }[], rating?: RatingData) {
+  const business = businessEntity(rating);
 
   const serviceEntities = BUSINESS.services.map((svc) => ({
     "@type": "Service" as const,
@@ -166,9 +187,26 @@ export function generateHomepageSchema() {
     "mainEntity": { "@id": `${BUSINESS.url}/#business` },
   };
 
+  const graph: Record<string, unknown>[] = [business, ...serviceEntities, webPage, webSiteEntity()];
+
+  if (faqs && faqs.length > 0) {
+    graph.push({
+      "@type": "FAQPage" as const,
+      "@id": `${BUSINESS.url}/#faq`,
+      "mainEntity": faqs.map((faq) => ({
+        "@type": "Question" as const,
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer" as const,
+          "text": faq.a,
+        },
+      })),
+    });
+  }
+
   return {
     "@context": "https://schema.org",
-    "@graph": [business, ...serviceEntities, webPage, webSiteEntity()],
+    "@graph": graph,
   };
 }
 

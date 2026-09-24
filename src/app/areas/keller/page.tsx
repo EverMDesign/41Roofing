@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   title: "Roofing in Keller, TX | 41 Roofing & Restoration",
   description:
     "Professional roofing contractor serving Keller, TX. Free inspections, roof repair, replacement, storm damage restoration, and premium shingle installations for one of North Texas's most desirable communities.",
+  openGraph: {
+    title: "Roofing in Keller, TX | 41 Roofing & Restoration",
+    description: "Professional roofing contractor serving Keller, TX. Free inspections, roof repair, replacement, storm damage restoration, and premium shingle installations for one of North Texas's most desirable communities.",
+    url: "/areas/keller",
+    images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — roofing in Keller TX" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Roofing in Keller, TX | 41 Roofing & Restoration",
+    description: "Professional roofing contractor serving Keller, TX. Free inspections, roof repair, replacement, storm damage restoration, and premium shingle installations for one of North Texas's most desirable communities.",
+    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+  },
 };
 
 const reviews: Review[] = [

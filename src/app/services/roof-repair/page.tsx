@@ -5,10 +5,24 @@ import ServicePageTemplate, {
 import type { Review } from "@/components/ReviewCard";
 
 export const metadata: Metadata = {
-  title: "Roof Repair | 41 Roofing & Restoration",
+  title: "Roof Repair in Crowley, TX | 41 Roofing & Restoration",
   description:
     "Targeted roof repairs for active leaks, storm damage, and aging materials. Honest assessments and dependable fixes from a local Crowley, TX roofing contractor.",
   alternates: { canonical: "/services/roof-repair" },
+  openGraph: {
+    title: "Roof Repair in Crowley, TX | 41 Roofing & Restoration",
+    description:
+      "Targeted roof repairs for active leaks, storm damage, and aging materials. Honest assessments and dependable fixes from a local Crowley, TX roofing contractor.",
+    url: "/services/roof-repair",
+    images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — roof repair services" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Roof Repair in Crowley, TX | 41 Roofing & Restoration",
+    description:
+      "Targeted roof repairs for active leaks, storm damage, and aging materials. Honest assessments and dependable fixes from a local Crowley, TX roofing contractor.",
+    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+  },
 };
 
 const commonIssues = [
