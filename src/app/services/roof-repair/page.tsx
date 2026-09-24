@@ -76,7 +76,7 @@ const pageData: ServicePageData = {
   serviceType: "Roofing Contractor",
   breadcrumbs: [
     { label: "Services", href: "/#services" },
-    { label: "Residential" },
+    { label: "Roofing", href: "/services/roofing" },
   ],
   title: "Roof\nRepair",
   subtitle:

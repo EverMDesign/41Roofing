@@ -5,14 +5,14 @@ import ServicePageTemplate, {
 import type { Review } from "@/components/ReviewCard";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/services/painting" },
+  alternates: { canonical: "/services/interior-exterior-painting" },
   title: "Interior & Exterior Painting in Crowley, TX | 41 Roofing & Restoration",
   description:
     "Professional interior and exterior painting services in Crowley and North Texas. Expert prep, prime, and finish for any surface.",
   openGraph: {
     title: "Interior & Exterior Painting in Crowley, TX | 41 Roofing & Restoration",
     description: "Professional interior and exterior painting services in Crowley and North Texas. Expert prep, prime, and finish for any surface.",
-    url: "/services/painting",
+    url: "/services/interior-exterior-painting",
     images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — painting services" }],
   },
   twitter: {
@@ -51,11 +51,11 @@ const reviews: Review[] = [
 ];
 
 const pageData: ServicePageData = {
-  path: "/services/painting",
+  path: "/services/interior-exterior-painting",
   serviceType: "Home Improvement",
   breadcrumbs: [
     { label: "Services", href: "/#services" },
-    { label: "Restoration" },
+    { label: "Restoration", href: "/services/restoration" },
   ],
   title: "Interior &\nExterior Painting",
   subtitle:

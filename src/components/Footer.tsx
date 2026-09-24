@@ -64,8 +64,8 @@ export default function Footer() {
             <li><a href="/services/emergency-tarping" className="hover:text-brand-aqua transition-colors">Emergency Tarping</a></li>
             <li><a href="/services/gutters" className="hover:text-brand-aqua transition-colors">Gutters</a></li>
             <li><a href="/services/exterior-repairs" className="hover:text-brand-aqua transition-colors">Exterior Repairs</a></li>
-            <li><a href="/services/restoration" className="hover:text-brand-aqua transition-colors">Restoration</a></li>
-            <li><a href="/services/painting" className="hover:text-brand-aqua transition-colors">Painting</a></li>
+            <li><a href="/services/interior-exterior-restoration" className="hover:text-brand-aqua transition-colors">Restoration</a></li>
+            <li><a href="/services/interior-exterior-painting" className="hover:text-brand-aqua transition-colors">Painting</a></li>
           </ul>
         </div>
 

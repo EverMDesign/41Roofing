@@ -5,24 +5,24 @@ import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import ModalProvider from "@/components/ModalProvider";
 
-const PAGE_TITLE = "Restoration & Remodeling Services in Crowley, TX | 41 Roofing & Restoration";
+const PAGE_TITLE = "Roofing Services in Crowley, TX | 41 Roofing & Restoration";
 const PAGE_DESC =
-  "Residential and commercial restoration and remodeling services in Crowley and North Texas. Gutters, exterior repairs, interior and exterior restoration, and painting.";
+  "Residential and commercial roofing services in Crowley and North Texas. Roof repair, replacement, commercial roofing, and emergency tarping from a local contractor you can trust.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESC,
-  alternates: { canonical: "/services/restoration" },
+  alternates: { canonical: "/services/roofing" },
   openGraph: {
     title: PAGE_TITLE,
     description: PAGE_DESC,
-    url: "/services/restoration",
+    url: "/services/roofing",
     images: [
       {
         url: "/41-roofing-and-restoration-roof-replacement.webp",
         width: 1200,
         height: 630,
-        alt: "41 Roofing and Restoration — restoration and remodeling services in Crowley TX",
+        alt: "41 Roofing and Restoration — roofing services in Crowley TX",
       },
     ],
   },
@@ -36,28 +36,28 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    title: "Gutters",
-    desc: "Seamless gutter installation and replacement. Protect your foundation, landscaping, and siding with a properly functioning gutter system.",
-    href: "/services/gutters",
+    title: "Roof Repair",
+    desc: "Targeted fixes for active leaks, storm damage, missing shingles, and flashing issues. We diagnose the problem and fix it right.",
+    href: "/services/roof-repair",
   },
   {
-    title: "Exterior Repairs",
-    desc: "Siding, fascia, soffit, fence, and general exterior repairs. We restore and protect the exterior of your property with dependable craftsmanship.",
-    href: "/services/exterior-repairs",
+    title: "Roof Replacement",
+    desc: "Complete tear-offs and new system installations using premium architectural and impact-resistant shingles built for the Texas climate.",
+    href: "/services/roof-replacement",
   },
   {
-    title: "Interior & Exterior Restoration",
-    desc: "Full property restoration after storm or water damage. We restore properties to their original condition with quality materials and workmanship.",
-    href: "/services/interior-exterior-restoration",
+    title: "Commercial Roofing",
+    desc: "Low-slope and flat roof solutions for businesses. Inspections, repairs, and full replacements for commercial properties across North Texas.",
+    href: "/services/commercial-roofing",
   },
   {
-    title: "Interior & Exterior Painting",
-    desc: "Professional painting services for residential and commercial properties. Quality materials and clean, detailed workmanship inside and out.",
-    href: "/services/interior-exterior-painting",
+    title: "Emergency Tarping",
+    desc: "Same-day emergency tarping to protect your property from further damage after storms, fallen trees, or sudden roof failures.",
+    href: "/services/emergency-tarping",
   },
 ];
 
-export default function RestorationCategoryPage() {
+export default function RoofingCategoryPage() {
   return (
     <ModalProvider>
       <div className="w-full overflow-x-clip bg-brand-white text-brand-charcoal font-sans">
@@ -75,16 +75,16 @@ export default function RestorationCategoryPage() {
                 <div className="flex items-center gap-2 text-brand-aqua font-heading font-bold tracking-[0.2em] text-xs uppercase mb-6">
                   <Link href="/" className="hover:text-brand-white transition-colors">Home</Link>
                   <span>/</span>
-                  <span>Restoration</span>
+                  <span>Roofing</span>
                 </div>
                 <h1 className="font-heading font-black text-[40px] md:text-[56px] lg:text-[80px] leading-[0.95] text-brand-white uppercase mb-6">
-                  Restoration &amp; Remodeling
+                  Roofing Services
                 </h1>
                 <p className="text-brand-white/60 font-heading font-bold text-sm uppercase tracking-widest mb-8">
                   Residential and Commercial
                 </p>
                 <p className="text-brand-white/80 text-lg max-w-2xl font-light leading-relaxed">
-                  From gutters and exterior repairs to full interior restoration and painting, we bring properties back to life across Crowley and North Texas.
+                  From targeted repairs to complete replacements, we protect homes and businesses across Crowley and North Texas with honest inspections and dependable workmanship.
                 </p>
               </div>
             </div>

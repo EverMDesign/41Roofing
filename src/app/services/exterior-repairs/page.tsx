@@ -55,7 +55,7 @@ const pageData: ServicePageData = {
   serviceType: "Property Restoration",
   breadcrumbs: [
     { label: "Services", href: "/#services" },
-    { label: "Restoration" },
+    { label: "Restoration", href: "/services/restoration" },
   ],
   title: "Exterior\nRepairs",
   subtitle:

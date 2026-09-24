@@ -1,8 +1,8 @@
 const services = [
   { label: "Gutters", href: "/services/gutters" },
   { label: "Exterior Repairs", href: "/services/exterior-repairs" },
-  { label: "Interior & Exterior Restoration", href: "/services/restoration" },
-  { label: "Interior & Exterior Painting", href: "/services/painting" },
+  { label: "Interior & Exterior Restoration", href: "/services/interior-exterior-restoration" },
+  { label: "Interior & Exterior Painting", href: "/services/interior-exterior-painting" },
 ];
 
 export default function Restoration() {

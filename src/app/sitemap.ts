@@ -10,6 +10,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    // Service category pages
+    {
+      url: `${BASE_URL}/services/roofing`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/services/restoration`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     // Service pages
     {
       url: `${BASE_URL}/services/roof-replacement`,
@@ -24,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/services/restoration`,
+      url: `${BASE_URL}/services/interior-exterior-restoration`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
@@ -42,7 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}/services/painting`,
+      url: `${BASE_URL}/services/interior-exterior-painting`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

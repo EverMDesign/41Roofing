@@ -73,7 +73,7 @@ export const BUSINESS = {
       serviceType: "Roofing Contractor",
     },
     {
-      id: "restoration",
+      id: "interior-exterior-restoration",
       name: "Interior and Exterior Restoration",
       description:
         "Comprehensive restoration services for both interior and exterior property damage. From storm damage to general wear, we restore properties to their original condition with quality craftsmanship.",
@@ -87,7 +87,7 @@ export const BUSINESS = {
       serviceType: "Gutter Service",
     },
     {
-      id: "painting",
+      id: "interior-exterior-painting",
       name: "Interior and Exterior Painting",
       description:
         "Professional painting services for residential and commercial properties. Interior and exterior painting with quality materials and clean, detailed workmanship.",

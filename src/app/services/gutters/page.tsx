@@ -55,7 +55,7 @@ const pageData: ServicePageData = {
   serviceType: "Gutter Service",
   breadcrumbs: [
     { label: "Services", href: "/#services" },
-    { label: "Restoration" },
+    { label: "Restoration", href: "/services/restoration" },
   ],
   title: "Gutter\nInstallation",
   subtitle:

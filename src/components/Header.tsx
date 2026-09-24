@@ -14,8 +14,8 @@ const roofingServices = [
 const restorationServices = [
   { label: "Gutters", href: "/services/gutters" },
   { label: "Exterior Repairs", href: "/services/exterior-repairs" },
-  { label: "Interior & Exterior Restoration", href: "/services/restoration" },
-  { label: "Interior & Exterior Painting", href: "/services/painting" },
+  { label: "Interior & Exterior Restoration", href: "/services/interior-exterior-restoration" },
+  { label: "Interior & Exterior Painting", href: "/services/interior-exterior-painting" },
 ];
 
 const serviceAreas = [
@@ -38,8 +38,8 @@ const mobileNavItems = [
   { label: "Emergency Tarping", href: "/services/emergency-tarping" },
   { label: "Gutters", href: "/services/gutters" },
   { label: "Exterior Repairs", href: "/services/exterior-repairs" },
-  { label: "Restoration", href: "/services/restoration" },
-  { label: "Painting", href: "/services/painting" },
+  { label: "Restoration", href: "/services/interior-exterior-restoration" },
+  { label: "Painting", href: "/services/interior-exterior-painting" },
   // { label: "Projects", href: "#projects" },
   { label: "Areas", href: "#service-areas" },
   { label: "FAQ", href: "#faq" },

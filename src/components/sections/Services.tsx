@@ -15,8 +15,8 @@ const roofingServices: ServiceItem[] = [
 const restorationServices: ServiceItem[] = [
   { title: "Gutters", desc: "Seamless gutter installation and replacement.", href: "/services/gutters" },
   { title: "Exterior Repairs", desc: "Siding, fascia, soffit, and trim restoration.", href: "/services/exterior-repairs" },
-  { title: "Interior & Exterior Restoration", desc: "Full property restoration after storm or water damage.", href: "/services/restoration" },
-  { title: "Interior & Exterior Painting", desc: "Professional prep, prime, and finish for any surface.", href: "/services/painting" },
+  { title: "Interior & Exterior Restoration", desc: "Full property restoration after storm or water damage.", href: "/services/interior-exterior-restoration" },
+  { title: "Interior & Exterior Painting", desc: "Professional prep, prime, and finish for any surface.", href: "/services/interior-exterior-painting" },
 ];
 
 function ServiceList({ items }: { items: ServiceItem[] }) {
@@ -65,17 +65,23 @@ export default function Services() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Roofing */}
           <div>
-            <h3 className="font-heading font-black text-2xl md:text-3xl uppercase tracking-tight mb-6">
-              Roofing
-            </h3>
+            <a href="/services/roofing" className="block mb-6">
+              <h3 className="font-heading font-black text-2xl md:text-3xl uppercase tracking-tight underline underline-offset-4 decoration-1">
+                Roofing
+              </h3>
+              <p className="text-sm text-brand-muted font-sans mt-1">Residential and Commercial</p>
+            </a>
             <ServiceList items={roofingServices} />
           </div>
 
           {/* Restoration & Remodeling */}
           <div>
-            <h3 className="font-heading font-black text-2xl md:text-3xl uppercase tracking-tight mb-6">
-              Restoration &amp; Remodeling
-            </h3>
+            <a href="/services/restoration" className="block mb-6">
+              <h3 className="font-heading font-black text-2xl md:text-3xl uppercase tracking-tight underline underline-offset-4 decoration-1">
+                Restoration &amp; Remodeling
+              </h3>
+              <p className="text-sm text-brand-muted font-sans mt-1">Residential and Commercial</p>
+            </a>
             <ServiceList items={restorationServices} />
           </div>
         </div>
