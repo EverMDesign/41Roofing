@@ -6,7 +6,6 @@ import MobileBottomBar from "@/components/MobileBottomBar";
 import ModalProvider from "@/components/ModalProvider";
 import ReviewsWidget from "./ReviewsWidget";
 import { BUSINESS } from "@/lib/schema-business";
-import { fetchGoogleReviews } from "@/lib/google-reviews";
 
 const PAGE_TITLE = "Customer Reviews | 41 Roofing & Restoration";
 const PAGE_DESC =
@@ -40,7 +39,12 @@ export const metadata: Metadata = {
   },
 };
 
-function buildSchemas(rating?: number, totalReviews?: number) {
+function buildSchemas() {
+  // The business's AggregateRating is already emitted once, sitewide, by the
+  // root layout (buildSitewideSchema). Rebuilding a LocalBusiness node with
+  // its own AggregateRating here — same @id — caused Google Search Console's
+  // "Review has multiple aggregate ratings" error. This page only needs to
+  // reference the business by @id, not redeclare it.
   const schemas: Record<string, unknown>[] = [
     {
       "@context": "https://schema.org",
@@ -63,29 +67,11 @@ function buildSchemas(rating?: number, totalReviews?: number) {
     },
   ];
 
-  if (rating && totalReviews) {
-    schemas.push({
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": `${BUSINESS.url}/#business`,
-      name: BUSINESS.name,
-      url: BUSINESS.url,
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: rating.toFixed(1),
-        bestRating: "5",
-        worstRating: "1",
-        ratingCount: totalReviews,
-      },
-    });
-  }
-
   return schemas;
 }
 
 export default async function ReviewsPage() {
-  const googleData = await fetchGoogleReviews();
-  const schemas = buildSchemas(googleData?.rating, googleData?.totalReviews);
+  const schemas = buildSchemas();
 
   return (
     <ModalProvider>

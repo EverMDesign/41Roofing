@@ -4,7 +4,6 @@ import MobileBottomBar from "@/components/MobileBottomBar";
 import ModalProvider from "@/components/ModalProvider";
 import InspectionModal from "@/components/InspectionModal";
 import { buildHomepageSchema } from "@/lib/schema-business";
-import { fetchGoogleReviews } from "@/lib/google-reviews";
 import Hero from "@/components/sections/Hero";
 import TrustBar from "@/components/sections/TrustBar";
 import Services from "@/components/sections/Services";
@@ -22,11 +21,7 @@ import Contact from "@/components/sections/Contact";
 import MapEmbed from "@/components/sections/MapEmbed";
 
 export default async function Home() {
-  const reviewsData = await fetchGoogleReviews();
-  const rating = reviewsData
-    ? { ratingValue: reviewsData.rating, reviewCount: reviewsData.totalReviews }
-    : undefined;
-  const homepageSchema = buildHomepageSchema(homepageFaqs, rating);
+  const homepageSchema = buildHomepageSchema(homepageFaqs);
 
   return (
     <ModalProvider>

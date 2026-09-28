@@ -173,10 +173,13 @@ export function buildSitewideSchema(rating?: RatingData): JsonLdDocument {
 
 export function buildHomepageSchema(
   faqs?: { q: string; a: string }[],
-  rating?: RatingData,
 ): JsonLdDocument {
-  const business = build41BusinessNode(rating);
   const base = BUSINESS_CONFIG.url;
+  // The full business node (with its AggregateRating) is already emitted once
+  // per page by buildSitewideSchema() in the root layout — reference it here
+  // by @id instead of rebuilding it, or Google sees two AggregateRating
+  // blocks for the same entity on the homepage ("multiple aggregate ratings").
+  const business: Node = { "@id": `${base}/#business` };
   const areas = BUSINESS_CONFIG.areaServed?.map((a) => `${a.city}, ${a.state}`) ?? [];
 
   const serviceEntities: Node[] = BUSINESS_CONFIG.services.map((svc) => {
@@ -202,7 +205,9 @@ export function buildHomepageSchema(
     mainEntity: { "@id": `${base}/#business` },
   };
 
-  const graph: Node[] = [business, ...serviceEntities, webPage, buildWebsiteNode(BUSINESS_CONFIG)];
+  // The WebSite node is also already emitted once per page by buildSitewideSchema()
+  // in the root layout; isPartOf above references it by @id instead of duplicating it.
+  const graph: Node[] = [business, ...serviceEntities, webPage];
 
   if (faqs && faqs.length > 0) {
     const mapped: FaqItem[] = faqs.map((f) => ({ question: f.q, answer: f.a }));
