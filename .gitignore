@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# customer estimate PDFs and pricing data -- never push to GitHub
+docs/estimates/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
