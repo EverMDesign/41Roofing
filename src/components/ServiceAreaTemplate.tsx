@@ -28,7 +28,9 @@ export interface ServiceAreaData {
   state: string;
   stateFull: string;
   slug: string;
+  metaTitle: string;
   metaDescription: string;
+  ogImageAlt: string;
   heroImage: string;
   heroImageAlt: string;
   eyebrow: string;

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useModal } from "@/components/ModalProvider";
+import { serviceAreas as serviceAreasData } from "@/lib/service-areas-data";
 
 const roofingServices = [
   { label: "Roof Repair", href: "/services/roof-repair" },
@@ -18,14 +19,10 @@ const restorationServices = [
   { label: "Interior & Exterior Painting", href: "/services/interior-exterior-painting" },
 ];
 
-const serviceAreas = [
-  { label: "Crowley", href: "/areas/crowley" },
-  { label: "Burleson", href: "/areas/burleson" },
-  { label: "Arlington", href: "/areas/arlington" },
-  { label: "Joshua", href: "/areas/joshua" },
-  { label: "Cleburne", href: "/areas/cleburne" },
-  { label: "Keller", href: "/areas/keller" },
-];
+const serviceAreas = serviceAreasData.map((area) => ({
+  label: area.city,
+  href: `/areas/${area.slug}`,
+}));
 
 const navItems: { label: string; href: string }[] = [
   { label: "Projects", href: "/projects" },

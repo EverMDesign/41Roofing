@@ -1,13 +1,10 @@
 import ArrowIcon from "@/components/icons/ArrowIcon";
+import { serviceAreas } from "@/lib/service-areas-data";
 
-const cities = [
-  { name: "CROWLEY", href: "/areas/crowley" },
-  { name: "BURLESON", href: "/areas/burleson" },
-  { name: "ARLINGTON", href: "/areas/arlington" },
-  { name: "JOSHUA", href: "/areas/joshua" },
-  { name: "CLEBURNE", href: "/areas/cleburne" },
-  { name: "KELLER", href: "/areas/keller" },
-];
+const cities = serviceAreas.map((area) => ({
+  name: area.city.toUpperCase(),
+  href: `/areas/${area.slug}`,
+}));
 
 export default function ServiceAreas() {
   return (

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getProjects } from "@/lib/workpress-api";
+import { serviceAreas } from "@/lib/service-areas-data";
 
 const BASE_URL = "https://www.41roofing.com";
 
@@ -85,41 +86,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     // Area pages
     {
-      url: `${BASE_URL}/areas/crowley`,
+      url: `${BASE_URL}/areas`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
-    {
-      url: `${BASE_URL}/areas/arlington`,
+    ...serviceAreas.map((area) => ({
+      url: `${BASE_URL}/areas/${area.slug}`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "monthly" as const,
       priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/areas/burleson`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/areas/cleburne`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/areas/joshua`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/areas/keller`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+    })),
     // Reviews
     {
       url: `${BASE_URL}/reviews`,

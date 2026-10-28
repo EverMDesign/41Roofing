@@ -1,3 +1,5 @@
+import { serviceAreas } from "@/lib/service-areas-data";
+
 export default function Footer() {
   return (
     <footer className="bg-brand-black border-t border-white/10 text-brand-white pt-24 pb-12">
@@ -72,12 +74,13 @@ export default function Footer() {
         <div>
           <h4 className="font-heading font-bold text-lg mb-6 tracking-wide">AREAS</h4>
           <ul className="space-y-3 font-sans text-brand-white/70 text-sm">
-            <li><a href="/areas/crowley" className="hover:text-brand-aqua transition-colors">Crowley</a></li>
-            <li><a href="/areas/burleson" className="hover:text-brand-aqua transition-colors">Burleson</a></li>
-            <li><a href="/areas/arlington" className="hover:text-brand-aqua transition-colors">Arlington</a></li>
-            <li><a href="/areas/joshua" className="hover:text-brand-aqua transition-colors">Joshua</a></li>
-            <li><a href="/areas/cleburne" className="hover:text-brand-aqua transition-colors">Cleburne</a></li>
-            <li><a href="/areas/keller" className="hover:text-brand-aqua transition-colors">Keller</a></li>
+            {serviceAreas.map((area) => (
+              <li key={area.slug}>
+                <a href={`/areas/${area.slug}`} className="hover:text-brand-aqua transition-colors">
+                  {area.city}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

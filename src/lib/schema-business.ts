@@ -10,6 +10,7 @@
 
 import type { BusinessConfig, Node, JsonLdDocument, FaqItem } from "./schema-common";
 import { buildBusinessNode, buildWebsiteNode, buildFaqNode, clean } from "./schema-common";
+import { serviceAreas } from "./service-areas-data";
 
 // ── Schema Configuration (for JSON-LD generators) ───────────────────────────
 
@@ -263,14 +264,7 @@ export const BUSINESS = {
     "Godley, TX",
     "Fort Worth, TX",
   ],
-  areaPages: [
-    { slug: "crowley", name: "Crowley" },
-    { slug: "burleson", name: "Burleson" },
-    { slug: "arlington", name: "Arlington" },
-    { slug: "joshua", name: "Joshua" },
-    { slug: "cleburne", name: "Cleburne" },
-    { slug: "keller", name: "Keller" },
-  ],
+  areaPages: serviceAreas.map((a) => ({ slug: a.slug, name: a.city })),
   services: BUSINESS_CONFIG.services.map((s) => ({
     id: s.id,
     name: s.name,

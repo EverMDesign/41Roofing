@@ -65,3 +65,25 @@ Fixed the schema.org duplicate-#business bug: project pages were independently r
 **Next Steps:** GBP posting is currently disabled by Google at the account level for a content policy violation — needs resolution through Google's own appeal process before any further GBP testing is useful. Code-side fixes (JPG-forced photos, no phone/URL in post text, UTM-tagged Learn More link) are ready in the WorkPress dashboard repo for whenever that's lifted.
 
 ---
+
+## 2026-10-28 — 14:49
+
+Diagnosed and fixed a bad state value ('TE' instead of 'TX') on project 62 (complete-remodel-in-burleson-tx) that was showing up in the detail page's eyebrow text and the JSON-LD schema's areaServed place name — traced both back to the single project.address.state field with no other duplicate copies anywhere in the code. User fixed the value directly in the WorkPress database (dashboard edit UI reportedly had no way to change it); confirmed via the public API that it now reads TX. Explained that a direct DB edit doesn't trigger any revalidation on its own (bypasses WorkPress's application layer entirely, and the webhook still isn't registered in the dashboard anyway), then manually POSTed to /api/revalidate with the real secret to force the fix live immediately instead of waiting out the 1hr ISR window — confirmed live: page title, eyebrow text, and schema all now show TX/Texas. Separately fixed a real bug on the project detail page: project.description was being dumped into a single <p>, collapsing every \n\n-separated paragraph from WorkPress into one run-on block of text. Now splits on blank lines and renders one <p> per paragraph; same fix applied to the workpress-pages skill template so future sites don't repeat it. Also picked up and shipped the user's parallel schema-business.ts cleanup (removed duplicate contactPoint/openingHoursSpecification entries, fixed a Saturday-hours typo, swapped a share.google link for a stable Google Maps CID, added hasOfferCatalog/knowsAbout/hasMap). Committed and pushed both fixes, confirmed the new Vercel production deployment is live and verified on www.41roofing.com.
+
+**Files:** src/app/[city]/[slug]/page.tsx, src/lib/schema-business.ts, src/lib/workpress-schema.ts
+
+**Status:** ✅ Complete
+**Next Steps:** Register the WorkPress webhook (POST https://www.41roofing.com/api/revalidate with REVALIDATE_SECRET) in the dashboard so future edits sync automatically instead of needing a manual revalidate call or a DB fix again. Confirm with the user whether the WorkPress dashboard's address-edit form genuinely has no way to set State (a real product bug worth fixing in the WorkPress codebase itself) or whether that was a one-off issue with this specific project record.
+
+---
+
+## 2026-10-28 — 14:50
+
+Schema.org fixes on the business schema per review: removed duplicate opening hours (openingHours + openingHoursSpecification both present), corrected Saturday hours typo (9am-6pm -> 8am-5pm to match weekday pattern), converted telephone to E.164 format, replaced weak share.google sameAs link with the decoded full Google Maps CID URL, added priceRange/hasMap/hasOfferCatalog/knowsAbout, and collapsed duplicate contactPoint entries into one.
+
+**Files:** src/lib/schema-business.ts
+
+**Status:** ✅ Complete
+**Next Steps:** Add remaining sameAs profile URLs (Facebook, Instagram, BBB, Yelp, Nextdoor) when available.
+
+---
