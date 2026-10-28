@@ -114,6 +114,13 @@ export interface ProjectConfig {
    * breadcrumb — most sites with no projects hub page want that default.
    */
   breadcrumbParent?: { name: string; path: string } | null;
+  /**
+   * Overrides the city breadcrumb item's URL. Use this when the site's
+   * city hub pages don't follow business.areaPathPrefix + slugify(city)
+   * (e.g. hand-curated slugs like "burleson-tx"). Pass the full URL,
+   * including the business's own domain.
+   */
+  cityUrl?: string;
 }
 
 // ── Service Page (service offering / marketing page) ──────────────────────────
@@ -226,7 +233,7 @@ export function buildProjectSchema(
   // points at the real per-city hub page instead of a bare, unrouted
   // "/{city}" segment. breadcrumbParent is opt-in for sites with a
   // projects index page.
-  const cityItemUrl = `${base}${business.areaPathPrefix ?? ""}/${slugify(project.city)}`;
+  const cityItemUrl = project.cityUrl ?? `${base}${business.areaPathPrefix ?? ""}/${slugify(project.city)}`;
   const parent = project.breadcrumbParent;
   const breadcrumbItems: Node[] = [
     { "@type": "ListItem", position: 1, name: "Home", item: base },
