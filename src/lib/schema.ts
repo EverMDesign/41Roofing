@@ -108,6 +108,12 @@ export interface ProjectConfig {
   faqs?: FaqItem[];
   /** URL pattern. Tokens: {city}, {slug}. Default: "/{city}/{slug}" */
   urlPattern?: string;
+  /**
+   * Optional intermediate breadcrumb crumb between Home and the city
+   * (e.g. a "/projects" index page). Omit for a flat Home > City > Title
+   * breadcrumb — most sites with no projects hub page want that default.
+   */
+  breadcrumbParent?: { name: string; path: string } | null;
 }
 
 // ── Service Page (service offering / marketing page) ──────────────────────────
@@ -215,20 +221,35 @@ export function buildProjectSchema(
     dateModified: project.dateModified,
   } as Node);
 
-  // ── Breadcrumb: Home > City > Title ─────────────────────────────────────
+  // ── Breadcrumb: Home > [Parent] > City > Title ───────────────────────────
+  // City links through business.areaPathPrefix (e.g. "/areas") so this
+  // points at the real per-city hub page instead of a bare, unrouted
+  // "/{city}" segment. breadcrumbParent is opt-in for sites with a
+  // projects index page.
+  const cityItemUrl = `${base}${business.areaPathPrefix ?? ""}/${slugify(project.city)}`;
+  const parent = project.breadcrumbParent;
+  const breadcrumbItems: Node[] = [
+    { "@type": "ListItem", position: 1, name: "Home", item: base },
+    ...(parent
+      ? [{ "@type": "ListItem", position: 2, name: parent.name, item: `${base}${parent.path}` }]
+      : []),
+    {
+      "@type": "ListItem",
+      position: parent ? 3 : 2,
+      name: project.city,
+      item: cityItemUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: parent ? 4 : 3,
+      name: project.title,
+      item: pageUrl,
+    },
+  ];
   const breadcrumb: Node = {
     "@type": "BreadcrumbList",
     "@id": `${pageUrl}#breadcrumb`,
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: base },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: project.city,
-        item: `${base}/${slugify(project.city)}`,
-      },
-      { "@type": "ListItem", position: 3, name: project.title, item: pageUrl },
-    ],
+    itemListElement: breadcrumbItems,
   };
 
   // ── WebPage ─────────────────────────────────────────────────────────────

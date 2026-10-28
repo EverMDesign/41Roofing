@@ -1,8 +1,19 @@
 import type { MetadataRoute } from "next";
+import { getProjects } from "@/lib/workpress-api";
 
 const BASE_URL = "https://www.41roofing.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const projects = await getProjects();
+  const projectRoutes: MetadataRoute.Sitemap = projects
+    .filter((project) => project.is_published)
+    .map((project) => ({
+    url: `${BASE_URL}/${project.address.city.toLowerCase().replace(/\s+/g, "-")}/${project.slug}`,
+    lastModified: new Date(project.updated_at || project.created_at),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   return [
     {
       url: BASE_URL,
@@ -129,5 +140,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+    ...projectRoutes,
   ];
 }

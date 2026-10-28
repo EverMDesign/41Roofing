@@ -68,7 +68,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         ></script>
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(buildSitewideSchema(rating)) }}

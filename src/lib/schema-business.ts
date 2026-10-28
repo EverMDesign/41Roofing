@@ -29,6 +29,9 @@ export const BUSINESS_CONFIG: BusinessConfig = {
     postalCode: "76036",
     country: "US",
   },
+  // Shop location (not a customer job site) — verified against the Google
+  // Maps pin for 208 E Main St Ste D, Crowley, TX 76036.
+  geo: { latitude: 32.5781129, longitude: -97.3575218 },
   openingHours: ["Mo-Fr 08:00-17:00", "Sa 09:00-18:00"],
   areaServed: [
     { city: "Crowley", state: "Texas" },

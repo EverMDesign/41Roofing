@@ -28,7 +28,7 @@ const serviceAreas = [
 ];
 
 const navItems: { label: string; href: string }[] = [
-  // { label: "Projects", href: "#projects" },
+  { label: "Projects", href: "/projects" },
 ];
 
 const mobileNavItems = [
@@ -40,7 +40,7 @@ const mobileNavItems = [
   { label: "Exterior Repairs", href: "/services/exterior-repairs" },
   { label: "Restoration", href: "/services/interior-exterior-restoration" },
   { label: "Painting", href: "/services/interior-exterior-painting" },
-  // { label: "Projects", href: "#projects" },
+  { label: "Projects", href: "/projects" },
   { label: "Areas", href: "#service-areas" },
   { label: "FAQ", href: "#faq" },
   { label: "Reviews", href: "/reviews" },
