@@ -87,3 +87,22 @@ Schema.org fixes on the business schema per review: removed duplicate opening ho
 **Next Steps:** Add remaining sameAs profile URLs (Facebook, Instagram, BBB, Yelp, Nextdoor) when available.
 
 ---
+
+## 2026-10-28 — 16:55
+
+Audited the service-area pages: 6 static per-city page.tsx files (no central data file, no dynamic [slug] route, no archive page beyond a homepage teaser list in sections/ServiceAreas.tsx) — an architecture inconsistency vs. the newly standardized service-area-pages skill pattern. Schema wiring (schema-business.ts / BUSINESS_CONFIG / buildServiceAreaSchema) was already correct, no drift bug found here unlike Kingdom Care. Wrote a detailed migration prompt (not yet executed — no code changed in this repo) for a developer/agent to convert the 6 static files into the dynamic-route + central-data-file pattern, add the missing archive page, and sync any hardcoded references (BUSINESS.areaPages, nav, sitemap) to the new central array. Prompt explicitly requires zero visual/content changes — byte-identical copy, routing only.
+
+**Status:** 📝 Planned (prompt drafted, not run)
+**Next Steps:** Hand off the migration prompt to a dev/agent session scoped to this repo to execute the static-to-dynamic conversion and add the archive page.
+
+---
+
+## 2026-10-28 — 16:55
+
+Refactored 41 Roofing's service-area pages from 6 hand-written static routes into the dynamic-route pattern per the service-area-pages skill, with zero visual/content changes. Created src/lib/service-areas-data.ts as the single source of truth for all 6 cities' content (hero/about/services/neighborhoods/reviews/projects/FAQ), moved verbatim from the old page.tsx files, and added metaTitle/ogImageAlt fields to the ServiceAreaData interface for generic metadata generation. Replaced the 6 static folders with src/app/areas/[slug]/page.tsx (generateStaticParams + generateMetadata + notFound() for unknown slugs) and built the previously-missing archive page at src/app/areas/page.tsx (hero + city grid, reusing the ProjectCard visual pattern). Eliminated 4 other hardcoded 6-city-slug lists that had drifted into a single-source-of-truth pattern: BUSINESS.areaPages in schema-business.ts, the header's service-areas dropdown, the footer's Areas column, and the homepage teaser section — all now derive from serviceAreas. Also updated sitemap.ts to generate area URLs from the same array instead of 6 hardcoded entries, and added the new /areas archive URL. Verified via tsc --noEmit, next build (all 6 routes statically generate), npm run lint (no new errors in any touched file), and a byte-for-byte HTML diff against the pre-refactor build (stashed changes, rebuilt originals, restored, rebuilt, diffed with hashed build-asset tags stripped) confirming all 6 pages render identical meta tags, JSON-LD schema, and body content. Spot-checked live in the browser: archive grid, detail page, FAQ accordion, header dropdown, and 404 on an unknown slug all work correctly.
+
+**Files:** src/lib/service-areas-data.ts, src/app/areas/[slug]/page.tsx, src/app/areas/page.tsx, src/components/ServiceAreaTemplate.tsx, src/lib/schema-business.ts, src/components/Header.tsx, src/components/Footer.tsx, src/components/sections/ServiceAreas.tsx, src/app/sitemap.ts
+
+**Status:** ✅ Complete
+
+---
