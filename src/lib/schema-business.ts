@@ -17,11 +17,15 @@ export const BUSINESS_CONFIG: BusinessConfig = {
   name: "41 Roofing & Restoration",
   url: "https://www.41roofing.com",
   type: "RoofingContractor",
-  telephone: "(817) 266-9433",
+  telephone: "+1-817-266-9433",
   email: "info@41roofing.com",
   logo: "https://www.41roofing.com/41-roofing-logo.webp",
   image: "https://www.41roofing.com/41-roofing-and-restoration-roof-replacement.webp",
-  sameAs: ["https://share.google/lptYzXmBTygQYyjS4"],
+  priceRange: "$$",
+  // Full Google Maps CID link (stable entity id), not a share.google short
+  // link — those are session/tracking URLs and a weak entity signal.
+  // Add Facebook, Instagram, BBB, Yelp, Nextdoor, etc. here as they're confirmed.
+  sameAs: ["https://www.google.com/maps?cid=6780711113948862781"],
   address: {
     street: "208 E Main St Suite D",
     city: "Crowley",
@@ -32,7 +36,11 @@ export const BUSINESS_CONFIG: BusinessConfig = {
   // Shop location (not a customer job site) — verified against the Google
   // Maps pin for 208 E Main St Ste D, Crowley, TX 76036.
   geo: { latitude: 32.5781129, longitude: -97.3575218 },
-  openingHours: ["Mo-Fr 08:00-17:00", "Sa 09:00-18:00"],
+  // Mon-Sat 8am-5pm. (Previously listed Sat as 9am-6pm — confirmed typo, now
+  // matches the weekday pattern.) Kept here only for reference; the
+  // sitewide schema node uses openingHoursSpecification below instead —
+  // emitting both is what caused the duplicate-hours issue.
+  openingHours: ["Mo-Sa 08:00-17:00"],
   areaServed: [
     { city: "Crowley", state: "Texas" },
     { city: "Burleson", state: "Texas" },
@@ -111,7 +119,12 @@ export interface RatingData {
 // ── Project-specific business node (extends the generic one) ─────────────────
 
 function build41BusinessNode(rating?: RatingData): Node {
-  const base = buildBusinessNode(BUSINESS_CONFIG);
+  const base = { ...buildBusinessNode(BUSINESS_CONFIG) };
+  // openingHoursSpecification (below) replaces the plain openingHours string
+  // array buildBusinessNode() emits from BUSINESS_CONFIG.openingHours —
+  // keeping both is the "duplicate hours" issue flagged in review.
+  delete base.openingHours;
+
   return clean({
     ...base,
     description:
@@ -120,35 +133,33 @@ function build41BusinessNode(rating?: RatingData): Node {
       "@type": "ImageObject",
       url: `${BUSINESS_CONFIG.url}/41-roofing-logo.webp`,
     },
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        contactType: "Customer Service",
-        telephone: BUSINESS_CONFIG.telephone,
-        areaServed: "US",
-      },
-      {
-        "@type": "ContactPoint",
-        contactType: "Emergency",
-        telephone: BUSINESS_CONFIG.telephone,
-        areaServed: "US",
-      },
-    ],
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "08:00",
-        closes: "17:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Saturday",
-        opens: "09:00",
-        closes: "18:00",
-      },
-    ],
+    hasMap: BUSINESS_CONFIG.sameAs?.[0],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "Customer Service",
+      telephone: BUSINESS_CONFIG.telephone,
+      areaServed: "US",
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "08:00",
+      closes: "17:00",
+    },
     founder: { "@type": "Person", name: "Brandi Burk" },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Services",
+      itemListElement: BUSINESS_CONFIG.services.map((s) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: s.name },
+      })),
+    },
+    knowsAbout: [
+      ...BUSINESS_CONFIG.services.map((s) => s.name),
+      "Hail Damage",
+      "Insurance Claims",
+    ],
     ...(rating
       ? {
           aggregateRating: {
@@ -238,7 +249,7 @@ export const BUSINESS = {
   },
   hours: {
     weekday: { opens: "08:00", closes: "17:00" },
-    saturday: { opens: "09:00", closes: "18:00" },
+    saturday: { opens: "08:00", closes: "17:00" },
   },
   serviceAreas: [
     "Crowley, TX",

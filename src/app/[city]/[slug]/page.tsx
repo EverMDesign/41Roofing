@@ -136,7 +136,13 @@ export default async function ProjectDetailPage({
                   )}
 
                   <div className="space-y-6 text-brand-charcoal text-base leading-relaxed">
-                    <p>{project.description}</p>
+                    {project.description
+                      .split(/\n\s*\n/)
+                      .map((p) => p.trim())
+                      .filter(Boolean)
+                      .map((paragraph, i) => (
+                        <p key={i}>{paragraph}</p>
+                      ))}
                   </div>
 
                   <ProjectGallery

@@ -43,3 +43,25 @@ Form system overhaul: fixed validation bypass, added requestSubmit pattern, auto
 **Status:** ✅ Complete
 
 ---
+
+## 2026-10-28 — 11:38
+
+Connected 41Roofing to WorkPress and built the two pages it was missing. Ran workpress-connect to lay the plumbing (workpress-api.ts, workpress-types.ts, workpress-schema.ts, webhook route, env vars), fixed a real bug in the generated schema adapter (it called a generateProjectSchema/schema-types API that no longer exists in the current schema-builder output — rewrote it against the actual buildProjectSchema/BusinessConfig/ProjectConfig API). Ran workpress-pages to build /projects (city filter + load-more via URL params, service area map, empty states) and /[city]/[slug] (hero, before/after slider, lightbox gallery, related projects, GHL-wired CTA form via the existing QuoteForm, full JSON-LD schema). Wired ServiceAreaMap into the archive page with 41Roofing's brand colors, added the Projects link to the header nav (desktop + mobile), and fixed BeforeAfterSlider to a fixed 16:9 aspect ratio after discovering a CompanyCam-tagged 'before' photo was actually a pre-made before/after composite graphic that blew out the layout. Diagnosed and fixed a DNS typo in NEXT_PUBLIC_DASHBOARD_URL (www.app.workpressapp.com -> app.workpressapp.com) and an inactive-subscription 403 that were both silently masked by getProjects()'s fail-safe empty-array return. Committed and pushed all of it, then pushed the real WorkPress + Mapbox env vars to Vercel production (none existed there before) and triggered a fresh deploy — confirmed live: /projects and both current Burleson project detail pages return 200 on www.41roofing.com. Separately diagnosed a rejected Google Business Profile post for an older/renamed project (project no longer exists under that slug in WorkPress) and confirmed via Local Falcon that this GBP location isn't OAuth-connected there.
+
+**Files:** src/app/projects/page.tsx, src/app/projects/loading.tsx, src/app/[city]/[slug]/page.tsx, src/app/api/revalidate/route.ts, src/app/sitemap.ts, src/app/layout.tsx, src/components/Header.tsx, src/components/ServiceAreaMap.tsx, src/components/projects/*, src/lib/workpress-api.ts, src/lib/workpress-types.ts, src/lib/workpress-schema.ts, src/lib/related-projects.ts, WORKPRESS_INTEGRATION.md, WORKPRESS_STANDARDS.md, WORKPRESS_UNMAPPED.md
+
+**Status:** ✅ Complete
+**Next Steps:** Register the WorkPress webhook (POST https://www.41roofing.com/api/revalidate with REVALIDATE_SECRET) in the dashboard. Confirm whether re-checking the GBP toggle on a project actually retriggers a GBP post (no new post appeared in Business Profile Manager after the user tried it). Push a corrected GBP post pointing at one of the two current live Burleson project URLs.
+
+---
+
+## 2026-10-28 — 11:39
+
+Fixed the schema.org duplicate-#business bug: project pages were independently rebuilding a full business entity from live WorkPress org settings (LocalBusiness, unnormalized phone) while the root layout already built one from the static schema-business.ts config (RoofingContractor, normalized phone) — same @id, conflicting data. workpress-schema.ts now passes includeSitewide: false and references the layout's node by @id instead. Fixed the breadcrumb's city link, which 404'd (hardcoded /{city} with no areaPathPrefix); added geo to the business config (verified against Google Maps). Added a generic cityUrl override field to ProjectConfig (schema.ts) so a site with hand-curated service-area hub slugs can skip the default areaPathPrefix+slugify derivation — not used on this site, added to keep schema.ts in sync with Kingdom Care's copy, which does need it.
+
+**Files:** src/lib/schema-business.ts, src/lib/schema.ts, src/lib/workpress-schema.ts
+
+**Status:** ✅ Complete
+**Next Steps:** GBP posting is currently disabled by Google at the account level for a content policy violation — needs resolution through Google's own appeal process before any further GBP testing is useful. Code-side fixes (JPG-forced photos, no phone/URL in post text, UTM-tagged Learn More link) are ready in the WorkPress dashboard repo for whenever that's lifted.
+
+---
