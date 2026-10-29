@@ -1,10 +1,22 @@
-import ArrowIcon from "@/components/icons/ArrowIcon";
+import ModalCTA from "@/components/ModalCTA";
 import { serviceAreas } from "@/lib/service-areas-data";
+import { BUSINESS } from "@/lib/schema-business";
 
 const cities = serviceAreas.map((area) => ({
   name: area.city.toUpperCase(),
   href: `/areas/${area.slug}`,
 }));
+
+const primaryCities = new Set(serviceAreas.map((area) => area.city));
+const surroundingCities = BUSINESS.serviceAreas
+  .map((area) => area.replace(/,\s*TX$/, ""))
+  .filter((city) => !primaryCities.has(city));
+
+function joinWithAnd(items: string[]) {
+  if (items.length <= 1) return items.join("");
+  if (items.length === 2) return `${items[0]} and ${items[1]}`;
+  return `${items.slice(0, -1).join(", ")}, and ${items[items.length - 1]}`;
+}
 
 export default function ServiceAreas() {
   return (
@@ -27,15 +39,15 @@ export default function ServiceAreas() {
             </a>
           ))}
         </div>
-        {/* <div className="text-center">
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 font-heading font-bold text-sm tracking-widest text-brand-black hover:text-brand-aqua transition-colors uppercase group"
-          >
-            View All Service Areas
-            <ArrowIcon className="w-4 h-4" />
-          </a>
-        </div> */}
+        <div className="text-center max-w-2xl mx-auto">
+          <p className="font-sans text-brand-charcoal/80 text-base md:text-lg mb-8">
+            Don&rsquo;t see your city listed? We also serve {joinWithAnd(surroundingCities)}, and the
+            surrounding North Texas area. Reach out and we&rsquo;ll confirm we&rsquo;ve got you covered.
+          </p>
+          <ModalCTA className="inline-flex justify-center items-center bg-brand-aqua text-brand-black px-10 py-5 rounded-[10px] font-heading font-bold text-sm tracking-widest uppercase hover:bg-white transition-colors duration-300">
+            Get In Touch
+          </ModalCTA>
+        </div>
       </div>
     </section>
   );

@@ -60,6 +60,20 @@ export default function BeforeAfterSlider({
         className="pointer-events-none absolute inset-y-0 w-1 bg-brand-aqua shadow-lg"
         style={{ left: `${position}%` }}
       />
+      <div
+        className="pointer-events-none absolute top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-brand-aqua shadow-lg"
+        style={{ left: `${position}%` }}
+      >
+        <svg
+          className="h-5 w-5 text-brand-black"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 9l-4 3 4 3m8-6l4 3-4 3" />
+        </svg>
+      </div>
 
       <input
         type="range"
