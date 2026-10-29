@@ -85,7 +85,7 @@ export default function ServiceAreaMap({ projects, mapStyle = 'mapbox://styles/m
             container: mapContainer.current,
             style: mapStyle,
             center,
-            zoom: 8,
+            zoom: 10,
             minZoom: 7,
             maxZoom: 15,   // Keep ≤ 15; 10–13 recommended to avoid street-level detail
             pitch: 0,
