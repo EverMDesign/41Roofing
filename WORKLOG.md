@@ -106,3 +106,13 @@ Refactored 41 Roofing's service-area pages from 6 hand-written static routes int
 **Status:** ✅ Complete
 
 ---
+
+## 2026-10-29 — 11:36
+
+Added a surrounding-areas callout and CTA to the homepage service areas section: text telling visitors who don't see their city in the 6-city list which surrounding areas (Alvarado, Mansfield, Godley, Fort Worth) are also served, derived from BUSINESS.serviceAreas so it can't drift from the dedicated area pages, plus a 'Get In Touch' button wired to the existing ModalCTA/InspectionModal flow. Added a visible circular drag handle (brand-aqua circle with a left/right chevron icon) to the before/after project photo slider, centered on the divider line — purely visual and pointer-events-none like the existing divider, so the underlying range input still owns all drag/keyboard/touch interaction. Also pulled two Google Business Profile support call summaries from Granola (Oct 28 and Oct 29) into docs/google-business-profile-support.md as a reference log for the ongoing post-rejection issue with 41 Roofing's GBP listing, leaving out an unrelated client's (Tar River Air) verification issue that came up on the same call. Verified all three changes with tsc/eslint and live in the browser (homepage CTA opens the inspection modal; slider handle renders centered and drags correctly on the Burleson remodel project page). Committed and pushed.
+
+**Files:** src/components/sections/ServiceAreas.tsx, src/components/projects/BeforeAfterSlider.tsx, docs/google-business-profile-support.md
+
+**Status:** ✅ Complete
+
+---
