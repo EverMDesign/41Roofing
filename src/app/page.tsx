@@ -8,7 +8,7 @@ import Hero from "@/components/sections/Hero";
 import TrustBar from "@/components/sections/TrustBar";
 import Services from "@/components/sections/Services";
 import Reviews from "@/components/sections/Reviews";
-// import Projects from "@/components/sections/Projects";
+import Projects from "@/components/sections/Projects";
 import StormDamage from "@/components/sections/StormDamage";
 import Diagnosis from "@/components/sections/Diagnosis";
 import RepairOrReplace from "@/components/sections/RepairOrReplace";
@@ -36,7 +36,7 @@ export default async function Home() {
           <TrustBar />
           <Services />
           <Reviews />
-          {/* <Projects /> */}
+          <Projects />
           <StormDamage />
           <Diagnosis />
           <RepairOrReplace />

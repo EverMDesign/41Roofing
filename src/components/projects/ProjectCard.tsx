@@ -4,11 +4,21 @@ import type { Project } from "@/lib/workpress-types";
 
 /**
  * Card for a real WorkPress project. Distinct from the legacy
- * `src/components/ProjectCard.tsx` (bespoke placeholder shape used by
- * the still-commented-out homepage Projects section) — this one renders
+ * `src/components/ProjectCard.tsx` (bespoke placeholder shape used by the
+ * still-commented-out service-area-page Projects section) — this one renders
  * live WorkPress data and links to the real `/[city]/[slug]` detail page.
+ *
+ * `featured`: stretches the card (and its image) to fill the height of its
+ * container instead of using a fixed aspect ratio — for the homepage's
+ * single expanded "most recent project" slot.
  */
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({
+  project,
+  featured = false,
+}: {
+  project: Project;
+  featured?: boolean;
+}) {
   const citySlug = project.address.city.toLowerCase().replace(/\s+/g, "-");
   const excerpt =
     project.description.length > 140
@@ -19,14 +29,18 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/${citySlug}/${project.slug}`}
-      className="group block bg-brand-white border border-brand-border rounded-[10px] overflow-hidden"
+      className={`group bg-brand-white border border-brand-border rounded-[10px] overflow-hidden ${
+        featured ? "flex flex-col h-full" : "block"
+      }`}
     >
-      <div className="aspect-[16/10] overflow-hidden relative">
+      <div
+        className={`overflow-hidden relative ${featured ? "flex-1 min-h-[320px]" : "aspect-[16/10]"}`}
+      >
         <img
           src={project.cover_photo_url}
           alt={`${project.seoTitle} - project photo`}
           loading="lazy"
-          className="w-full h-full object-cover img-hover-scale"
+          className="absolute inset-0 h-full w-full object-cover img-hover-scale"
         />
         <div className="absolute top-6 left-6 bg-brand-black text-white px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-[10px]">
           {project.address.city}

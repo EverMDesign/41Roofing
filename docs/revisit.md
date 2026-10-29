@@ -4,20 +4,6 @@ Items commented out or removed from the homepage to revisit at a later date.
 
 ---
 
-## Services Section ("How Can We Help?")
-
-### Roofing — Commented Out
-- **Storm Damage** — "Rapid response and thorough damage assessment." (`/storm-damage`)
-- **Roof Inspections** — "Honest assessments and clear documentation." (`/roof-inspections`)
-
-### Restoration & Remodeling — Commented Out
-- **Remodeling** — "Interior and exterior renovation projects." (`/remodeling`)
-- **Property Repairs** — "General maintenance and structural repairs." (`/property-repairs`)
-
-> These items are commented out in `src/components/sections/Services.tsx`. Uncomment to restore.
-
----
-
 ## RepairOrReplace Section — Removed CTAs
 
 The following link buttons were removed from `src/components/sections/RepairOrReplace.tsx`:
@@ -26,22 +12,6 @@ The following link buttons were removed from `src/components/sections/RepairOrRe
 - **Learn About Replacement** — outline button linking to `#contact`
 
 > These were two side-by-side border-outline buttons. Replaced with a single "Schedule An Inspection Or Consultation" CTA. Restore when dedicated `/roof-repair` and `/roof-replacement` pages are ready.
-
----
-
-## Projects Section — Commented Out
-
-- **Projects** — "Recent Work / Roofs We've Built Across North Texas" — 4 project cards (Crowley, Burleson, Joshua, Arlington)
-
-> Commented out in `src/app/page.tsx`. Component file `src/components/sections/Projects.tsx` and `src/components/ProjectCard.tsx` still exist. Uncomment to restore.
-
----
-
-## ServiceAreas Section — Commented Out Link
-
-- **View All Service Areas** — text link with arrow icon linking to `#contact`
-
-> Commented out in `src/components/sections/ServiceAreas.tsx`. Restore when a dedicated service areas page is ready.
 
 ---
 
@@ -60,7 +30,7 @@ The following sections were removed from `page.tsx` but their component files st
 
 ## Service Area Pages — Projects Section (Commented Out)
 
-The Projects section on all service area pages has been commented out in `src/components/ServiceAreaTemplate.tsx`. Each city page (`src/app/areas/[city]/page.tsx`) still has its `projects` array and `projectsEyebrow`/`projectsHeading` data — just not rendering.
+The Projects section on all service area pages has been commented out in `src/components/ServiceAreaTemplate.tsx`. Each city's `projects` array and `projectsEyebrow`/`projectsHeading` data still lives in `src/lib/service-areas-data.ts` (the single data file behind `src/app/areas/[slug]/page.tsx`) — just not rendering.
 
 **Per-city project data still in page files:**
 - **Arlington** — Hail Damage Replacement, Commercial Flat Roof Repair, Wind Damage Restoration
@@ -87,42 +57,6 @@ Currently using Google Places API which only returns 5 "most relevant" reviews (
 
 ---
 
-## Non-Functional Forms
-
-The following forms exist in the UI but are not yet wired to a backend/CRM:
-
-- **HeroQuoteForm** (`src/components/HeroQuoteForm.tsx`) — Homepage hero quick-quote form
-- **SidebarQuoteForm** (`src/components/SidebarQuoteForm.tsx`) — Service & area page sidebar form
-- **InspectionModal** (`src/components/InspectionModal.tsx`) — Free roof inspection modal form
-
-> Wire these to GoHighLevel or another CRM endpoint when ready. Reference AvValley's `ghl-client.ts` pattern.
-
----
-
-## Service Area Page Schema (JSON-LD)
-
-Each service area page (`src/app/areas/[city]/page.tsx`) currently has no Schema.org structured data. Add `LocalBusiness` or `Service` schema with:
-
-- City-specific `areaServed`
-- Business `@id` reference
-- `BreadcrumbList` schema
-- FAQ schema (already have FAQ data in each page)
-
-> Use the existing `generateServicePageSchema()` in `src/lib/schema.ts` as a starting point.
-
----
-
-## Privacy Policy & Terms of Service
-
-Footer links for "Privacy Policy" and "Terms of Service" currently point to `#contact` (placeholder). Need to:
-
-1. Create `/privacy` and `/terms` pages with actual legal content
-2. Update footer links in `src/components/Footer.tsx` (lines 72-73)
-
-> Revisit when legal copy is ready.
-
----
-
 ## SEO & LLM Optimization — P2 Items
 
 ### Blog / Resources Hub
@@ -135,7 +69,7 @@ Create `src/app/not-found.tsx` with branded design, helpful links back to servic
 Add explicit `viewport` export to `src/app/layout.tsx` per Next.js best practices. Currently relying on the framework default.
 
 ### TrustBar Badge Optimization
-Convert the TrustBar PNG badges in `src/components/sections/TrustBar.tsx` to WebP for faster load times. Check `public/` for the source images.
+The BBB/BuildZoom/ARCO/Yelp badges in `src/components/sections/TrustBar.tsx` are hosted externally (bbb.org, buildzoom.com, etc.), not local files — there's nothing in `public/` to convert to WebP. Low priority; only worth revisiting if a self-hosted copy becomes necessary.
 
 ### Auto-Generate `llms.txt` at Build Time
-Write a build script that pulls from `schema-business.ts` (services, areas) and `FAQ.tsx` (FAQ data) to auto-generate `public/llms.txt`. Keeps the AI crawler cheat sheet in sync without manual updates.
+`public/llms.txt` exists but is hand-written. Write a build script that pulls from `schema-business.ts` (services, areas) and `FAQ.tsx` (FAQ data) to auto-generate it, so it can't drift out of sync with manual updates.
