@@ -116,3 +116,13 @@ Added a surrounding-areas callout and CTA to the homepage service areas section:
 **Status:** ✅ Complete
 
 ---
+
+## 2026-10-30 — 15:52
+
+Bumped the projects map's initial zoom from 8 to 10 so it frames the actual project cluster near Burleson instead of the entire DFW metroplex (minZoom/maxZoom bounds left unchanged). Uncommented the homepage Projects section per user request, then replaced its fake Unsplash placeholder data entirely with real, live WorkPress project data (same getProjects() source as /projects), matching a new layout: the single most-recent project expanded full-height in a left column using ProjectCard's new 'featured' prop (stretches the image to fill height instead of a fixed aspect ratio, archive-grid behavior unchanged since featured defaults to false), and the next 3 most-recent as thumbnail-left/text-right list cards in a right column via a new ProjectListCard component. Also did a full audit of commented-out sections across the codebase for the user and cleaned up docs/revisit.md to drop entries that had gone stale (Services section rewrite, ServiceAreas CTA resolution, Privacy/Terms pages, non-functional forms, service-area schema, and eventually the homepage Projects placeholder-data note once that got replaced with real data) and fixed stale file-path references in the remaining entries. Verified every change with tsc/eslint and live in the browser (map framing, real project cards rendering and linking correctly, archive page grid unaffected). Committed and pushed in two pushes.
+
+**Files:** src/components/ServiceAreaMap.tsx, src/app/page.tsx, src/components/sections/Projects.tsx, src/components/projects/ProjectCard.tsx, src/components/projects/ProjectListCard.tsx, docs/revisit.md
+
+**Status:** ✅ Complete
+
+---
