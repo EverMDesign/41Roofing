@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     title: "Interior & Exterior Painting in Crowley, TX | 41 Roofing & Restoration",
     description: "Professional interior and exterior painting services in Crowley and North Texas. Expert prep, prime, and finish for any surface.",
     url: "/services/interior-exterior-painting",
-    images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — painting services" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "41 Roofing and Restoration — painting services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Interior & Exterior Painting in Crowley, TX | 41 Roofing & Restoration",
     description: "Professional interior and exterior painting services in Crowley and North Texas. Expert prep, prime, and finish for any surface.",
-    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+    images: ["/og-image.jpg"],
   },
 };
 

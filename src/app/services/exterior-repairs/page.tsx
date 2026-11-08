@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     title: "Exterior Repairs in Crowley, TX | 41 Roofing & Restoration",
     description: "Siding, fascia, soffit, and trim restoration for homes in Crowley and North Texas. Repair storm damage and restore your home\u2019s exterior.",
     url: "/services/exterior-repairs",
-    images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — exterior repair services" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "41 Roofing and Restoration — exterior repair services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Exterior Repairs in Crowley, TX | 41 Roofing & Restoration",
     description: "Siding, fascia, soffit, and trim restoration for homes in Crowley and North Texas. Repair storm damage and restore your home\u2019s exterior.",
-    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+    images: ["/og-image.jpg"],
   },
 };
 

@@ -3,7 +3,7 @@ import ServiceAreaTemplate from "@/components/ServiceAreaTemplate";
 import { serviceAreas, getServiceArea } from "@/lib/service-areas-data";
 import { notFound } from "next/navigation";
 
-const OG_IMAGE = "/41-roofing-and-restoration-roof-replacement.webp";
+const OG_IMAGE = "/og-image.jpg";
 
 export async function generateStaticParams() {
   return serviceAreas.map((area) => ({ slug: area.slug }));

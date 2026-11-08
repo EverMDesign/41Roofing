@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     title: "Emergency Tarping in Crowley, TX | 41 Roofing & Restoration",
     description: "Immediate emergency tarping to protect your property from further damage after storms, fallen trees, or sudden roof failures in North Texas.",
     url: "/services/emergency-tarping",
-    images: [{ url: "/41-roofing-and-restoration-roof-replacement.webp", width: 1200, height: 630, alt: "41 Roofing and Restoration — emergency tarping services" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "41 Roofing and Restoration — emergency tarping services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Emergency Tarping in Crowley, TX | 41 Roofing & Restoration",
     description: "Immediate emergency tarping to protect your property from further damage after storms, fallen trees, or sudden roof failures in North Texas.",
-    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+    images: ["/og-image.jpg"],
   },
 };
 

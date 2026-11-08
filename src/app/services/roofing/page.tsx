@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     url: "/services/roofing",
     images: [
       {
-        url: "/41-roofing-and-restoration-roof-replacement.webp",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "41 Roofing and Restoration — roofing services in Crowley TX",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESC,
-    images: ["/41-roofing-and-restoration-roof-replacement.webp"],
+    images: ["/og-image.jpg"],
   },
 };
 
