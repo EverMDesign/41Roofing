@@ -14,7 +14,7 @@ export default function ConfirmationHero() {
       {/* Background image */}
       <div className="absolute inset-0 z-0 opacity-20">
         <img
-          src="/41-roofing-quad-finished.webp"
+          src="https://41media.evermdesign.com/images/41-roofing-quad-finished.webp"
           alt=""
           className="w-full h-full object-cover grayscale"
         />

@@ -3,7 +3,7 @@ import ServiceAreaTemplate from "@/components/ServiceAreaTemplate";
 import { serviceAreas, getServiceArea } from "@/lib/service-areas-data";
 import { notFound } from "next/navigation";
 
-const OG_IMAGE = "/og-image.jpg";
+const OG_IMAGE = "https://41media.evermdesign.com/images/og-image.jpg";
 
 export async function generateStaticParams() {
   return serviceAreas.map((area) => ({ slug: area.slug }));

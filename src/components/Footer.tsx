@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div>
           <img
-            src="/41-roofing-logo.webp"
+            src="https://41media.evermdesign.com/images/41-roofing-logo.webp"
             alt="41 Roofing and Restoration logo — roofing contractor in Crowley TX"
             className="h-14 w-auto mb-8"
           />

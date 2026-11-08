@@ -45,7 +45,7 @@ export default function Diagnosis() {
         </div>
         <div className="hidden lg:block h-[600px] w-full relative overflow-hidden rounded-[10px] bg-brand-black">
           <img
-            src="/41-roofing-and-restoration-roof-replacement.webp"
+            src="https://41media.evermdesign.com/images/41-roofing-and-restoration-roof-replacement.webp"
             alt="41 Roofing and Restoration roof replacement"
             className="absolute inset-0 w-full h-full object-cover opacity-80"
           />

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://41media.evermdesign.com/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "41 Roofing and Restoration — customer reviews",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESC,
-    images: ["/og-image.jpg"],
+    images: ["https://41media.evermdesign.com/images/og-image.jpg"],
   },
 };
 

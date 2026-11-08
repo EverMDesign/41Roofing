@@ -2,7 +2,7 @@ export default function StatementBanner() {
   return (
     <section className="relative h-[60vh] min-h-[500px] w-full bg-brand-black flex items-center justify-center overflow-hidden">
       <img
-        src="/41-roofing-restore-thepast.webp"
+        src="https://41media.evermdesign.com/images/41-roofing-restore-thepast.webp"
         alt="41 Roofing restore the past"
         className="absolute inset-0 w-full h-full object-cover opacity-40"
       />

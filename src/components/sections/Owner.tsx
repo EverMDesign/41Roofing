@@ -43,7 +43,7 @@ export default function Owner() {
               src="https://assets.cdn.filesafe.space/R7DwPt39QmcIooKJtyyM/media/6a73a3b5ee50b30ddc6f569f.mp4"
               controls={playing}
               playsInline
-              poster="/41-roofing-thumbnail-video.webp"
+              poster="https://41media.evermdesign.com/images/41-roofing-thumbnail-video.webp"
               className="absolute inset-0 w-full h-full object-cover"
               onPause={() => setPlaying(false)}
               onPlay={() => setPlaying(true)}

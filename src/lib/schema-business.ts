@@ -20,8 +20,8 @@ export const BUSINESS_CONFIG: BusinessConfig = {
   type: "RoofingContractor",
   telephone: "+1-817-266-9433",
   email: "info@41roofing.com",
-  logo: "https://www.41roofing.com/41-roofing-logo.webp",
-  image: "https://www.41roofing.com/41-roofing-and-restoration-roof-replacement.webp",
+  logo: "https://41media.evermdesign.com/images/41-roofing-logo.webp",
+  image: "https://41media.evermdesign.com/images/41-roofing-and-restoration-roof-replacement.webp",
   priceRange: "$$",
   // Full Google Maps CID link (stable entity id), not a share.google short
   // link — those are session/tracking URLs and a weak entity signal.
@@ -132,7 +132,7 @@ function build41BusinessNode(rating?: RatingData): Node {
       "Residential and commercial roofing, storm damage repairs, gutters, exterior work, and remodeling services for Crowley and North Texas property owners.",
     logo: {
       "@type": "ImageObject",
-      url: `${BUSINESS_CONFIG.url}/41-roofing-logo.webp`,
+      url: `https://41media.evermdesign.com/images/41-roofing-logo.webp`,
     },
     hasMap: BUSINESS_CONFIG.sameAs?.[0],
     contactPoint: {
@@ -240,7 +240,7 @@ export const BUSINESS = {
   phone: BUSINESS_CONFIG.telephone!,
   email: BUSINESS_CONFIG.email!,
   founder: "Brandi Burk",
-  logo: "/41-roofing-logo.webp",
+  logo: "https://41media.evermdesign.com/images/41-roofing-logo.webp",
   address: {
     street: "208 E Main St Suite D",
     city: "Crowley",

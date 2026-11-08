@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://41media.evermdesign.com/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "41 Roofing and Restoration — roofing contractor in Crowley TX",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "41 Roofing & Restoration | Crowley, TX Roofing Contractor",
     description:
       "Honest inspections. Dependable results. Premier roofing and restoration services in Crowley and North Texas.",
-    images: ["/og-image.jpg"],
+    images: ["https://41media.evermdesign.com/images/og-image.jpg"],
   },
 };
 

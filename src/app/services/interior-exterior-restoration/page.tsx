@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     title: "Interior & Exterior Restoration in Crowley, TX | 41 Roofing & Restoration",
     description: "Full property restoration after storm or water damage. Interior and exterior restoration services for homes in Crowley and North Texas.",
     url: "/services/interior-exterior-restoration",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "41 Roofing and Restoration — restoration services" }],
+    images: [{ url: "https://41media.evermdesign.com/images/og-image.jpg", width: 1200, height: 630, alt: "41 Roofing and Restoration — restoration services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Interior & Exterior Restoration in Crowley, TX | 41 Roofing & Restoration",
     description: "Full property restoration after storm or water damage. Interior and exterior restoration services for homes in Crowley and North Texas.",
-    images: ["/og-image.jpg"],
+    images: ["https://41media.evermdesign.com/images/og-image.jpg"],
   },
 };
 

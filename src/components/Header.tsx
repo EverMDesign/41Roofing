@@ -75,7 +75,7 @@ export default function Header() {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             <img
-              src="/41-roofing-logo.webp"
+              src="https://41media.evermdesign.com/images/41-roofing-logo.webp"
               alt="41 Roofing and Restoration logo — roofing contractor in Crowley TX"
               className="h-12 md:h-14 w-auto"
             />

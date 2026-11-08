@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     description:
       "Targeted roof repairs for active leaks, storm damage, and aging materials. Honest assessments and dependable fixes from a local Crowley, TX roofing contractor.",
     url: "/services/roof-repair",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "41 Roofing and Restoration — roof repair services" }],
+    images: [{ url: "https://41media.evermdesign.com/images/og-image.jpg", width: 1200, height: 630, alt: "41 Roofing and Restoration — roof repair services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Roof Repair in Crowley, TX | 41 Roofing & Restoration",
     description:
       "Targeted roof repairs for active leaks, storm damage, and aging materials. Honest assessments and dependable fixes from a local Crowley, TX roofing contractor.",
-    images: ["/og-image.jpg"],
+    images: ["https://41media.evermdesign.com/images/og-image.jpg"],
   },
 };
 

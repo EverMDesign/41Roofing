@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     title: "Gutters in Crowley, TX | 41 Roofing & Restoration",
     description: "Seamless gutter installation and replacement in Crowley and North Texas. Protect your foundation, landscaping, and siding with a properly functioning gutter system.",
     url: "/services/gutters",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "41 Roofing and Restoration — gutter services" }],
+    images: [{ url: "https://41media.evermdesign.com/images/og-image.jpg", width: 1200, height: 630, alt: "41 Roofing and Restoration — gutter services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Gutters in Crowley, TX | 41 Roofing & Restoration",
     description: "Seamless gutter installation and replacement in Crowley and North Texas. Protect your foundation, landscaping, and siding with a properly functioning gutter system.",
-    images: ["/og-image.jpg"],
+    images: ["https://41media.evermdesign.com/images/og-image.jpg"],
   },
 };
 

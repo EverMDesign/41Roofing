@@ -27,7 +27,7 @@ export default async function Hero() {
     <section className="relative min-h-[90vh] w-full bg-brand-black overflow-hidden flex items-end pt-24 pb-12 md:pb-24">
       <div className="absolute inset-0 z-0">
         <img
-          src="/41-roofing-and-restoration-roof-replacement.webp"
+          src="https://41media.evermdesign.com/images/41-roofing-and-restoration-roof-replacement.webp"
           alt="41 Roofing and Restoration roof replacement"
           className="w-full h-full object-cover opacity-60"
         />
