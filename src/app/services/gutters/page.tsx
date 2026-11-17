@@ -92,10 +92,10 @@ export default function GuttersPage() {
   return (
     <ServicePageTemplate data={pageData}>
       <div>
-        <h2 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-brand-black mb-6">
+        <h2 className="font-heading font-black text-md md:text-lg lg:text-xl text-brand-black mb-6">
           YOUR GUTTERS ARE YOUR FIRST LINE OF DEFENSE AGAINST WATER DAMAGE.
         </h2>
-        <div className="space-y-6 text-brand-charcoal/80 text-lg leading-relaxed">
+        <div className="space-y-6 text-brand-charcoal/80 text-base leading-relaxed">
           <p>
             A properly functioning gutter system channels thousands of gallons
             of rainwater away from your foundation, siding, and landscaping
@@ -113,7 +113,7 @@ export default function GuttersPage() {
       </div>
 
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-6">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-6">
           WHAT WE PROVIDE
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -149,10 +149,10 @@ export default function GuttersPage() {
       </div>
 
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-4">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-4">
           WHY GUTTERS MATTER MORE IN NORTH TEXAS
         </h3>
-        <p className="text-brand-charcoal/80 text-lg leading-relaxed mb-6">
+        <p className="text-brand-charcoal/80 text-base leading-relaxed mb-6">
           DFW&apos;s climate and soil conditions put unique demands on gutter
           systems that homeowners from other parts of the country often don&apos;t
           anticipate. A gutter setup that works fine in a milder region can fail

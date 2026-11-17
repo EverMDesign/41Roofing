@@ -161,7 +161,7 @@ export default function InspectionModal() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-3">REQUEST RECEIVED</h3>
+              <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-3">REQUEST RECEIVED</h3>
               <p className="text-brand-muted font-sans text-sm mb-6 max-w-xs">
                 Thank you! Our team will contact you within 2 business hours to schedule your inspection.
               </p>
@@ -175,7 +175,7 @@ export default function InspectionModal() {
             </div>
           ) : (
           <>
-          <h3 className="font-heading font-black text-2xl md:text-3xl text-brand-black mb-2">
+          <h3 className="font-heading font-black text-md md:text-lg text-brand-black mb-2">
             BOOK YOUR FREE INSPECTION
           </h3>
           <p className="text-brand-muted font-sans text-sm mb-8">
@@ -187,26 +187,26 @@ export default function InspectionModal() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <input type="text" id="modal-fname" name="fname" value={formData.fname} onChange={handleChange} className={errors.fname ? `${inputClasses} !border-red-400 focus:!border-red-500` : inputClasses} placeholder="First Name *" required />
-                  {errors.fname && <p className="text-red-500 text-xs mt-1">{errors.fname}</p>}
+                  {errors.fname && <p className="text-red-500 text-sm mt-1">{errors.fname}</p>}
                 </div>
                 <div>
                   <input type="text" id="modal-lname" name="lname" value={formData.lname} onChange={handleChange} className={errors.lname ? `${inputClasses} !border-red-400 focus:!border-red-500` : inputClasses} placeholder="Last Name *" required />
-                  {errors.lname && <p className="text-red-500 text-xs mt-1">{errors.lname}</p>}
+                  {errors.lname && <p className="text-red-500 text-sm mt-1">{errors.lname}</p>}
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <input type="tel" id="modal-phone" name="phone" value={formData.phone} onChange={handleChange} className={errors.phone ? `${inputClasses} !border-red-400 focus:!border-red-500` : inputClasses} placeholder="Phone *" required />
-                  {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+                  {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                 </div>
                 <div>
                   <input type="email" id="modal-email" name="email" value={formData.email} onChange={handleChange} className={errors.email ? `${inputClasses} !border-red-400 focus:!border-red-500` : inputClasses} placeholder="Email *" required />
-                  {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                 </div>
               </div>
               <div>
                 <input type="text" id="modal-address" name="address" value={formData.address} onChange={handleChange} className={errors.address ? `${inputClasses} !border-red-400 focus:!border-red-500` : inputClasses} placeholder="123 Main St, City, TX 76036 *" required />
-                {errors.address && <p className="text-red-500 text-xs mt-1">{errors.address}</p>}
+                {errors.address && <p className="text-red-500 text-sm mt-1">{errors.address}</p>}
               </div>
               <div className="relative">
                 <select
@@ -245,7 +245,7 @@ export default function InspectionModal() {
                   onChange={(e) => setFormData((prev) => ({ ...prev, sms: e.target.checked }))}
                   className="mt-1 accent-brand-aqua cursor-pointer w-4 h-4"
                 />
-                <label htmlFor="modal-sms" className="text-[10px] text-brand-muted font-sans leading-tight cursor-pointer">
+                <label htmlFor="modal-sms" className="text-sm text-brand-muted font-sans leading-tight cursor-pointer">
                   I consent to receive SMS notifications, alerts &amp; occasional marketing communication from 41
                   Roofing &amp; Restoration. View Privacy Policy and Terms of Service.
                 </label>

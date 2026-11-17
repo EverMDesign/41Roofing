@@ -92,10 +92,10 @@ export default function ExteriorRepairsPage() {
   return (
     <ServicePageTemplate data={pageData}>
       <div>
-        <h2 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-brand-black mb-6">
+        <h2 className="font-heading font-black text-md md:text-lg lg:text-xl text-brand-black mb-6">
           YOUR HOME&rsquo;S EXTERIOR PROTECTS EVERYTHING INSIDE IT.
         </h2>
-        <div className="space-y-6 text-brand-charcoal/80 text-lg leading-relaxed">
+        <div className="space-y-6 text-brand-charcoal/80 text-base leading-relaxed">
           <p>
             Siding, fascia, soffit, and trim aren&rsquo;t just cosmetic. They
             form your home&rsquo;s protective envelope, keeping moisture, pests,
@@ -112,7 +112,7 @@ export default function ExteriorRepairsPage() {
       </div>
 
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-6">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-6">
           WHAT WE REPAIR
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -148,10 +148,10 @@ export default function ExteriorRepairsPage() {
       </div>
 
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-4">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-4">
           HOW TEXAS WEATHER IMPACTS YOUR HOME&rsquo;S EXTERIOR
         </h3>
-        <p className="text-brand-charcoal/80 text-lg leading-relaxed mb-6">
+        <p className="text-brand-charcoal/80 text-base leading-relaxed mb-6">
           DFW homeowners face a combination of weather stresses that accelerates
           exterior wear faster than most parts of the country. Knowing what to
           look for helps you catch damage early&mdash;before it becomes a bigger

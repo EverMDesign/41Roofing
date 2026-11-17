@@ -29,7 +29,7 @@ export default function ConfirmationPage() {
           {/* Back to Home CTA */}
           <section className="py-24 md:py-32 bg-brand-white text-center">
             <div className="max-w-2xl mx-auto px-6 md:px-12">
-              <h2 className="font-heading font-black text-2xl mb-6">
+              <h2 className="font-heading font-black text-md mb-6">
                 BACK TO HOME?
               </h2>
               <p className="text-brand-muted mb-10">

@@ -47,12 +47,12 @@ export default function ConfirmationHero() {
         <p className="text-brand-aqua font-heading font-bold tracking-[0.2em] text-sm uppercase mb-6">
           Inspection Request Received
         </p>
-        <h1 className="font-heading font-black text-3xl md:text-4xl lg:text-5xl leading-tight mb-8">
+        <h1 className="font-heading font-black text-lg md:text-xl lg:text-3xl leading-tight mb-8">
           YOU&rsquo;RE ON THE LIST,
           <br />
           CROWLEY.
         </h1>
-        <p className="text-brand-white/70 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+        <p className="text-brand-white/70 text-base md:text-md max-w-2xl mx-auto font-light leading-relaxed">
           Thank you for trusting 41 Roofing. We have received your details and
           our team is already reviewing your property location.
         </p>

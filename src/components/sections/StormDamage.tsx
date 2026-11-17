@@ -21,17 +21,17 @@ export default function StormDamage() {
         <div className="absolute inset-0 bg-brand-black/60" />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12">
         {/* Storm Damage — Top */}
         <div className="py-24 md:py-32 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <p className="eyebrow text-brand-aqua mb-4">North Texas Storms</p>
-            <h2 className="font-heading font-black text-brand-white text-[32px] md:text-[60px] md:leading-[66px] leading-[1.1] mb-8">
+            <h2 className="font-heading font-black text-brand-white text-xl md:text-4xl md:leading-[66px] leading-[1.1] mb-8">
               WHEN TEXAS WEATHER HITS,
               <br />
               KNOW WHAT TO DO NEXT.
             </h2>
-            <p className="font-sans text-brand-white/80 text-lg md:text-xl max-w-xl mb-10">
+            <p className="font-sans text-brand-white/80 text-base md:text-md max-w-xl mb-10">
               Hail, high winds, and heavy rain can compromise a roof instantly. Missing shingles, roof leaks, and
               hidden impact damage require immediate professional evaluation to prevent further structural
               deterioration.
@@ -50,7 +50,7 @@ export default function StormDamage() {
               className="w-full h-full object-cover opacity-80"
             />
             <div className="absolute inset-0 border border-white/10 rounded-[10px] pointer-events-none" />
-            <div className="absolute bottom-4 left-4 bg-brand-aqua text-brand-black px-4 py-2 rounded-[10px] font-heading font-bold text-xs md:text-sm tracking-widest uppercase">
+            <div className="absolute bottom-4 left-4 bg-brand-aqua text-brand-black px-4 py-2 rounded-[10px] font-heading font-bold text-sm md:text-sm tracking-widest uppercase">
               Free Inspections, Honest Answers.
             </div>
           </div>
@@ -62,17 +62,17 @@ export default function StormDamage() {
         {/* Our Process — Bottom */}
         <div className="py-24 md:py-32">
           <p className="eyebrow text-brand-aqua mb-4">Our Process</p>
-          <h3 className="font-heading font-black text-brand-white text-[28px] md:text-[48px] leading-[1.1] mb-16">
+          <h3 className="font-heading font-black text-brand-white text-lg md:text-3xl leading-[1.1] mb-16">
             FROM BEGINNING TO END.
           </h3>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
             {processSteps.map((step) => (
               <div key={step.num}>
-                <span className="block font-heading font-bold text-brand-aqua text-3xl md:text-4xl mb-4">
+                <span className="block font-heading font-bold text-brand-aqua text-lg md:text-xl mb-4">
                   {step.num}
                 </span>
-                <h4 className="font-heading font-bold text-brand-white text-base md:text-lg mb-2">
+                <h4 className="font-heading font-bold text-brand-white text-base md:text-base mb-2">
                   {step.title}
                 </h4>
                 <p className="font-sans text-brand-white/70 text-sm">{step.desc}</p>
@@ -82,7 +82,7 @@ export default function StormDamage() {
 
           {/* Callout */}
           <div className="bg-brand-charcoal/50 border border-white/10 rounded-[10px] p-6 md:p-8 max-w-4xl mb-12 border-l-4 border-l-brand-aqua">
-            <p className="font-sans text-brand-white text-base md:text-lg italic">
+            <p className="font-sans text-brand-white text-base md:text-base italic">
               &ldquo;We document visible damage, explain our findings and provide a clear construction scope.&rdquo;
             </p>
           </div>

@@ -70,20 +70,20 @@ export default function RestorationCategoryPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent" />
             </div>
 
-            <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12">
+            <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12">
               <div className="max-w-4xl">
-                <div className="flex items-center gap-2 text-brand-aqua font-heading font-bold tracking-[0.2em] text-xs uppercase mb-6">
+                <div className="flex items-center gap-2 text-brand-aqua font-heading font-bold tracking-[0.2em] text-sm uppercase mb-6">
                   <Link href="/" className="hover:text-brand-white transition-colors">Home</Link>
                   <span>/</span>
                   <span>Restoration</span>
                 </div>
-                <h1 className="font-heading font-black text-[40px] md:text-[56px] lg:text-[80px] leading-[0.95] text-brand-white uppercase mb-6">
+                <h1 className="font-heading font-black text-2xl md:text-3xl lg:text-6xl leading-[0.95] text-brand-white uppercase mb-6">
                   Restoration &amp; Remodeling
                 </h1>
                 <p className="text-brand-white/60 font-heading font-bold text-sm uppercase tracking-widest mb-8">
                   Residential and Commercial
                 </p>
-                <p className="text-brand-white/80 text-lg max-w-2xl font-light leading-relaxed">
+                <p className="text-brand-white/80 text-base max-w-2xl font-light leading-relaxed">
                   From gutters and exterior repairs to full interior restoration and painting, we bring properties back to life across Crowley and North Texas.
                 </p>
               </div>
@@ -92,7 +92,7 @@ export default function RestorationCategoryPage() {
 
           {/* Services List */}
           <section className="py-24 md:py-32 bg-brand-white">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-12">
               <div className="border-t border-brand-border">
                 {services.map((svc) => (
                   <Link
@@ -101,7 +101,7 @@ export default function RestorationCategoryPage() {
                     className="group flex items-center justify-between gap-4 py-6 px-4 -mx-4 border-b border-brand-border hover:bg-brand-softGray transition-colors duration-200"
                   >
                     <div className="min-w-0">
-                      <h2 className="font-heading font-bold text-xl uppercase tracking-wide text-brand-black">
+                      <h2 className="font-heading font-bold text-md uppercase tracking-wide text-brand-black">
                         {svc.title}
                       </h2>
                       <p className="text-sm text-brand-muted font-sans mt-1 leading-relaxed">

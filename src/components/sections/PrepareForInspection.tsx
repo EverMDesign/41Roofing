@@ -24,7 +24,7 @@ function CheckIcon() {
 export default function PrepareForInspection() {
   return (
     <section className="py-24 md:py-32 bg-brand-lightAqua">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           <div className="lg:w-1/2">
             <img
@@ -35,7 +35,7 @@ export default function PrepareForInspection() {
           </div>
           <div className="lg:w-1/2">
             <p className="eyebrow mb-4">While you wait</p>
-            <h2 className="font-heading font-black text-3xl md:text-4xl mb-8">
+            <h2 className="font-heading font-black text-lg md:text-xl mb-8">
               HOW TO PREPARE FOR YOUR INSPECTION.
             </h2>
             <ul className="space-y-6">

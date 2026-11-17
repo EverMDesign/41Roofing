@@ -23,26 +23,26 @@ export default function ProjectCard({ project }: { project: Project }) {
           alt={project.alt}
           className="w-full h-full object-cover img-hover-scale"
         />
-        <div className="absolute top-6 left-6 bg-brand-black text-white px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-[10px]">
+        <div className="absolute top-6 left-6 bg-brand-black text-white px-4 py-2 text-sm font-bold uppercase tracking-widest rounded-[10px]">
           {project.city}
         </div>
       </div>
       <div className="p-8 lg:p-10">
         <div className="mb-8">
-          <h3 className="font-heading font-black text-2xl uppercase mb-2 tracking-wide">
+          <h3 className="font-heading font-black text-md uppercase mb-2 tracking-wide">
             {project.title}
           </h3>
-          <p className="text-xs text-brand-muted uppercase tracking-widest font-bold">
+          <p className="text-sm text-brand-muted uppercase tracking-widest font-bold">
             {project.material}
           </p>
         </div>
         <div className="grid grid-cols-2 gap-8 mb-8 border-t border-brand-border pt-6">
           <div>
-            <p className="text-xs text-brand-black uppercase font-bold tracking-widest mb-2">Problem</p>
+            <p className="text-sm text-brand-black uppercase font-bold tracking-widest mb-2">Problem</p>
             <p className="text-sm text-brand-muted leading-relaxed">{project.problem}</p>
           </div>
           <div>
-            <p className="text-xs text-brand-black uppercase font-bold tracking-widest mb-2">Solution</p>
+            <p className="text-sm text-brand-black uppercase font-bold tracking-widest mb-2">Solution</p>
             <p className="text-sm text-brand-muted leading-relaxed">{project.solution}</p>
           </div>
         </div>

@@ -1,9 +1,9 @@
 export default function Commercial() {
   return (
     <section id="commercial" className="bg-brand-charcoal py-24 md:py-32 text-brand-white">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
-          <h2 className="font-heading font-black text-[32px] md:text-[52px] leading-[1.1] mb-8">
+          <h2 className="font-heading font-black text-xl md:text-3xl leading-[1.1] mb-8">
             COMMERCIAL ROOFING
             <br />
             WITHOUT THE GUESSWORK.
@@ -11,7 +11,7 @@ export default function Commercial() {
           <p className="font-heading font-bold text-brand-aqua text-sm tracking-widest uppercase mb-8">
             Property Owners &bull; Facility Managers &bull; Business Owners &bull; Commercial Property Managers
           </p>
-          <p className="font-sans text-brand-white/80 text-lg mb-12 max-w-xl">
+          <p className="font-sans text-brand-white/80 text-base mb-12 max-w-xl">
             Protecting your commercial asset requires specialized expertise. We provide dependable inspection,
             repair, and replacement services for low-slope and commercial systems.
           </p>

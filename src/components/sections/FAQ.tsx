@@ -49,14 +49,14 @@ export default function FAQ() {
       <div className="max-w-[1000px] mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <p className="eyebrow mb-4">Roofing Questions</p>
-          <h2 className="font-heading font-black text-[32px] md:text-[60px] md:leading-[66px] text-brand-black leading-[1.1]">
+          <h2 className="font-heading font-black text-xl md:text-4xl md:leading-[66px] text-brand-black leading-[1.1]">
             CLEAR ANSWERS BEFORE YOU MAKE A DECISION.
           </h2>
         </div>
         <div className="space-y-0 border-t border-brand-border">
           {faqs.map((faq, idx) => (
             <details key={idx} className="group border-b border-brand-border">
-              <summary className="flex justify-between items-center font-heading font-bold text-lg md:text-xl text-brand-black py-6 cursor-pointer">
+              <summary className="flex justify-between items-center font-heading font-bold text-base md:text-md text-brand-black py-6 cursor-pointer">
                 {faq.q}
                 <span className="transition group-open:rotate-180 text-brand-aqua ml-4 shrink-0">
                   <ChevronIcon />

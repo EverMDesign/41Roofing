@@ -71,23 +71,34 @@ export default async function ProjectsPage({
         <Header />
 
         <main className="pt-20 md:pt-24">
-          {/* Hero / intro */}
+          {/* Hero: title left, map right */}
           <section className="bg-brand-white">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12 pt-12 md:pt-16 pb-16">
-              <p className="eyebrow mb-4">Our Work</p>
-              <h1 className="font-heading font-black text-[36px] md:text-[60px] md:leading-[66px] text-brand-black leading-[1.1] max-w-3xl mb-6">
-                Roofs We&rsquo;ve Built Across North Texas.
-              </h1>
-              <p className="text-brand-muted text-base md:text-lg max-w-2xl leading-relaxed">
-                Real roof replacements, repairs, and storm restorations completed by 41 Roofing
-                &amp; Restoration for homeowners and businesses in Crowley and the surrounding area.
-              </p>
+            <div className="max-w-[1440px] mx-auto px-6 md:px-12 pt-12 md:pt-16 pb-16 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
+              {mappableProjects.length > 0 && (
+                <div className="order-2 aspect-video rounded-[10px] overflow-hidden border border-brand-border">
+                  <ServiceAreaMap projects={mappableProjects} />
+                </div>
+              )}
+              <div
+                className={`order-1 ${
+                  mappableProjects.length > 0 ? "" : "md:col-span-2"
+                }`}
+              >
+                <p className="eyebrow mb-4">Our Work</p>
+                <h1 className="font-heading font-black text-xl md:text-4xl md:leading-[66px] text-brand-black leading-[1.1] mb-6">
+                  Roofs We&rsquo;ve Built Across North Texas.
+                </h1>
+                <p className="text-brand-muted text-base md:text-base leading-relaxed">
+                  Real roof replacements, repairs, and storm restorations completed by 41 Roofing
+                  &amp; Restoration for homeowners and businesses in Crowley and the surrounding area.
+                </p>
+              </div>
             </div>
           </section>
 
           {/* City filter */}
           <section className="bg-brand-white border-y border-brand-border">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-6">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-6">
               <nav
                 aria-label="Filter projects by city"
                 className="flex flex-wrap gap-3"
@@ -108,27 +119,12 @@ export default async function ProjectsPage({
             </div>
           </section>
 
-          {/* Service area map — only when at least one visible project has coordinates */}
-          {mappableProjects.length > 0 && (
-            <section className="bg-brand-white">
-              <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-16">
-                <p className="eyebrow mb-4">Where We&rsquo;ve Worked</p>
-                <h2 className="font-heading font-black text-[28px] md:text-[36px] leading-[1.1] text-brand-black uppercase mb-8">
-                  {city ? `${city} Projects on the Map` : "Our Projects on the Map"}
-                </h2>
-                <div className="rounded-[10px] overflow-hidden border border-brand-border">
-                  <ServiceAreaMap projects={mappableProjects} />
-                </div>
-              </div>
-            </section>
-          )}
-
           {/* Project grid */}
           <section className="py-24 md:py-32 bg-brand-softGray">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-12">
               {filtered.length === 0 ? (
                 <div className="text-center py-16">
-                  <p className="font-heading font-black text-2xl text-brand-black uppercase mb-4">
+                  <p className="font-heading font-black text-md text-brand-black uppercase mb-4">
                     {city ? `No Projects in ${city} Yet` : "No Projects Yet"}
                   </p>
                   <p className="text-brand-muted mb-8">

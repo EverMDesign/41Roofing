@@ -21,10 +21,10 @@ function joinWithAnd(items: string[]) {
 export default function ServiceAreas() {
   return (
     <section id="service-areas" className="py-24 md:py-32 bg-brand-softGray">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <p className="eyebrow mb-4">Local Roofing</p>
-          <h2 className="font-heading font-black text-[32px] md:text-[60px] md:leading-[66px] text-brand-black leading-[1.1]">
+          <h2 className="font-heading font-black text-xl md:text-4xl md:leading-[66px] text-brand-black leading-[1.1]">
             PROUDLY SERVING NORTH TEXAS.
           </h2>
         </div>
@@ -33,14 +33,14 @@ export default function ServiceAreas() {
             <a
               key={city.name}
               href={city.href}
-              className="font-heading font-black text-2xl md:text-4xl text-brand-black hover:text-brand-aqua transition-colors"
+              className="font-heading font-black text-md md:text-xl text-brand-black hover:text-brand-aqua transition-colors"
             >
               {city.name}
             </a>
           ))}
         </div>
         <div className="text-center max-w-2xl mx-auto">
-          <p className="font-sans text-brand-charcoal/80 text-base md:text-lg mb-8">
+          <p className="font-sans text-brand-charcoal/80 text-base md:text-base mb-8">
             Don&rsquo;t see your city listed? We also serve {joinWithAnd(surroundingCities)}, and the
             surrounding North Texas area. Reach out and we&rsquo;ll confirm we&rsquo;ve got you covered.
           </p>

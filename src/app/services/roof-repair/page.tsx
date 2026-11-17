@@ -132,11 +132,11 @@ export default function RoofRepairPage() {
   return (
     <ServicePageTemplate data={pageData}>
       <div>
-        <h2 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-brand-black mb-6">
+        <h2 className="font-heading font-black text-md md:text-lg lg:text-xl text-brand-black mb-6">
           NOT EVERY ROOF NEEDS REPLACING. SOMETIMES IT JUST NEEDS THE RIGHT
           REPAIR.
         </h2>
-        <div className="space-y-6 text-brand-charcoal/80 text-lg leading-relaxed">
+        <div className="space-y-6 text-brand-charcoal/80 text-base leading-relaxed">
           <p>
             A damaged roof doesn&rsquo;t always mean a full replacement. At 41
             Roofing &amp; Restoration, we specialize in identifying the root
@@ -152,7 +152,7 @@ export default function RoofRepairPage() {
       </div>
 
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-6">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-6">
           COMMON ISSUES WE REPAIR
         </h3>
         <ul className="space-y-4">
@@ -176,7 +176,7 @@ export default function RoofRepairPage() {
       </div>
 
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-6">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-6">
           OUR REPAIR APPROACH
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -212,10 +212,10 @@ export default function RoofRepairPage() {
       </div>
 
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-4">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-4">
           WHY ROOF REPAIR IS CRITICAL IN NORTH TEXAS
         </h3>
-        <p className="text-brand-charcoal/80 text-lg leading-relaxed mb-6">
+        <p className="text-brand-charcoal/80 text-base leading-relaxed mb-6">
           North Texas subjects roofs to some of the harshest conditions in the
           country. Understanding what your roof is up against helps you recognize
           damage early&mdash;before a small problem becomes a major one.

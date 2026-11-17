@@ -8,10 +8,10 @@ const services = [
 export default function Restoration() {
   return (
     <section id="restoration" className="py-24 md:py-32 bg-brand-charcoal text-brand-white">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         <div className="max-w-3xl mb-16">
           <p className="eyebrow text-brand-white/50 mb-4">Restoration &amp; Remodeling</p>
-          <h2 className="font-heading font-bold text-[32px] md:text-[52px] leading-[1.1]">
+          <h2 className="font-heading font-bold text-xl md:text-3xl leading-[1.1]">
             WHEN YOUR PROJECT GOES BEYOND THE ROOF.
           </h2>
         </div>
@@ -20,7 +20,7 @@ export default function Restoration() {
             <a
               key={item.label}
               href={item.href}
-              className="font-heading font-bold text-xl md:text-2xl hover:text-brand-aqua transition-colors cursor-pointer text-left"
+              className="font-heading font-bold text-md md:text-md hover:text-brand-aqua transition-colors cursor-pointer text-left"
             >
               {item.label}
             </a>

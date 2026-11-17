@@ -92,10 +92,10 @@ export default function RestorationPage() {
   return (
     <ServicePageTemplate data={pageData}>
       <div>
-        <h2 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-brand-black mb-6">
+        <h2 className="font-heading font-black text-md md:text-lg lg:text-xl text-brand-black mb-6">
           WHEN THE DAMAGE GOES BEYOND THE ROOF, WE GO WITH IT.
         </h2>
-        <div className="space-y-6 text-brand-charcoal/80 text-lg leading-relaxed">
+        <div className="space-y-6 text-brand-charcoal/80 text-base leading-relaxed">
           <p>
             Severe storms and water intrusion rarely damage just one thing. A
             compromised roof leads to water-damaged ceilings, walls, insulation,
@@ -113,7 +113,7 @@ export default function RestorationPage() {
       </div>
 
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-6">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-6">
           RESTORATION SCOPE
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -149,10 +149,10 @@ export default function RestorationPage() {
       </div>
 
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-4">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-4">
           COMMON RESTORATION SCENARIOS IN NORTH TEXAS
         </h3>
-        <p className="text-brand-charcoal/80 text-lg leading-relaxed mb-6">
+        <p className="text-brand-charcoal/80 text-base leading-relaxed mb-6">
           North Texas homeowners face a specific set of conditions that make
           restoration work a recurring reality — not a once-in-a-lifetime event.
           These are the situations we see most often in Crowley and across

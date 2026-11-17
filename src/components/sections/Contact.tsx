@@ -39,10 +39,10 @@ const serviceOptions = [
 ];
 
 const inputClasses =
-  "w-full bg-transparent border-b border-white/20 pb-3 text-brand-white placeholder-transparent focus:outline-none focus:border-brand-aqua transition-colors peer font-sans text-lg";
+  "w-full bg-transparent border-b border-white/20 pb-3 text-brand-white placeholder-transparent focus:outline-none focus:border-brand-aqua transition-colors peer font-sans text-base";
 
 const labelClasses =
-  "absolute left-0 -top-4 text-xs font-heading font-bold uppercase tracking-widest text-brand-white/50 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-brand-white/70 peer-placeholder-shown:top-1 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brand-aqua";
+  "absolute left-0 -top-4 text-sm font-heading font-bold uppercase tracking-widest text-brand-white/50 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-brand-white/70 peer-placeholder-shown:top-1 peer-focus:-top-4 peer-focus:text-sm peer-focus:text-brand-aqua";
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -109,14 +109,14 @@ export default function Contact() {
 
   return (
     <section id="contact" className="bg-brand-black text-brand-white">
-      <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row">
+      <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row">
         {/* Left Panel */}
         <div className="w-full lg:w-1/2 p-12 lg:p-24 xl:p-32 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/10">
           <p className="eyebrow text-brand-white/50 mb-6">Start Here</p>
-          <h2 className="font-heading font-black text-[32px] md:text-[60px] md:leading-[66px] leading-[1.1] mb-6">
+          <h2 className="font-heading font-black text-xl md:text-4xl md:leading-[66px] leading-[1.1] mb-6">
             NOT SURE WHAT YOUR ROOF NEEDS?
           </h2>
-          <h3 className="font-heading font-bold text-brand-aqua text-xl md:text-2xl mb-12 tracking-wide">
+          <h3 className="font-heading font-bold text-brand-aqua text-md md:text-md mb-12 tracking-wide">
             START WITH AN HONEST INSPECTION.
           </h3>
           <div className="flex flex-col sm:flex-row gap-6 mt-auto pt-12">
@@ -138,7 +138,7 @@ export default function Contact() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="font-heading font-black text-xl md:text-2xl text-brand-white mb-3">REQUEST RECEIVED</h3>
+              <h3 className="font-heading font-black text-md md:text-md text-brand-white mb-3">REQUEST RECEIVED</h3>
               <p className="text-brand-white/60 font-sans text-sm mb-6 max-w-xs">
                 Thank you! Our team will contact you within 2 business hours to schedule your inspection.
               </p>
@@ -159,14 +159,14 @@ export default function Contact() {
                     <input type="text" id="fname" name="fname" value={formData.fname} onChange={handleInputChange} className={errors.fname ? `${inputClasses} !border-red-400 focus:!border-red-400` : inputClasses} placeholder="First Name" required />
                     <label htmlFor="fname" className={labelClasses}>First Name</label>
                   </div>
-                  {errors.fname && <p className="text-red-400 text-xs mt-1">{errors.fname}</p>}
+                  {errors.fname && <p className="text-red-400 text-sm mt-1">{errors.fname}</p>}
                 </div>
                 <div>
                   <div className="relative">
                     <input type="text" id="lname" name="lname" value={formData.lname} onChange={handleInputChange} className={errors.lname ? `${inputClasses} !border-red-400 focus:!border-red-400` : inputClasses} placeholder="Last Name" required />
                     <label htmlFor="lname" className={labelClasses}>Last Name</label>
                   </div>
-                  {errors.lname && <p className="text-red-400 text-xs mt-1">{errors.lname}</p>}
+                  {errors.lname && <p className="text-red-400 text-sm mt-1">{errors.lname}</p>}
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -175,14 +175,14 @@ export default function Contact() {
                     <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleInputChange} className={errors.phone ? `${inputClasses} !border-red-400 focus:!border-red-400` : inputClasses} placeholder="Phone" required />
                     <label htmlFor="phone" className={labelClasses}>Phone</label>
                   </div>
-                  {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
+                  {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone}</p>}
                 </div>
                 <div>
                   <div className="relative">
                     <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} className={errors.email ? `${inputClasses} !border-red-400 focus:!border-red-400` : inputClasses} placeholder="Email" required />
                     <label htmlFor="email" className={labelClasses}>Email</label>
                   </div>
-                  {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
+                  {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
                 </div>
               </div>
               <div>
@@ -190,7 +190,7 @@ export default function Contact() {
                   <input type="text" id="address" name="address" value={formData.address} onChange={handleInputChange} className={errors.address ? `${inputClasses} !border-red-400 focus:!border-red-400` : inputClasses} placeholder="123 Main St, City, TX 76036" required />
                   <label htmlFor="address" className={labelClasses}>Property Address</label>
                 </div>
-                {errors.address && <p className="text-red-400 text-xs mt-1">{errors.address}</p>}
+                {errors.address && <p className="text-red-400 text-sm mt-1">{errors.address}</p>}
               </div>
               <div className="relative">
                 <select
@@ -198,7 +198,7 @@ export default function Contact() {
                   name="service"
                   value={formData.service}
                   onChange={handleInputChange}
-                  className="w-full bg-brand-charcoal border-b border-white/20 pb-3 text-brand-white/70 focus:outline-none focus:border-brand-aqua transition-colors font-sans text-lg appearance-none rounded-none cursor-pointer"
+                  className="w-full bg-brand-charcoal border-b border-white/20 pb-3 text-brand-white/70 focus:outline-none focus:border-brand-aqua transition-colors font-sans text-base appearance-none rounded-none cursor-pointer"
                 >
                   <option value="" disabled>Select Service Needed</option>
                   {serviceOptions.map((opt) => (
@@ -218,7 +218,7 @@ export default function Contact() {
                   rows={3}
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full bg-transparent border-b border-white/20 pb-3 text-brand-white placeholder-transparent focus:outline-none focus:border-brand-aqua transition-colors peer font-sans text-lg resize-none"
+                  className="w-full bg-transparent border-b border-white/20 pb-3 text-brand-white placeholder-transparent focus:outline-none focus:border-brand-aqua transition-colors peer font-sans text-base resize-none"
                   placeholder="Message"
                 />
                 <label htmlFor="message" className={labelClasses}>Message (Optional)</label>
@@ -232,7 +232,7 @@ export default function Contact() {
                   onChange={handleInputChange}
                   className="mt-1 accent-brand-aqua cursor-pointer w-4 h-4 rounded-none bg-brand-charcoal border-white/20"
                 />
-                <label htmlFor="sms" className="text-xs text-brand-white/50 font-sans leading-tight cursor-pointer">
+                <label htmlFor="sms" className="text-sm text-brand-white/50 font-sans leading-tight cursor-pointer">
                   I consent to receive SMS notifications, alerts &amp; occasional marketing communication from 41
                   Roofing &amp; Restoration. View Privacy Policy and Terms of Service.
                 </label>

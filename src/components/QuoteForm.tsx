@@ -143,7 +143,7 @@ export default function QuoteForm({
       <button
         type="button"
         onClick={() => switchTab("roofing")}
-        className={`relative z-10 flex-1 py-2.5 text-center font-heading font-bold text-xs tracking-widest uppercase transition-colors duration-300 rounded-full ${
+        className={`relative z-10 flex-1 py-2.5 text-center font-heading font-bold text-sm tracking-widest uppercase transition-colors duration-300 rounded-full ${
           activeTab === "roofing" ? "text-brand-black" : "text-brand-muted hover:text-brand-charcoal"
         }`}
       >
@@ -152,7 +152,7 @@ export default function QuoteForm({
       <button
         type="button"
         onClick={() => switchTab("remodeling")}
-        className={`relative z-10 flex-1 py-2.5 text-center font-heading font-bold text-xs tracking-widest uppercase transition-colors duration-300 rounded-full ${
+        className={`relative z-10 flex-1 py-2.5 text-center font-heading font-bold text-sm tracking-widest uppercase transition-colors duration-300 rounded-full ${
           activeTab === "remodeling" ? "text-brand-black" : "text-brand-muted hover:text-brand-charcoal"
         }`}
       >
@@ -172,7 +172,7 @@ export default function QuoteForm({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-3">REQUEST RECEIVED</h3>
+          <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-3">REQUEST RECEIVED</h3>
           <p className="text-brand-muted font-sans text-sm mb-6 max-w-xs">
             Thank you! Our team will contact you within 2 business hours to schedule your inspection.
           </p>
@@ -279,26 +279,26 @@ function FormFields({
       <div className="grid grid-cols-2 gap-4">
         <div>
           <input type="text" name="fname" value={formData.fname} onChange={onChange} className={fieldClass("fname")} placeholder="First Name *" required />
-          {errors.fname && <p className="text-red-500 text-xs mt-1">{errors.fname}</p>}
+          {errors.fname && <p className="text-red-500 text-sm mt-1">{errors.fname}</p>}
         </div>
         <div>
           <input type="text" name="lname" value={formData.lname} onChange={onChange} className={fieldClass("lname")} placeholder="Last Name *" required />
-          {errors.lname && <p className="text-red-500 text-xs mt-1">{errors.lname}</p>}
+          {errors.lname && <p className="text-red-500 text-sm mt-1">{errors.lname}</p>}
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4">
         <div>
           <input type="tel" name="phone" value={formData.phone} onChange={onChange} className={fieldClass("phone")} placeholder="Phone *" required />
-          {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+          {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
         </div>
         <div>
           <input type="email" name="email" value={formData.email} onChange={onChange} className={fieldClass("email")} placeholder="Email *" required />
-          {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+          {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
         </div>
       </div>
       <div>
         <input type="text" name="address" value={formData.address} onChange={onChange} className={fieldClass("address")} placeholder="123 Main St, City, TX 76036 *" required />
-        {errors.address && <p className="text-red-500 text-xs mt-1">{errors.address}</p>}
+        {errors.address && <p className="text-red-500 text-sm mt-1">{errors.address}</p>}
       </div>
       <div className="relative">
         <select
@@ -327,7 +327,7 @@ function FormFields({
           onChange={(e) => onCheckbox(e.target.checked)}
           className="mt-1 accent-brand-aqua cursor-pointer w-4 h-4"
         />
-        <label htmlFor={`${formId}-sms`} className="text-[10px] text-brand-muted font-sans leading-tight cursor-pointer">
+        <label htmlFor={`${formId}-sms`} className="text-sm text-brand-muted font-sans leading-tight cursor-pointer">
           I consent to receive SMS notifications, alerts &amp; occasional marketing communication from 41
           Roofing &amp; Restoration. View Privacy Policy and Terms of Service.
         </label>

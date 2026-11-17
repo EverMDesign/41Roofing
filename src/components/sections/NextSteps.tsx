@@ -27,11 +27,11 @@ const steps = [
 export default function NextSteps() {
   return (
     <section className="py-24 md:py-32 bg-brand-white">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Steps */}
           <div className="lg:col-span-7">
-            <h2 className="font-heading font-black text-2xl md:text-3xl mb-12 flex items-center gap-4">
+            <h2 className="font-heading font-black text-md md:text-lg mb-12 flex items-center gap-4">
               WHAT HAPPENS NEXT
               <span className="flex-1 h-px bg-brand-border" />
             </h2>
@@ -39,11 +39,11 @@ export default function NextSteps() {
             <div className="space-y-12">
               {steps.map((step) => (
                 <div key={step.number} className="flex gap-6 md:gap-8 group">
-                  <div className="w-12 h-12 shrink-0 border border-brand-border flex items-center justify-center font-heading font-black text-xl group-hover:bg-brand-aqua transition-colors">
+                  <div className="w-12 h-12 shrink-0 border border-brand-border flex items-center justify-center font-heading font-black text-md group-hover:bg-brand-aqua transition-colors">
                     {step.number}
                   </div>
                   <div>
-                    <h3 className="font-heading font-black text-xl mb-3">
+                    <h3 className="font-heading font-black text-md mb-3">
                       {step.title.toUpperCase()}
                     </h3>
                     <p className="text-brand-charcoal/70 leading-relaxed max-w-xl">
@@ -61,7 +61,7 @@ export default function NextSteps() {
               <p className="font-heading font-black text-sm tracking-widest text-brand-muted mb-6">
                 PROJECT TOOL
               </p>
-              <h3 className="font-heading font-black text-xl md:text-2xl mb-6">
+              <h3 className="font-heading font-black text-md md:text-md mb-6">
                 BLOCK OUT TIME FOR YOUR ROOF.
               </h3>
               <p className="text-brand-charcoal/70 text-sm mb-8 leading-relaxed">
@@ -73,7 +73,7 @@ export default function NextSteps() {
               <div className="space-y-4">
                 <button
                   type="button"
-                  className="w-full bg-brand-black text-brand-white py-5 font-heading font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-3 hover:bg-brand-aqua hover:text-brand-black transition-colors"
+                  className="w-full bg-brand-black text-brand-white py-5 font-heading font-bold text-sm tracking-widest uppercase flex items-center justify-center gap-3 hover:bg-brand-aqua hover:text-brand-black transition-colors"
                 >
                   <svg
                     className="w-5 h-5"
@@ -93,7 +93,7 @@ export default function NextSteps() {
                 </button>
                 <button
                   type="button"
-                  className="w-full border border-brand-black text-brand-charcoal py-5 font-heading font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-3 hover:bg-brand-black hover:text-brand-white transition-colors"
+                  className="w-full border border-brand-black text-brand-charcoal py-5 font-heading font-bold text-sm tracking-widest uppercase flex items-center justify-center gap-3 hover:bg-brand-black hover:text-brand-white transition-colors"
                 >
                   <svg
                     className="w-5 h-5"
@@ -114,7 +114,7 @@ export default function NextSteps() {
               </div>
 
               <div className="mt-12 pt-8 border-t border-brand-border">
-                <p className="text-[10px] font-bold text-brand-muted uppercase tracking-widest mb-4">
+                <p className="text-sm font-bold text-brand-muted uppercase tracking-widest mb-4">
                   Immediate Assistance
                 </p>
                 <p className="text-sm font-medium mb-1">
@@ -122,7 +122,7 @@ export default function NextSteps() {
                 </p>
                 <a
                   href="tel:817-266-9433"
-                  className="text-xl font-heading font-black text-brand-charcoal hover:text-brand-aqua transition-colors uppercase"
+                  className="text-md font-heading font-black text-brand-charcoal hover:text-brand-aqua transition-colors uppercase"
                 >
                   817-266-9433
                 </a>

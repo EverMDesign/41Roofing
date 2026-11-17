@@ -92,10 +92,10 @@ export default function EmergencyTarpingPage() {
   return (
     <ServicePageTemplate data={pageData}>
       <div>
-        <h2 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-brand-black mb-6">
+        <h2 className="font-heading font-black text-md md:text-lg lg:text-xl text-brand-black mb-6">
           WHEN YOUR ROOF CAN&rsquo;T WAIT, NEITHER DO WE.
         </h2>
-        <div className="space-y-6 text-brand-charcoal/80 text-lg leading-relaxed">
+        <div className="space-y-6 text-brand-charcoal/80 text-base leading-relaxed">
           <p>
             Severe storms, fallen trees, and sudden roof failures can expose
             your home or business to immediate water damage. Every hour without
@@ -113,22 +113,22 @@ export default function EmergencyTarpingPage() {
 
       {/* Emergency CTA */}
       <div className="bg-brand-charcoal p-8 border border-white/10">
-        <p className="text-brand-aqua font-heading font-bold text-xs tracking-widest uppercase mb-3">
+        <p className="text-brand-aqua font-heading font-bold text-sm tracking-widest uppercase mb-3">
           Immediate Assistance
         </p>
-        <p className="text-brand-white text-lg font-medium mb-4">
+        <p className="text-brand-white text-base font-medium mb-4">
           Active water intrusion? Call us now.
         </p>
         <a
           href="tel:817-266-9433"
-          className="inline-flex items-center gap-3 text-2xl font-heading font-black text-brand-white hover:text-brand-aqua transition-colors uppercase"
+          className="inline-flex items-center gap-3 text-md font-heading font-black text-brand-white hover:text-brand-aqua transition-colors uppercase"
         >
           817-266-9433
         </a>
       </div>
 
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-6">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-6">
           WHAT WE COVER
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -164,10 +164,10 @@ export default function EmergencyTarpingPage() {
       </div>
 
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-4">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-4">
           WHY SPEED MATTERS IN NORTH TEXAS
         </h3>
-        <p className="text-brand-charcoal/80 text-lg leading-relaxed mb-6">
+        <p className="text-brand-charcoal/80 text-base leading-relaxed mb-6">
           The DFW Metroplex doesn&rsquo;t give you time to wait. Between Texas
           humidity, a storm season that runs March through June, and a second
           active window in the fall, a roof breach left unprotected can turn

@@ -7,7 +7,7 @@ export default function RelatedProjects({ projects }: { projects: Project[] }) {
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         <div className="mb-16">
           <p className="eyebrow mb-4">More Projects</p>
-          <h2 className="font-heading font-black text-[32px] lg:text-[48px] leading-[1.1] text-brand-black uppercase max-w-2xl">
+          <h2 className="font-heading font-black text-xl lg:text-3xl leading-[1.1] text-brand-black uppercase max-w-2xl">
             Related Work Nearby
           </h2>
         </div>

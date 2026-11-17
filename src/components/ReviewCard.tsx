@@ -16,7 +16,7 @@ interface ReviewCardProps {
 export default function ReviewCard({ review }: ReviewCardProps) {
   return (
     <div className="bg-brand-white p-10 lg:p-12 border border-brand-border rounded-[10px] flex flex-col justify-between h-full relative">
-      <div className="text-[80px] font-heading font-black text-brand-aqua/20 absolute top-4 left-6 leading-none">
+      <div className="text-6xl font-heading font-black text-brand-aqua/20 absolute top-4 left-6 leading-none">
         &ldquo;
       </div>
       <div className="relative z-10 mb-12">
@@ -30,13 +30,13 @@ export default function ReviewCard({ review }: ReviewCardProps) {
           <p className="font-heading font-bold text-sm uppercase tracking-wide">
             {review.name}
           </p>
-          <p className="text-brand-muted text-xs uppercase tracking-widest mt-1">
+          <p className="text-brand-muted text-sm uppercase tracking-widest mt-1">
             {review.location}
             {review.service && <> &bull; {review.service}</>}
           </p>
         </div>
         {review.source && (
-          <span className="text-xs font-bold text-brand-muted bg-brand-softGray px-2 py-1 uppercase">
+          <span className="text-sm font-bold text-brand-muted bg-brand-softGray px-2 py-1 uppercase">
             {review.source}
           </span>
         )}

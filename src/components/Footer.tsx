@@ -1,9 +1,10 @@
+import Image from "next/image";
 import { serviceAreas } from "@/lib/service-areas-data";
 
 export default function Footer() {
   return (
     <footer className="bg-brand-black border-t border-white/10 text-brand-white pt-24 pb-12">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div>
           <img
             src="https://41media.evermdesign.com/images/41-roofing-logo.webp"
@@ -24,7 +25,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="font-heading font-bold text-lg mb-6 tracking-wide">CONTACT</h4>
+          <h4 className="font-heading font-bold text-base mb-6 tracking-wide">CONTACT</h4>
           <ul className="space-y-4 font-sans text-brand-white/70 text-sm">
             <li>
               <span className="text-brand-white font-semibold">Call/Text:</span>{" "}
@@ -58,7 +59,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="font-heading font-bold text-lg mb-6 tracking-wide">SERVICES</h4>
+          <h4 className="font-heading font-bold text-base mb-6 tracking-wide">SERVICES</h4>
           <ul className="space-y-3 font-sans text-brand-white/70 text-sm">
             <li><a href="/services/roof-repair" className="hover:text-brand-aqua transition-colors">Roof Repair</a></li>
             <li><a href="/services/roof-replacement" className="hover:text-brand-aqua transition-colors">Roof Replacement</a></li>
@@ -72,7 +73,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="font-heading font-bold text-lg mb-6 tracking-wide">AREAS</h4>
+          <h4 className="font-heading font-bold text-base mb-6 tracking-wide">AREAS</h4>
           <ul className="space-y-3 font-sans text-brand-white/70 text-sm">
             {serviceAreas.map((area) => (
               <li key={area.slug}>
@@ -85,11 +86,14 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-sans text-brand-white/50">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-sans text-brand-white/50">
         <p>&copy; {new Date().getFullYear()} 41 Roofing &amp; Restoration. All rights reserved.</p>
         <div className="flex gap-4">
           <a href="/privacy-policy" className="hover:text-brand-white transition-colors">Privacy Policy</a>
           <a href="/terms-and-conditions" className="hover:text-brand-white transition-colors">Terms of Service</a>
+          <a href="https://evermdesign.com" target="_blank" rel="noopener" className="inline-flex items-center gap-2 hover:text-brand-white transition-colors">
+            Managed by <Image src="/EMD-Icon-Red-Black-Border.webp" alt="Ever Marketing and Design" width={24} height={23} />
+          </a>
         </div>
       </div>
     </footer>

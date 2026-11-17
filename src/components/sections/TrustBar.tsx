@@ -28,8 +28,8 @@ const badges = [
 export default function TrustBar() {
   return (
     <section className="bg-brand-softGray border-b border-brand-border">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-4 flex items-center justify-between gap-6">
-        <span className="hidden md:block font-heading font-black text-2xl tracking-widest uppercase text-brand-black">Backed By Trust</span>
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-4 flex items-center justify-between gap-6">
+        <span className="hidden md:block font-heading font-black text-md tracking-widest uppercase text-brand-black">Backed By Trust</span>
         <div className="flex items-center gap-6">
         {badges.map((badge, i) => (
           <div key={badge.href} className="flex items-center gap-6">

@@ -28,16 +28,16 @@ export default function ProjectListCard({ project }: { project: Project }) {
         />
       </div>
       <div className="flex min-w-0 flex-col justify-center py-1">
-        <p className="mb-1 text-[11px] font-bold uppercase tracking-widest text-brand-muted">
+        <p className="mb-1 text-sm font-bold uppercase tracking-widest text-brand-muted">
           {project.address.city}
         </p>
-        <h3 className="mb-1 line-clamp-2 font-heading font-black text-base uppercase leading-tight tracking-wide sm:text-lg">
+        <h3 className="mb-1 line-clamp-2 font-heading font-black text-base uppercase leading-tight tracking-wide sm:text-base">
           {project.seoTitle}
         </h3>
         <p className="mb-2 line-clamp-2 hidden text-sm leading-relaxed text-brand-muted sm:block">
           {excerpt}
         </p>
-        <div className="relative inline-flex w-fit items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-black">
+        <div className="relative inline-flex w-fit items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-black">
           <span>View Project</span>
           <ArrowIcon className="w-3 h-3" />
           <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-brand-black transition-all duration-300 ease-in-out group-hover:w-full" />

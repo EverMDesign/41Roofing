@@ -43,12 +43,12 @@ export default function ServiceAreasArchivePage() {
         <main className="pt-20 md:pt-24">
           {/* Hero / intro */}
           <section className="bg-brand-white">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12 pt-12 md:pt-16 pb-16">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-12 pt-12 md:pt-16 pb-16">
               <p className="eyebrow mb-4">Local Roofing</p>
-              <h1 className="font-heading font-black text-[36px] md:text-[60px] md:leading-[66px] text-brand-black leading-[1.1] max-w-3xl mb-6">
+              <h1 className="font-heading font-black text-xl md:text-4xl md:leading-[66px] text-brand-black leading-[1.1] max-w-3xl mb-6">
                 Proudly Serving North Texas.
               </h1>
-              <p className="text-brand-muted text-base md:text-lg max-w-2xl leading-relaxed">
+              <p className="text-brand-muted text-base md:text-base max-w-2xl leading-relaxed">
                 Honest inspections, roof repair, replacement, and storm damage restoration for
                 homeowners and businesses across Crowley and the surrounding communities.
               </p>
@@ -57,7 +57,7 @@ export default function ServiceAreasArchivePage() {
 
           {/* Area grid */}
           <section className="py-24 md:py-32 bg-brand-softGray">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-12">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {serviceAreas.map((area) => (
                   <Link
@@ -72,16 +72,16 @@ export default function ServiceAreasArchivePage() {
                         loading="lazy"
                         className="w-full h-full object-cover img-hover-scale"
                       />
-                      <div className="absolute top-6 left-6 bg-brand-black text-white px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-[10px]">
+                      <div className="absolute top-6 left-6 bg-brand-black text-white px-4 py-2 text-sm font-bold uppercase tracking-widest rounded-[10px]">
                         {area.state}
                       </div>
                     </div>
                     <div className="p-8 lg:p-10">
                       <div className="mb-6">
-                        <h2 className="font-heading font-black text-2xl uppercase mb-2 tracking-wide">
+                        <h2 className="font-heading font-black text-md uppercase mb-2 tracking-wide">
                           {area.city}, {area.state}
                         </h2>
-                        <p className="text-xs text-brand-muted uppercase tracking-widest font-bold">
+                        <p className="text-sm text-brand-muted uppercase tracking-widest font-bold">
                           {area.eyebrow}
                         </p>
                       </div>

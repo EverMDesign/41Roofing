@@ -28,17 +28,17 @@ const reasons = [
 export default function WhyChoose() {
   return (
     <section id="why-us" className="py-24 md:py-32 bg-brand-softGray">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         <div className="text-center max-w-4xl mx-auto mb-20">
           <p className="eyebrow mb-4">Why Choose 41 Roofing?</p>
-          <h2 className="font-heading font-black text-[32px] md:text-[60px] md:leading-[66px] text-brand-black leading-[1.1]">
+          <h2 className="font-heading font-black text-xl md:text-4xl md:leading-[66px] text-brand-black leading-[1.1]">
             THE STANDARD BEHIND EVERY PROJECT.
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reasons.map((item) => (
             <div key={item.title} className="p-10 bg-brand-white border border-brand-border rounded-[10px] hover:-translate-y-2 transition-transform duration-300 ease-in-out">
-              <h3 className="font-heading font-black text-xl mb-4">{item.title}</h3>
+              <h3 className="font-heading font-black text-md mb-4">{item.title}</h3>
               <p className="font-sans text-brand-charcoal/70 text-sm">{item.desc}</p>
             </div>
           ))}

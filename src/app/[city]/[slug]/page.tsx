@@ -7,6 +7,7 @@ import MobileBottomBar from "@/components/MobileBottomBar";
 import ModalProvider from "@/components/ModalProvider";
 import InspectionModal from "@/components/InspectionModal";
 import BeforeAfterSlider from "@/components/projects/BeforeAfterSlider";
+import AfterPhoto from "@/components/projects/AfterPhoto";
 import ProjectGallery from "@/components/projects/ProjectGallery";
 import RelatedProjects from "@/components/projects/RelatedProjects";
 import ProjectCTAForm from "@/components/projects/ProjectCTAForm";
@@ -69,7 +70,7 @@ export default async function ProjectDetailPage({
   if (!project || !project.is_published) notFound();
 
   const [photos, allProjects] = await Promise.all([getProjectPhotos(slug), getProjects()]);
-  const { hasBeforeAfter, beforePhotos, afterPhotos, galleryPhotos } = getBeforeAfterPhotos(photos);
+  const { hasBeforeAfter, afterOnly, beforePhotos, afterPhotos, galleryPhotos } = getBeforeAfterPhotos(photos);
   const related = getRelatedProjects(allProjects, project);
   const schemas = await generateProjectSchema(project, city);
 
@@ -99,7 +100,7 @@ export default async function ProjectDetailPage({
 
             <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12">
               <nav aria-label="Breadcrumb" className="mb-4">
-                <ol className="flex items-center gap-2 text-xs text-brand-white/60 uppercase tracking-widest font-heading font-bold">
+                <ol className="flex items-center gap-2 text-sm text-brand-white/60 uppercase tracking-widest font-heading font-bold">
                   <li>
                     <Link href="/" className="hover:text-brand-aqua transition-colors">
                       Home
@@ -119,7 +120,7 @@ export default async function ProjectDetailPage({
                 <span className="w-12 h-px bg-brand-aqua" />
                 {project.services?.[0] ?? "Completed Project"} &bull; {project.address.city}, {project.address.state}
               </p>
-              <h1 className="font-heading font-black text-[32px] md:text-[48px] lg:text-[64px] leading-[0.95] text-brand-white uppercase max-w-4xl">
+              <h1 className="font-heading font-black text-xl md:text-3xl lg:text-4xl leading-[0.95] text-brand-white uppercase max-w-4xl">
                 {project.seoTitle}
               </h1>
             </div>
@@ -134,6 +135,7 @@ export default async function ProjectDetailPage({
                   {hasBeforeAfter && (
                     <BeforeAfterSlider before={beforePhotos[0]} after={afterPhotos[0]} />
                   )}
+                  {afterOnly && <AfterPhoto after={afterPhotos[0]} />}
 
                   <div className="space-y-6 text-brand-charcoal text-base leading-relaxed">
                     {project.description
@@ -146,7 +148,7 @@ export default async function ProjectDetailPage({
                   </div>
 
                   <ProjectGallery
-                    photos={hasBeforeAfter ? galleryPhotos : photos}
+                    photos={galleryPhotos}
                     seoTitle={project.seoTitle}
                   />
                 </div>
@@ -155,14 +157,14 @@ export default async function ProjectDetailPage({
                 <aside className="w-full lg:w-1/3 lg:sticky lg:top-32 space-y-8">
                   {project.services && project.services.length > 0 && (
                     <div className="bg-brand-softGray border border-brand-border rounded-[10px] p-8">
-                      <h2 className="font-heading font-black text-lg uppercase mb-4 text-brand-black">
+                      <h2 className="font-heading font-black text-base uppercase mb-4 text-brand-black">
                         Services Performed
                       </h2>
                       <ul aria-label="Services performed" className="flex flex-wrap gap-3">
                         {project.services.map((s) => (
                           <li
                             key={s}
-                            className="px-4 py-2 bg-brand-white border border-brand-border rounded-full font-heading font-bold text-xs uppercase tracking-wide text-brand-charcoal"
+                            className="px-4 py-2 bg-brand-white border border-brand-border rounded-full font-heading font-bold text-sm uppercase tracking-wide text-brand-charcoal"
                           >
                             {s}
                           </li>

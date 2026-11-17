@@ -188,13 +188,13 @@ export default function Header() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-brand-black flex flex-col items-center justify-center gap-8 lg:hidden">
-          <span className="text-brand-aqua text-xs font-bold tracking-widest uppercase">Services</span>
+          <span className="text-brand-aqua text-sm font-bold tracking-widest uppercase">Services</span>
           {mobileNavItems.slice(0, 8).map((item) => (
             <a
               key={item.label}
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-brand-white text-lg font-heading font-bold uppercase tracking-wide"
+              className="text-brand-white text-base font-heading font-bold uppercase tracking-wide"
             >
               {item.label}
             </a>
@@ -205,7 +205,7 @@ export default function Header() {
               key={item.label}
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-brand-white text-lg font-heading font-bold uppercase tracking-wide"
+              className="text-brand-white text-base font-heading font-bold uppercase tracking-wide"
             >
               {item.label}
             </a>

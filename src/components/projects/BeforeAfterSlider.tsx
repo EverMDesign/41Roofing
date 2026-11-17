@@ -85,10 +85,10 @@ export default function BeforeAfterSlider({
         className="absolute inset-0 h-full w-full cursor-ew-resize opacity-0"
       />
 
-      <span className="absolute left-4 top-4 bg-brand-black/80 text-white px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-[10px] font-heading">
+      <span className="absolute left-4 top-4 bg-brand-black/80 text-white px-4 py-2 text-sm font-bold uppercase tracking-widest rounded-[10px] font-heading">
         Before
       </span>
-      <span className="absolute right-4 top-4 bg-brand-black/80 text-white px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-[10px] font-heading">
+      <span className="absolute right-4 top-4 bg-brand-black/80 text-white px-4 py-2 text-sm font-bold uppercase tracking-widest rounded-[10px] font-heading">
         After
       </span>
     </div>

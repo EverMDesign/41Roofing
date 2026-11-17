@@ -34,24 +34,24 @@ export default async function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/50 to-transparent" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-end">
           {/* Left — Copy */}
           <div className="lg:col-span-7">
-            <p className="hero-animate hero-animate-up font-heading font-bold text-brand-aqua tracking-[0.2em] text-xs md:text-sm mb-6 uppercase" style={{ animationDuration: "800ms", animationDelay: "100ms" }}>
+            <p className="hero-animate hero-animate-up font-heading font-bold text-brand-aqua tracking-[0.2em] text-sm md:text-sm mb-6 uppercase" style={{ animationDuration: "800ms", animationDelay: "100ms" }}>
               Crowley, Texas &bull; Serving North Texas
             </p>
-            <h1 className="hero-animate hero-animate-up font-heading font-black text-brand-white text-[36px] md:text-[64px] lg:text-[72px] leading-[0.95] mb-6" style={{ animationDuration: "900ms", animationDelay: "200ms" }}>
+            <h1 className="hero-animate hero-animate-up font-heading font-black text-brand-white text-xl md:text-4xl lg:text-5xl leading-[0.95] mb-6" style={{ animationDuration: "900ms", animationDelay: "200ms" }}>
               Roofing &amp; Restoration
               <br />
               In Crowley, TX
             </h1>
-            <h2 className="hero-animate hero-animate-up font-heading font-bold text-brand-white text-xl md:text-3xl mb-6 tracking-wide" style={{ animationDuration: "900ms", animationDelay: "550ms" }}>
+            <h2 className="hero-animate hero-animate-up font-heading font-bold text-brand-white text-md md:text-lg mb-6 tracking-wide" style={{ animationDuration: "900ms", animationDelay: "550ms" }}>
               Restore The Past.
               <br />
               Build The Future.
             </h2>
-            <p className="hero-animate hero-animate-up text-brand-white/80 text-base md:text-lg max-w-xl font-sans font-normal leading-relaxed mb-8" style={{ animationDuration: "900ms", animationDelay: "550ms" }}>
+            <p className="hero-animate hero-animate-up text-brand-white/80 text-base md:text-base max-w-xl font-sans font-normal leading-relaxed mb-8" style={{ animationDuration: "900ms", animationDelay: "550ms" }}>
               41 Roofing &amp; Restoration provides roof inspections, repairs, replacements, storm restoration,
               commercial roofing and property restoration throughout Crowley and North Texas.
             </p>
@@ -76,7 +76,7 @@ export default async function Hero() {
         </div>
 
         {/* Trust Bar */}
-        <div className="hero-animate hero-animate-up w-full border-t border-white/20 pt-6 mt-12 flex flex-wrap gap-x-8 gap-y-4 text-xs md:text-sm font-heading font-bold text-brand-white/60 tracking-widest uppercase" style={{ animationDuration: "900ms", animationDelay: "900ms" }}>
+        <div className="hero-animate hero-animate-up w-full border-t border-white/20 pt-6 mt-12 flex flex-wrap gap-x-8 gap-y-4 text-sm md:text-sm font-heading font-bold text-brand-white/60 tracking-widest uppercase" style={{ animationDuration: "900ms", animationDelay: "900ms" }}>
           {data && data.totalReviews > 0 && (
             <>
               <a

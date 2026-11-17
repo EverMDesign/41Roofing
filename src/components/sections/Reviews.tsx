@@ -48,11 +48,11 @@ export default async function Reviews() {
 
   return (
     <section id="reviews" className="py-24 md:py-32 bg-brand-softGray">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="max-w-2xl">
             <p className="eyebrow mb-4">North Texas Homeowners</p>
-            <h2 className="font-heading font-black text-[32px] md:text-[60px] md:leading-[66px] text-brand-black leading-[1.1]">
+            <h2 className="font-heading font-black text-xl md:text-4xl md:leading-[66px] text-brand-black leading-[1.1]">
               BUILT ON TRUST.
               <br />
               PROVEN BY THE PEOPLE WE SERVE.

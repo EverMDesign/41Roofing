@@ -10,11 +10,11 @@ const materials = [
 export default function Materials() {
   return (
     <section id="materials" className="py-24 md:py-32 bg-brand-white">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
           <div className="max-w-2xl">
             <p className="eyebrow mb-4">Materials &amp; Roofing Systems</p>
-            <h2 className="font-heading font-bold text-[32px] md:text-[48px] text-brand-black leading-[1.1]">
+            <h2 className="font-heading font-bold text-xl md:text-3xl text-brand-black leading-[1.1]">
               CHOOSE A ROOF BUILT FOR YOUR HOME AND YOUR PROPERTY.
             </h2>
           </div>
@@ -32,9 +32,9 @@ export default function Materials() {
               href="#contact"
               className="bg-brand-white p-8 border border-brand-border h-[300px] flex flex-col justify-between group hover:border-brand-black transition-colors"
             >
-              <h3 className="font-heading font-bold text-xl text-brand-black">{mat}</h3>
+              <h3 className="font-heading font-bold text-md text-brand-black">{mat}</h3>
               <div className="flex justify-between items-center text-brand-aqua opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="font-heading font-bold text-xs tracking-widest text-brand-black uppercase">
+                <span className="font-heading font-bold text-sm tracking-widest text-brand-black uppercase">
                   View Options
                 </span>
                 <ArrowIcon className="w-5 h-5 text-brand-black" />

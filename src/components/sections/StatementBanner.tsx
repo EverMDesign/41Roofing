@@ -8,7 +8,7 @@ export default function StatementBanner() {
       />
       <div className="absolute inset-0 bg-brand-black/40" />
       <div className="relative z-10 text-center px-6">
-        <h2 className="font-heading font-black text-brand-white text-[42px] md:text-[80px] lg:text-[120px] leading-[0.9] tracking-tighter">
+        <h2 className="font-heading font-black text-brand-white text-2xl md:text-6xl lg:text-6xl leading-[0.9] tracking-tighter">
           RESTORE THE PAST.
           <br />
           BUILD THE FUTURE.

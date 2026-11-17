@@ -16,12 +16,12 @@ const problems = [
 export default function Diagnosis() {
   return (
     <section id="problems" className="py-24 md:py-32 bg-brand-charcoal">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24 items-center">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24 items-center">
         <div className="flex flex-col max-w-2xl">
-          <h2 className="font-heading font-black text-[32px] md:text-[60px] md:leading-[66px] text-brand-white leading-[1.1] mb-6">
+          <h2 className="font-heading font-black text-xl md:text-4xl md:leading-[66px] text-brand-white leading-[1.1] mb-6">
             NOT SURE WHAT YOUR ROOF NEEDS?
           </h2>
-          <p className="text-brand-white/70 text-lg md:text-xl font-sans mb-12 border-l-2 border-brand-aqua pl-6">
+          <p className="text-brand-white/70 text-base md:text-md font-sans mb-12 border-l-2 border-brand-aqua pl-6">
             A roof problem does not automatically mean you need a new roof. Start with an honest inspection.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-12">

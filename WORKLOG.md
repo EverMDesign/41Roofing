@@ -126,3 +126,11 @@ Bumped the projects map's initial zoom from 8 to 10 so it frames the actual proj
 **Status:** ✅ Complete
 
 ---
+
+---
+
+## 2026-11-16 — 22:43
+
+Projects page and site-wide standards pass. /projects hero now has the title on the left and the Mapbox map on the right in a 16:9 box (map section below the filter removed; map height now fills its container; attribution collapsed to the compact info icon, logo kept per Mapbox terms). Containers standardized to max-w-[1440px] (39 classes changed from 1400px). Type scale moved to multiples of 7px (theme block in globals.css resets Tailwind sizes; every size class mapped to the nearest step; body default 14px). A blanket text-sm to text-base change was tried and reverted by comparing against the last commit; kept as text-sm: CTA buttons (17), hero QuoteForm (also affects the sidebar variant), hero trust strip, Built on Trust rating line and Read More Reviews, and ReviewCard name/date/source. Project detail pages now follow tag rules: before + after shows the slider, after only shows the first after photo alone with no "After" label (new AfterPhoto component) and it is not repeated in the gallery, before only shows no hero and keeps before photos in the gallery. Display only; no project data changed and GBP posting is unaffected. Rule documented in CLAUDE.md.
+
+**Files:** src/app/projects/page.tsx, src/components/ServiceAreaMap.tsx, src/app/globals.css, src/lib/workpress-api.ts, src/app/[city]/[slug]/page.tsx, src/components/projects/AfterPhoto.tsx (new), src/components/QuoteForm.tsx, src/components/ReviewCard.tsx, src/components/sections/Hero.tsx, src/components/sections/Reviews.tsx, many components (size class swaps), CLAUDE.md. **Open:** pages not checked in a browser (CTA, header and badge wrapping); tsc clean.

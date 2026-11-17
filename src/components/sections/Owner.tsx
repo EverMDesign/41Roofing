@@ -15,16 +15,16 @@ export default function Owner() {
 
   return (
     <section id="owner" className="bg-brand-aqua py-24 md:py-32">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         <div className="lg:col-span-5 flex flex-col justify-center">
           <p className="eyebrow mb-4">Meet The Owner</p>
-          <h2 className="font-heading font-black text-brand-charcoal text-[32px] md:text-[60px] md:leading-[66px] leading-[1.1] mb-8">
+          <h2 className="font-heading font-black text-brand-charcoal text-xl md:text-4xl md:leading-[66px] leading-[1.1] mb-8">
             OWNER-LED.
             <br />
             WOMAN-OWNED.
           </h2>
-          <h3 className="font-heading font-bold text-brand-black text-xl tracking-widest mb-6">BRANDI BURK</h3>
-          <div className="font-sans text-brand-charcoal/80 text-base md:text-lg space-y-6 max-w-lg">
+          <h3 className="font-heading font-bold text-brand-black text-md tracking-widest mb-6">BRANDI BURK</h3>
+          <div className="font-sans text-brand-charcoal/80 text-base md:text-base space-y-6 max-w-lg">
             <p>
               Born and raised with local Crowley roots, Brandi built 41 Roofing on the principle that contractors
               should be trustworthy, transparent, and present.

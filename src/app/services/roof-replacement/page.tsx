@@ -177,10 +177,10 @@ export default function RoofReplacementPage() {
     <ServicePageTemplate data={pageData}>
       {/* Intro */}
       <div>
-        <h2 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-brand-black mb-6">
+        <h2 className="font-heading font-black text-md md:text-lg lg:text-xl text-brand-black mb-6">
           A NEW ROOF IS A MAJOR INVESTMENT. WE TREAT IT LIKE ONE.
         </h2>
-        <div className="space-y-6 text-brand-charcoal/80 text-lg leading-relaxed">
+        <div className="space-y-6 text-brand-charcoal/80 text-base leading-relaxed">
           <p>
             Replacing your roof isn&rsquo;t just about nailing down new
             shingles. It&rsquo;s about protecting everything underneath it. At
@@ -208,7 +208,7 @@ export default function RoofReplacementPage() {
 
       {/* Signs */}
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-6">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-6">
           SIGNS YOU MIGHT NEED A REPLACEMENT
         </h3>
         <ul className="space-y-4">
@@ -233,7 +233,7 @@ export default function RoofReplacementPage() {
 
       {/* Installation Standard */}
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-6">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-6">
           OUR INSTALLATION STANDARD
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -250,10 +250,10 @@ export default function RoofReplacementPage() {
 
       {/* Texas Climate */}
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-4">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-4">
           BUILT FOR THE TEXAS CLIMATE
         </h3>
-        <p className="text-brand-charcoal/80 text-lg leading-relaxed mb-8">
+        <p className="text-brand-charcoal/80 text-base leading-relaxed mb-8">
           A roof built to national averages isn&rsquo;t built for North Texas.
           DFW&rsquo;s heat, hail, and high winds demand specific materials,
           fastening methods, and ventilation systems. Here&rsquo;s what that

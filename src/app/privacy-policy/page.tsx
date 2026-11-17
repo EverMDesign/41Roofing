@@ -19,7 +19,7 @@ export default function PrivacyPage() {
         <Header />
         <main className="min-h-screen pt-20 md:pt-24">
           <div className="max-w-3xl mx-auto px-6 md:px-12 py-20">
-            <h1 className="font-heading font-black text-3xl md:text-4xl text-brand-black mb-2">
+            <h1 className="font-heading font-black text-lg md:text-xl text-brand-black mb-2">
               PRIVACY POLICY
             </h1>
             <p className="text-sm text-brand-muted mb-12">Last updated: June 2026</p>
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
               </p>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">1. WHO WE ARE</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">1. WHO WE ARE</h2>
                 <p>41 Roofing and Restoration LLC is a roofing, restoration, and remodeling company based in Crowley, Texas, serving homeowners and business owners across North Texas.</p>
                 <div className="mt-3 space-y-1">
                   <p><strong className="text-brand-black">Business Contact Information:</strong></p>
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">2. INFORMATION WE COLLECT</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">2. INFORMATION WE COLLECT</h2>
                 <p>We may collect the following categories of information, depending on how you interact with us:</p>
 
                 <h3 className="font-heading font-bold text-base text-brand-black mt-6 mb-2">Contact Information</h3>
@@ -70,7 +70,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">3. HOW WE COLLECT INFORMATION</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">3. HOW WE COLLECT INFORMATION</h2>
                 <p>We may collect information directly from you when you:</p>
                 <ul className="list-disc pl-6 mt-3 space-y-1">
                   <li>Submit a website form</li>
@@ -86,7 +86,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">4. HOW WE USE YOUR INFORMATION</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">4. HOW WE USE YOUR INFORMATION</h2>
                 <p>We may use personal information for the following purposes:</p>
                 <ul className="list-disc pl-6 mt-3 space-y-1">
                   <li>To respond to your questions, estimate requests, inspection requests, and service inquiries</li>
@@ -104,7 +104,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">5. TEXT MESSAGING AND MOBILE INFORMATION</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">5. TEXT MESSAGING AND MOBILE INFORMATION</h2>
                 <p>If you provide your mobile phone number and opt in to receive text messages from 41 Roofing and Restoration LLC, we may send you text messages related to your inquiry, inspection request, appointment, estimate, project updates, service reminders, or customer support.</p>
                 <p className="mt-3">Message frequency may vary. Message and data rates may apply. You may opt out of receiving text messages at any time by replying STOP. You may request assistance by replying HELP or by contacting us directly.</p>
                 <p className="mt-3">We do not sell, rent, or share mobile phone numbers, SMS opt-in data, or text messaging consent with third parties or affiliates for marketing or promotional purposes.</p>
@@ -112,14 +112,14 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">6. MARKETING COMMUNICATIONS</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">6. MARKETING COMMUNICATIONS</h2>
                 <p>We may contact you by email, phone, or text message about services you requested, appointments, project updates, or related customer service matters. Where required by law, we will obtain your consent before sending marketing communications.</p>
                 <p className="mt-3">You may opt out of marketing emails by using the unsubscribe instructions included in the email, if available, or by contacting us directly. You may opt out of text messages by replying STOP.</p>
                 <p className="mt-3">Even if you opt out of marketing communications, we may still send non-marketing messages related to active services, appointments, estimates, transactions, warranties, safety matters, or legal obligations.</p>
               </section>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">7. COOKIES, ANALYTICS, AND ADVERTISING TOOLS</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">7. COOKIES, ANALYTICS, AND ADVERTISING TOOLS</h2>
                 <p>Our website may use cookies, analytics tools, advertising pixels, and similar technologies to:</p>
                 <ul className="list-disc pl-6 mt-3 space-y-1">
                   <li>Operate and improve the website</li>
@@ -133,7 +133,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">8. HOW WE SHARE INFORMATION</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">8. HOW WE SHARE INFORMATION</h2>
                 <p>We may share personal information when reasonably necessary for our business operations, including with:</p>
                 <ul className="list-disc pl-6 mt-3 space-y-1">
                   <li>Service providers that help us operate our website, forms, CRM, email, text messaging, scheduling, hosting, analytics, advertising, payment processing, invoicing, or customer communications</li>
@@ -147,24 +147,24 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">9. THIRD-PARTY WEBSITES AND SERVICES</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">9. THIRD-PARTY WEBSITES AND SERVICES</h2>
                 <p>Our website may contain links to third-party websites, platforms, or services. We are not responsible for the privacy practices, content, or security of those third-party websites or services. You should review their privacy policies before providing information to them.</p>
               </section>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">10. DATA RETENTION</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">10. DATA RETENTION</h2>
                 <p>We retain personal information for as long as reasonably necessary to provide services, respond to inquiries, maintain business records, fulfill warranty or project obligations, comply with legal and accounting requirements, resolve disputes, and protect our rights.</p>
                 <p className="mt-3">The exact retention period may vary depending on the type of information, the purpose for which it was collected, and applicable legal or business requirements.</p>
               </section>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">11. DATA SECURITY</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">11. DATA SECURITY</h2>
                 <p>We use reasonable administrative, technical, and physical safeguards designed to protect personal information from unauthorized access, use, loss, misuse, alteration, or disclosure.</p>
                 <p className="mt-3">No website, data transmission, storage system, or method of electronic communication is completely secure. We cannot guarantee absolute security, but we take reasonable steps to protect the information we collect and maintain.</p>
               </section>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">12. YOUR PRIVACY RIGHTS</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">12. YOUR PRIVACY RIGHTS</h2>
                 <p>Depending on where you live and the laws that apply, you may have certain rights regarding your personal information. These rights may include the right to:</p>
                 <ul className="list-disc pl-6 mt-3 space-y-1">
                   <li>Confirm whether we process your personal information</li>
@@ -186,31 +186,31 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">13. TEXAS PRIVACY NOTICE</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">13. TEXAS PRIVACY NOTICE</h2>
                 <p>Texas residents may have privacy rights under the Texas Data Privacy and Security Act and other applicable laws. These rights may include the ability to access, correct, delete, obtain, and opt out of certain uses of personal data, subject to legal limitations and business exemptions.</p>
                 <p className="mt-3">If you are a Texas resident and would like to exercise privacy rights that may apply to your information, contact us at <a href="mailto:info@41roofing.com" className="text-brand-aqua hover:underline">info@41roofing.com</a> or call/text <a href="tel:817-266-9433" className="text-brand-aqua hover:underline">(817) 266-9433</a>.</p>
               </section>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">14. CHILDREN&apos;S PRIVACY</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">14. CHILDREN&apos;S PRIVACY</h2>
                 <p>Our website and services are intended for homeowners, business owners, property managers, and other adults seeking roofing, restoration, remodeling, gutter, or related services. We do not knowingly collect personal information from children under 13.</p>
                 <p className="mt-3">If you believe a child has provided personal information to us, please contact us so we can review and delete the information if appropriate.</p>
               </section>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">15. INSURANCE AND CLAIM-RELATED INFORMATION</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">15. INSURANCE AND CLAIM-RELATED INFORMATION</h2>
                 <p>If you ask us to help document storm damage, restoration needs, or project details for an insurance-related matter, we may use photos, inspection notes, estimates, communications, and other project information for that purpose.</p>
                 <p className="mt-3">We are not responsible for the privacy practices of insurance companies, adjusters, mortgage companies, or other third parties involved in an insurance or claim process. Those parties may have their own privacy policies and data handling practices.</p>
               </section>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">16. CHANGES TO THIS PRIVACY POLICY</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">16. CHANGES TO THIS PRIVACY POLICY</h2>
                 <p>We may update this Privacy Policy from time to time. When we make updates, we will revise the &ldquo;Last Updated&rdquo; date at the top of this page.</p>
                 <p className="mt-3">Your continued use of our website or services after updates are posted means you acknowledge the revised Privacy Policy.</p>
               </section>
 
               <section>
-                <h2 className="font-heading font-bold text-lg text-brand-black mb-3">17. CONTACT US</h2>
+                <h2 className="font-heading font-bold text-base text-brand-black mb-3">17. CONTACT US</h2>
                 <p>If you have questions about this Privacy Policy or how your information is handled, contact us at:</p>
                 <div className="mt-3 space-y-1">
                   <p><strong className="text-brand-black">41 Roofing and Restoration LLC</strong></p>

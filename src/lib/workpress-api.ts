@@ -76,17 +76,30 @@ export async function getProjectPhotos(slug: string): Promise<Photo[]> {
 }
 
 /**
- * Check if a project has before/after photos and return them paired.
- * Returns { hasBeforeAfter, beforePhotos, afterPhotos, galleryPhotos }.
- * Only show the before/after slider if BOTH before AND after photos exist.
+ * Splits a project's photos into the top-of-page hero and the gallery.
+ *
+ * Tag rules (41 Roofing):
+ * - before + after  -> slider (hasBeforeAfter). Gallery = untagged photos only.
+ * - after only      -> the first after photo shown by itself (afterOnly).
+ *                      Gallery = untagged photos only (after is not repeated).
+ * - before only     -> no slider and no hero. Before photos stay in the gallery.
+ * - neither         -> no hero. Gallery = all photos.
+ *
+ * Only the first after (and first before) photo is used in the hero; extra
+ * before/after photos are not shown in the gallery while a hero is showing.
  */
 export function getBeforeAfterPhotos(photos: Photo[]) {
   const beforePhotos = photos.filter(p => p.type === 'before');
   const afterPhotos = photos.filter(p => p.type === 'after');
-  const galleryPhotos = photos.filter(p => p.type !== 'before' && p.type !== 'after');
+  const untaggedPhotos = photos.filter(p => p.type !== 'before' && p.type !== 'after');
+
+  const hasBeforeAfter = beforePhotos.length > 0 && afterPhotos.length > 0;
+  const afterOnly = afterPhotos.length > 0 && beforePhotos.length === 0;
+  const galleryPhotos = hasBeforeAfter || afterOnly ? untaggedPhotos : photos;
 
   return {
-    hasBeforeAfter: beforePhotos.length > 0 && afterPhotos.length > 0,
+    hasBeforeAfter,
+    afterOnly,
     beforePhotos,
     afterPhotos,
     galleryPhotos,

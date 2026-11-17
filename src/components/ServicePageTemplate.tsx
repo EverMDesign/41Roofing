@@ -105,9 +105,9 @@ export default async function ServicePageTemplate({
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent" />
             </div>
 
-            <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12">
+            <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12">
               <div className="max-w-4xl">
-                <div className="flex items-center gap-2 text-brand-aqua font-heading font-bold tracking-[0.2em] text-xs uppercase mb-6">
+                <div className="flex items-center gap-2 text-brand-aqua font-heading font-bold tracking-[0.2em] text-sm uppercase mb-6">
                   {data.breadcrumbs.map((crumb, i) => (
                     <span key={crumb.label} className="flex items-center gap-2">
                       {i > 0 && <span>/</span>}
@@ -124,7 +124,7 @@ export default async function ServicePageTemplate({
                     </span>
                   ))}
                 </div>
-                <h1 className="font-heading font-black text-[40px] md:text-[56px] lg:text-[80px] leading-[0.95] text-brand-white uppercase mb-8">
+                <h1 className="font-heading font-black text-2xl md:text-3xl lg:text-6xl leading-[0.95] text-brand-white uppercase mb-8">
                   {titleLines.map((line, i) => (
                     <span key={i}>
                       {i > 0 && <br />}
@@ -132,7 +132,7 @@ export default async function ServicePageTemplate({
                     </span>
                   ))}
                 </h1>
-                <p className="text-brand-white/80 text-lg max-w-2xl font-light leading-relaxed">
+                <p className="text-brand-white/80 text-base max-w-2xl font-light leading-relaxed">
                   {data.subtitle}
                 </p>
               </div>
@@ -141,7 +141,7 @@ export default async function ServicePageTemplate({
 
           {/* Content + Sidebar Form */}
           <section className="py-24 md:py-32 bg-brand-white">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-12">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
                 <div className="lg:col-span-7 space-y-16">{children}</div>
                 <div className="lg:col-span-5 lg:self-stretch">
@@ -153,10 +153,10 @@ export default async function ServicePageTemplate({
 
           {/* Reviews */}
           <section className="py-24 md:py-32 bg-brand-softGray">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-12">
               <div className="text-center mb-16 md:mb-20">
                 <p className="eyebrow mb-4">{data.reviewsEyebrow}</p>
-                <h2 className="font-heading font-black text-[32px] md:text-[56px] md:leading-[1.1] text-brand-black leading-[1.1] uppercase max-w-3xl mx-auto">
+                <h2 className="font-heading font-black text-xl md:text-3xl md:leading-[1.1] text-brand-black leading-[1.1] uppercase max-w-3xl mx-auto">
                   {data.reviewsHeading}
                 </h2>
                 {googleData && googleData.totalReviews > 0 && (
@@ -193,8 +193,8 @@ export default async function ServicePageTemplate({
 
           {/* Service Areas Cross-Links */}
           <section className="py-16 md:py-20 bg-brand-white border-t border-brand-border">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12 text-center">
-              <h2 className="font-heading font-black text-[24px] md:text-[32px] text-brand-black uppercase mb-8">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-12 text-center">
+              <h2 className="font-heading font-black text-md md:text-xl text-brand-black uppercase mb-8">
                 Areas We Serve
               </h2>
               <div className="flex flex-wrap justify-center gap-3">
@@ -216,7 +216,7 @@ export default async function ServicePageTemplate({
             <div className="max-w-[1000px] mx-auto px-6 md:px-12">
               <div className="text-center mb-16">
                 <p className="eyebrow mb-4">{data.faqEyebrow}</p>
-                <h2 className="font-heading font-black text-[32px] md:text-[56px] md:leading-[1.1] text-brand-black leading-[1.1] uppercase">
+                <h2 className="font-heading font-black text-xl md:text-3xl md:leading-[1.1] text-brand-black leading-[1.1] uppercase">
                   {data.faqHeading}
                 </h2>
               </div>
@@ -226,7 +226,7 @@ export default async function ServicePageTemplate({
                     key={idx}
                     className="group border-b border-brand-border"
                   >
-                    <summary className="flex justify-between items-center font-heading font-bold text-lg md:text-xl text-brand-black py-6 cursor-pointer">
+                    <summary className="flex justify-between items-center font-heading font-bold text-base md:text-md text-brand-black py-6 cursor-pointer">
                       {faq.q}
                       <span className="transition group-open:rotate-180 text-brand-aqua ml-4 shrink-0">
                         <ChevronIcon />

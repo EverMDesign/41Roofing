@@ -22,11 +22,11 @@ export default async function Projects() {
 
   return (
     <section id="projects" className="py-24 md:py-32 bg-brand-white">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
             <p className="eyebrow mb-4">Recent Work</p>
-            <h2 className="font-heading font-black text-4xl lg:text-5xl uppercase tracking-tight">
+            <h2 className="font-heading font-black text-xl lg:text-3xl uppercase tracking-tight">
               Roofs We&rsquo;ve Built
               <br />
               Across North Texas.

@@ -121,7 +121,7 @@ export default function Lightbox({
         </button>
       )}
 
-      <span className="absolute bottom-6 left-1/2 -translate-x-1/2 font-heading text-xs tracking-widest uppercase text-white/70">
+      <span className="absolute bottom-6 left-1/2 -translate-x-1/2 font-heading text-sm tracking-widest uppercase text-white/70">
         {index + 1} / {photos.length}
       </span>
     </div>

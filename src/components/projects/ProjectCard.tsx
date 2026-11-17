@@ -42,17 +42,17 @@ export default function ProjectCard({
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover img-hover-scale"
         />
-        <div className="absolute top-6 left-6 bg-brand-black text-white px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-[10px]">
+        <div className="absolute top-6 left-6 bg-brand-black text-white px-4 py-2 text-sm font-bold uppercase tracking-widest rounded-[10px]">
           {project.address.city}
         </div>
       </div>
       <div className="p-8 lg:p-10">
         <div className="mb-6">
-          <h3 className="font-heading font-black text-2xl uppercase mb-2 tracking-wide">
+          <h3 className="font-heading font-black text-md uppercase mb-2 tracking-wide">
             {project.seoTitle}
           </h3>
           {primaryService && (
-            <p className="text-xs text-brand-muted uppercase tracking-widest font-bold">
+            <p className="text-sm text-brand-muted uppercase tracking-widest font-bold">
               {primaryService}
             </p>
           )}

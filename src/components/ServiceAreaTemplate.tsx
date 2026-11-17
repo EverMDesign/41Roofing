@@ -128,10 +128,10 @@ export default async function ServiceAreaTemplate({
                   <span className="w-12 h-px bg-brand-aqua" />
                   {data.eyebrow}
                 </p>
-                <h1 className="font-heading font-black text-[40px] md:text-[56px] lg:text-[80px] leading-[0.9] text-brand-white uppercase mb-6">
+                <h1 className="font-heading font-black text-2xl md:text-3xl lg:text-6xl leading-[0.9] text-brand-white uppercase mb-6">
                   {data.heroTitle}
                 </h1>
-                <h2 className="font-heading font-black text-xl lg:text-2xl text-brand-aqua uppercase mb-6 tracking-wide">
+                <h2 className="font-heading font-black text-md lg:text-md text-brand-aqua uppercase mb-6 tracking-wide">
                   {data.heroSubtitle}
                 </h2>
               </div>
@@ -147,7 +147,7 @@ export default async function ServiceAreaTemplate({
                   {/* About Section */}
                   <div>
                     <p className="eyebrow mb-4">{data.aboutEyebrow}</p>
-                    <h2 className="font-heading font-black text-[32px] lg:text-[48px] leading-[1.1] text-brand-black uppercase mb-8">
+                    <h2 className="font-heading font-black text-xl lg:text-3xl leading-[1.1] text-brand-black uppercase mb-8">
                       {data.aboutHeading}
                     </h2>
                     <div className="aspect-[16/9] overflow-hidden bg-brand-softGray mb-8 rounded-[10px]">
@@ -166,7 +166,7 @@ export default async function ServiceAreaTemplate({
 
                   {/* Services Section */}
                   <div>
-                    <h2 className="font-heading font-black text-[28px] lg:text-[36px] leading-[1.1] text-brand-black uppercase mb-8">
+                    <h2 className="font-heading font-black text-lg lg:text-xl leading-[1.1] text-brand-black uppercase mb-8">
                       {data.servicesHeading}
                     </h2>
                     <p className="text-brand-charcoal text-base leading-relaxed mb-8">
@@ -178,7 +178,7 @@ export default async function ServiceAreaTemplate({
                           key={card.title}
                           className="bg-brand-softGray p-8 border border-brand-border rounded-[10px]"
                         >
-                          <h3 className="font-heading font-black text-xl uppercase mb-3 text-brand-black">
+                          <h3 className="font-heading font-black text-md uppercase mb-3 text-brand-black">
                             {card.title}
                           </h3>
                           <p className="text-brand-muted text-sm leading-relaxed">
@@ -191,7 +191,7 @@ export default async function ServiceAreaTemplate({
 
                   {/* Neighborhoods Section */}
                   <div>
-                    <h2 className="font-heading font-black text-[28px] lg:text-[36px] leading-[1.1] text-brand-black uppercase mb-8">
+                    <h2 className="font-heading font-black text-lg lg:text-xl leading-[1.1] text-brand-black uppercase mb-8">
                       {data.neighborhoodsHeading}
                     </h2>
                     <div className="space-y-6 text-brand-charcoal text-base leading-relaxed">
@@ -212,7 +212,7 @@ export default async function ServiceAreaTemplate({
           {/* Services Cross-Links */}
           <section className="py-16 md:py-20 bg-brand-softGray border-t border-brand-border">
             <div className="max-w-[1440px] mx-auto px-6 md:px-12 text-center">
-              <h2 className="font-heading font-black text-[24px] md:text-[32px] text-brand-black uppercase mb-8">
+              <h2 className="font-heading font-black text-md md:text-xl text-brand-black uppercase mb-8">
                 Our Services in {data.city}
               </h2>
               <div className="flex flex-wrap justify-center gap-3">
@@ -236,7 +236,7 @@ export default async function ServiceAreaTemplate({
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
                 <div>
                   <p className="eyebrow mb-4">{data.projectsEyebrow}</p>
-                  <h2 className="font-heading font-black text-[32px] lg:text-[56px] leading-[1.1] text-brand-black uppercase max-w-2xl">
+                  <h2 className="font-heading font-black text-xl lg:text-3xl leading-[1.1] text-brand-black uppercase max-w-2xl">
                     {data.projectsHeading}
                   </h2>
                 </div>
@@ -256,7 +256,7 @@ export default async function ServiceAreaTemplate({
             <div className="max-w-[1440px] mx-auto px-6 md:px-12">
               <div className="text-center mb-16 md:mb-20">
                 <p className="eyebrow mb-4">{data.reviewsEyebrow}</p>
-                <h2 className="font-heading font-black text-[32px] md:text-[56px] md:leading-[1.1] text-brand-black leading-[1.1] uppercase max-w-3xl mx-auto">
+                <h2 className="font-heading font-black text-xl md:text-3xl md:leading-[1.1] text-brand-black leading-[1.1] uppercase max-w-3xl mx-auto">
                   {data.reviewsHeading}
                 </h2>
                 {googleData && googleData.totalReviews > 0 && (
@@ -298,7 +298,7 @@ export default async function ServiceAreaTemplate({
                 <p className="text-brand-aqua font-bold tracking-[0.2em] text-sm uppercase mb-4">
                   {data.faqEyebrow}
                 </p>
-                <h2 className="font-heading font-black text-[32px] md:text-[56px] md:leading-[1.1] text-brand-white leading-[1.1] uppercase">
+                <h2 className="font-heading font-black text-xl md:text-3xl md:leading-[1.1] text-brand-white leading-[1.1] uppercase">
                   {data.faqHeading}
                 </h2>
               </div>
@@ -308,7 +308,7 @@ export default async function ServiceAreaTemplate({
                     key={idx}
                     className="group border-b border-white/20"
                   >
-                    <summary className="flex justify-between items-center font-heading font-bold text-lg md:text-xl text-brand-white py-6 cursor-pointer hover:text-brand-aqua transition-colors">
+                    <summary className="flex justify-between items-center font-heading font-bold text-base md:text-md text-brand-white py-6 cursor-pointer hover:text-brand-aqua transition-colors">
                       {faq.q}
                       <span className="transition group-open:rotate-180 text-brand-aqua ml-4 shrink-0">
                         <ChevronIcon />

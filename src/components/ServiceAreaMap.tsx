@@ -90,7 +90,10 @@ export default function ServiceAreaMap({ projects, mapStyle = 'mapbox://styles/m
             maxZoom: 15,   // Keep ≤ 15; 10–13 recommended to avoid street-level detail
             pitch: 0,
             bearing: 0,
+            attributionControl: false,
           });
+          // Collapsed ⓘ attribution (Mapbox ToS requires attribution stay present)
+          map.current.addControl(new mapboxgl.AttributionControl({ compact: true }));
 
           map.current.on('style.load', () => {
 
@@ -284,7 +287,7 @@ export default function ServiceAreaMap({ projects, mapStyle = 'mapbox://styles/m
 
   if (!mounted) {
     return (
-      <div style={{ width: '100%', height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <p>Loading map...</p>
       </div>
     );
@@ -292,7 +295,7 @@ export default function ServiceAreaMap({ projects, mapStyle = 'mapbox://styles/m
 
   if (error) {
     return (
-      <div style={{ width: '100%', height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '1rem' }}>
+      <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '1rem' }}>
         <p style={{ fontWeight: 'bold' }}>Map Error</p>
         <p style={{ fontSize: '0.875rem' }}>{error}</p>
         {error.includes('token') && (
@@ -305,7 +308,7 @@ export default function ServiceAreaMap({ projects, mapStyle = 'mapbox://styles/m
   return (
     <div
       ref={mapContainer}
-      style={{ width: '100%', height: '600px', borderRadius: '4px', overflow: 'hidden' }}
+      style={{ width: '100%', height: '100%', borderRadius: '4px', overflow: 'hidden' }}
     />
   );
 }

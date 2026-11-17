@@ -92,10 +92,10 @@ export default function CommercialRoofingPage() {
   return (
     <ServicePageTemplate data={pageData}>
       <div>
-        <h2 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-brand-black mb-6">
+        <h2 className="font-heading font-black text-md md:text-lg lg:text-xl text-brand-black mb-6">
           YOUR COMMERCIAL PROPERTY DESERVES SPECIALIZED EXPERTISE.
         </h2>
-        <div className="space-y-6 text-brand-charcoal/80 text-lg leading-relaxed">
+        <div className="space-y-6 text-brand-charcoal/80 text-base leading-relaxed">
           <p>
             Commercial roofing systems face unique challenges that residential
             roofs do not. From flat and low-slope configurations to the demands
@@ -113,7 +113,7 @@ export default function CommercialRoofingPage() {
       </div>
 
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-6">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-6">
           COMMERCIAL SERVICES
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -149,7 +149,7 @@ export default function CommercialRoofingPage() {
       </div>
 
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-6">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-6">
           WHO WE SERVE
         </h3>
         <div className="grid grid-cols-2 gap-4">
@@ -172,10 +172,10 @@ export default function CommercialRoofingPage() {
       </div>
 
       <div>
-        <h3 className="font-heading font-black text-xl md:text-2xl text-brand-black mb-4">
+        <h3 className="font-heading font-black text-md md:text-md text-brand-black mb-4">
           COMMERCIAL ROOFING IN NORTH TEXAS
         </h3>
-        <p className="text-brand-charcoal/80 text-lg leading-relaxed mb-8">
+        <p className="text-brand-charcoal/80 text-base leading-relaxed mb-8">
           North Texas puts commercial roofs through conditions that accelerate
           wear faster than almost anywhere else in the country. Understanding
           these regional stressors is the difference between a roof that lasts

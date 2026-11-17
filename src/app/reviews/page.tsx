@@ -85,8 +85,8 @@ export default async function ReviewsPage() {
         ))}
         <Header />
         <main className="min-h-screen pt-20 md:pt-24">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-20">
-            <h1 className="font-heading font-black text-3xl md:text-4xl text-brand-black mb-2 uppercase">
+          <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-20">
+            <h1 className="font-heading font-black text-lg md:text-xl text-brand-black mb-2 uppercase">
               Customer Reviews — 41 Roofing &amp; Restoration
             </h1>
             <p className="text-sm text-brand-muted mb-12">
