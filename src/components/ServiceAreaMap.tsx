@@ -10,7 +10,7 @@ const PIN_COLOR = '#46968b';           // Pin fill — brand-aqua
 const PIN_STROKE = '#050505';          // Pin stroke — brand-black, keep dark for contrast
 const POPUP_TITLE_COLOR = '#46968b';   // Popup title — brand-aqua
 const POPUP_LINK_COLOR = '#46968b';    // "View Project" link — brand-aqua
-const POPUP_TEXT_COLOR = '#F4F6F6';    // Popup body text — brand-softGray, for contrast on dark-v11
+const POPUP_TEXT_COLOR = '#171A1B';    // Popup body text — brand-charcoal — readable on the white popup
 
 // Common Mapbox styles:
 //   mapbox://styles/mapbox/dark-v11
@@ -292,17 +292,18 @@ export default function ServiceAreaMap({ projects, companyLocation = null, mapSt
               logo.className = 'h-full w-full object-contain p-1';
               badge.appendChild(logo);
 
-              const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                companyLocation.address || `${companyLocation.lat},${companyLocation.lon}`
+              // Opens the business's Google listing (profile, reviews, directions) via a name + address search
+              const profileUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                [companyLocation.name, companyLocation.address].filter(Boolean).join(' ')
               )}`;
 
               const companyPopup = new mapboxgl.Popup({ offset: 32 }).setHTML(
                 `<div style="font-family: sans-serif; color: ${POPUP_TEXT_COLOR}; padding: 8px;">
                   <strong style="color: ${POPUP_TITLE_COLOR}; display: block; margin-bottom: 8px;">${escapeHtml(companyLocation.name)}</strong>
                   ${companyLocation.address ? `<p style="margin: 0 0 8px 0; font-size: 14px;">${escapeHtml(companyLocation.address)}</p>` : ''}
-                  <a href="${directionsUrl}" target="_blank" rel="noopener noreferrer"
+                  <a href="${profileUrl}" target="_blank" rel="noopener noreferrer"
                      style="color: ${POPUP_LINK_COLOR}; text-decoration: none; font-weight: 500; font-size: 13px;">
-                    Get Directions →
+                    See Profile →
                   </a>
                 </div>`
               );
