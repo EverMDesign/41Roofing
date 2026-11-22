@@ -7,7 +7,7 @@ import ModalProvider from "@/components/ModalProvider";
 import InspectionModal from "@/components/InspectionModal";
 import ProjectCard from "@/components/projects/ProjectCard";
 import ServiceAreaMap from "@/components/ServiceAreaMap";
-import { getProjects } from "@/lib/workpress-api";
+import { getProjects, getCompanySettings } from "@/lib/workpress-api";
 import { BUSINESS } from "@/lib/schema-business";
 
 export const revalidate = 300;
@@ -45,7 +45,23 @@ export default async function ProjectsPage({
   searchParams: Promise<{ city?: string; show?: string }>;
 }) {
   const { city, show } = await searchParams;
-  const allProjects = (await getProjects()).filter((p) => p.is_published);
+  const [projectsData, settings] = await Promise.all([getProjects(), getCompanySettings()]);
+  const allProjects = projectsData.filter((p) => p.is_published);
+
+  const companyLocation =
+    settings?.show_company_pin &&
+    settings.company_latitude != null &&
+    settings.company_longitude != null
+      ? {
+          lat: Number(settings.company_latitude),
+          lon: Number(settings.company_longitude),
+          name: settings.company_name || "41 Roofing & Restoration",
+          address: settings.company_address || undefined,
+          // Uploaded in the WorkPress dashboard; falls back to the site's own logo
+          logoSrc: settings.company_logo_url || "/41-roofing-logo.webp",
+        }
+      : null;
+
 
   const cities = Array.from(new Set(allProjects.map((p) => p.address.city))).sort();
 
@@ -74,14 +90,14 @@ export default async function ProjectsPage({
           {/* Hero: title left, map right */}
           <section className="bg-brand-white">
             <div className="max-w-[1440px] mx-auto px-6 md:px-12 pt-12 md:pt-16 pb-16 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
-              {mappableProjects.length > 0 && (
+              {(mappableProjects.length > 0 || companyLocation) && (
                 <div className="order-2 aspect-video rounded-[10px] overflow-hidden border border-brand-border">
-                  <ServiceAreaMap projects={mappableProjects} />
+                  <ServiceAreaMap projects={mappableProjects} companyLocation={companyLocation} />
                 </div>
               )}
               <div
                 className={`order-1 ${
-                  mappableProjects.length > 0 ? "" : "md:col-span-2"
+                  mappableProjects.length > 0 || companyLocation ? "" : "md:col-span-2"
                 }`}
               >
                 <p className="eyebrow mb-4">Our Work</p>
